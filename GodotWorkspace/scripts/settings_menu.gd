@@ -16,13 +16,6 @@ func _on_credits_button_pressed():
 	get_tree().change_scene_to_file("res://screens/credits_screen.tscn")
 	pass # Replace with function body.
 
-#changes volume of music
-func _on_music_slider_drag_ended(value_changed):
-	if value_changed:
-		var value = musicSlider.value - 35
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value)
-	else:
-		pass
 
 #quits game entirely
 func _on_quit_button_pressed():
@@ -31,3 +24,7 @@ func _on_quit_button_pressed():
 #coninues back to where it was
 func _on_continue_button_pressed():
 	pass # Replace with function body.
+
+#changes volume of music
+func _on_music_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value - 35)
