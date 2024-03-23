@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7q35l8ctyu0e"]
 
 [ext_resource type="Script" path="res://scripts/creditsLabel.gd" id="1_x4kin"]
-[ext_resource type="Script" path="res://scripts/Button.gd" id="2_5rng6"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="2_5rng6"]
 [ext_resource type="AudioStream" uid="uid://b01bpv1v7smkr" path="res://music/chiphead64 - 11pm.ogg" id="3_gg50c"]
 
 [node name="credits_screen" type="Node2D"]

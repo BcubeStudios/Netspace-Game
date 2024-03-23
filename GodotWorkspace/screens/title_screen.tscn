@@ -1,8 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://bndtv83sp3wfj"]
+[gd_scene load_steps=4 format=3 uid="uid://bxb6kmvkkcnqh"]
 
-[ext_resource type="Script" path="res://scripts/TitleScreen.gd" id="1_duc1c"]
 [ext_resource type="AudioStream" uid="uid://b01bpv1v7smkr" path="res://music/chiphead64 - 11pm.ogg" id="2_al1s5"]
 [ext_resource type="PackedScene" uid="uid://c6fth4mtmu8c0" path="res://screens/settings_menu.tscn" id="3_e4t44"]
+
+[sub_resource type="GDScript" id="GDScript_xfbvu"]
+script/source = "extends Control
+
+@onready var audio = $AudioStreamPlayer2D
+@onready var normal_menu =$NormalMenu
+@onready var settings_menu = $SettingsMenu
+var setting_on = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+func _on_start_button_pressed():
+	get_tree().change_scene_to_file(\"res://screens/loading_screen.tscn\")
+	pass # Replace with function body.
+
+func _process(_delta):
+	if Input.is_action_just_pressed(\"Settings\"):
+		settingsMenu()
+		
+func settingsMenu():
+	if setting_on:
+		settings_menu.hide()
+		normal_menu.show()
+		Engine.time_scale = 1
+	else :
+		normal_menu.hide()
+		settings_menu.show()
+		Engine.time_scale = 0
+	setting_on = !setting_on
+
+
+func _on_settings_button_pressed():
+	settingsMenu()
+	
+
+"
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -11,7 +48,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_duc1c")
+script = SubResource("GDScript_xfbvu")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_al1s5")

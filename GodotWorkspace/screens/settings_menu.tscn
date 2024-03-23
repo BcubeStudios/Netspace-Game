@@ -18,9 +18,9 @@ script = ExtResource("1_0h81g")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.427852
-anchor_top = 0.444934
+anchor_top = 0.393539
 anchor_right = 0.604866
-anchor_bottom = 0.500734
+anchor_bottom = 0.632893
 offset_left = -4.0
 offset_top = -20.0
 offset_right = 4.0
@@ -33,9 +33,13 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="ContinueButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "EXIT"
+text = "CONTINUE"
+
+[node name="MainMenuButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "MAIN MENU"
 
 [node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -55,7 +59,8 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "QUIT GAME"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MainMenuButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="drag_ended" from="MarginContainer/VBoxContainer/MusicSlider" to="." method="_on_music_slider_drag_ended"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
