@@ -14,7 +14,7 @@ func _ready():
 #slowly loads te progress bar
 func loadBar():
 	if percentage <=100:
-		percentage += 1
+		percentage += 4
 		progressBar.value = percentage
 		pass
 	else:
