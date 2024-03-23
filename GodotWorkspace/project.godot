@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Se-2024-code"
-run/main_scene="res://scripts/title_screen.tscn"
+run/main_scene="res://screens/title_screen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
