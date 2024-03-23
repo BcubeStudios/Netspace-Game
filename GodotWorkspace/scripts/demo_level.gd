@@ -1,9 +1,6 @@
 extends Node2D
 
 var setting_on = false
-@onready var settings_menu = $SettingsMenu
-@onready var setting_panel = $settingPanel
-@onready var settings_button = $settingButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,8 +10,12 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("Settings"):
 		settingsMenu()
-		
+
+
 func settingsMenu():
+	var settings_menu = $SettingsMenu
+	var setting_panel = $settingPanel
+	var settings_button = $settingButton
 	if setting_on:
 		settings_menu.hide()
 		setting_panel.hide()
@@ -29,6 +30,16 @@ func settingsMenu():
 pass
 
 
+#activates the settings mode
 func _on_setting_button_pressed():
 	settingsMenu()
 	pass # Replace with function body.
+
+
+#toggles the info panel
+func _on_info_toggle_toggled(toggled_on):
+	var info_graphic = $infoPanel
+	if toggled_on:
+		info_graphic.show()
+	else:
+		info_graphic.hide()
