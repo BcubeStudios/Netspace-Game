@@ -9,7 +9,7 @@ func _on_start_button_pressed():
 	# get_tree().change_scene( INSERT SCENE HERE)
 	pass # Replace with function body.
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("Settings"):
 		settingsMenu()
 		
