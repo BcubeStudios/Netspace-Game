@@ -5,6 +5,10 @@ extends Control
 @onready var settings_menu = $SettingsMenu
 var setting_on = false
 
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
 func _on_start_button_pressed():
 	get_tree().change_scene_to_file("res://screens/loading_screen.tscn")
 	pass # Replace with function body.
@@ -29,8 +33,3 @@ func _on_settings_button_pressed():
 	settingsMenu()
 	
 
-func change_volume(new_volume):
-	audio.volume_db = (new_volume - 35)
-	
-func toggle_volume():
-	audio.playing = !audio.playing

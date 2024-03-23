@@ -16,8 +16,8 @@ func _on_credits_button_pressed():
 #changes volume of music
 func _on_music_slider_drag_ended(value_changed):
 	if value_changed:
-		var value = $MarginContainer/VBoxContainer/MusicSlider.value
-		main.change_volume(value)
+		var value = $MarginContainer/VBoxContainer/MusicSlider.value - 35
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value)
 	else:
 		pass
 

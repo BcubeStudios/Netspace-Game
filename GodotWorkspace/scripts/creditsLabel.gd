@@ -13,6 +13,6 @@ func showText():
 	self.visible_characters = textSpeed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	showText()
 	pass
