@@ -1,23 +1,58 @@
-[gd_scene load_steps=4 format=3 uid="uid://3kt3xgd6i045"]
+[gd_scene load_steps=10 format=3 uid="uid://3kt3xgd6i045"]
 
 [ext_resource type="Script" path="res://scripts/loading_screen.gd" id="1_o6dig"]
 [ext_resource type="AudioStream" uid="uid://b01bpv1v7smkr" path="res://music/chiphead64 - 11pm.ogg" id="1_qib4h"]
 [ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="3_mqag2"]
+[ext_resource type="Texture2D" uid="uid://doa7t8ekweu" path="res://sprites/router/router0.jpg" id="4_v4613"]
+[ext_resource type="Texture2D" uid="uid://sr633uiq0ymu" path="res://sprites/router/router1.jpg" id="5_qlia2"]
+[ext_resource type="Texture2D" uid="uid://bv1kutfe6awkm" path="res://sprites/router/router2.jpg" id="6_nsr33"]
+[ext_resource type="Texture2D" uid="uid://dtuoqbsm3xprh" path="res://sprites/router/router3.jpg" id="7_hrvy1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uetre"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6deqq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_v4613")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qlia2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nsr33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hrvy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nsr33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qlia2")
+}],
+"loop": true,
+"name": &"router",
+"speed": 5.0
+}]
 
 [node name="loading_screen" type="Node2D"]
 script = ExtResource("1_o6dig")
+
+[node name="Panel2" type="Panel" parent="."]
+offset_right = 1159.0
+offset_bottom = 658.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uetre")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_qib4h")
 autoplay = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-
 [node name="Panel" type="Panel" parent="."]
-offset_left = 679.0
-offset_top = 411.0
-offset_right = 1054.0
-offset_bottom = 492.0
+offset_left = 389.0
+offset_top = 404.0
+offset_right = 764.0
+offset_bottom = 485.0
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
@@ -33,8 +68,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 327.0
-offset_top = 563.0
-offset_right = 942.0
-offset_bottom = 590.0
+offset_left = 159.0
+offset_top = 561.0
+offset_right = 986.0
+offset_bottom = 593.0
 theme = ExtResource("3_mqag2")
+
+[node name="AnimatedRouter" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 262)
+sprite_frames = SubResource("SpriteFrames_6deqq")
+animation = &"router"
+autoplay = "router"
+frame_progress = 0.0437307

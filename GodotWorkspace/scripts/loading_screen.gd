@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var progressBar = $ProgressBar
+@onready var router = $AnimatedRouter
 #progress bar percentage
 var percentage: int = 0
 
@@ -19,6 +20,8 @@ func changeScene():
 	get_tree().change_scene_to_file("res://screens/demo_level.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+#calls to play the animation and the loading bar
 func _process(_delta):
+	router.play()
 	loadBar()
 	pass

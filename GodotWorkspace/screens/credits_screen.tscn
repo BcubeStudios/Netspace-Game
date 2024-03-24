@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7q35l8ctyu0e"]
+[gd_scene load_steps=6 format=3 uid="uid://c7q35l8ctyu0e"]
 
 [ext_resource type="Script" path="res://scripts/creditsLabel.gd" id="1_x4kin"]
 [ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="1_yyrdf"]
 [ext_resource type="Script" path="res://scripts/button.gd" id="2_5rng6"]
 [ext_resource type="AudioStream" uid="uid://b01bpv1v7smkr" path="res://music/chiphead64 - 11pm.ogg" id="3_gg50c"]
+[ext_resource type="Texture2D" uid="uid://560ew43lfwqo" path="res://sprites/logoB3.png" id="3_nv5jp"]
 
 [node name="credits_screen" type="Node2D"]
 
@@ -38,6 +39,11 @@ Music by Chiphead64
 visible_characters = 0
 visible_ratio = 0.0
 script = ExtResource("1_x4kin")
+
+[node name="Sprite2D" type="Sprite2D" parent="creditsPanel"]
+position = Vector2(184, 108)
+scale = Vector2(0.408719, 0.508117)
+texture = ExtResource("3_nv5jp")
 
 [node name="thankyouLabel" type="Label" parent="."]
 offset_left = 234.0

@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://bar8iv8kegwxm" path="res://music/Free Game Soundtrack by chiphead64 - (hurry up).ogg" id="3_ruto6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw0v8"]
-bg_color = Color(0.913725, 0.913725, 0.913725, 1)
 
 [node name="demo_level" type="Node2D"]
 script = ExtResource("1_j08t0")
@@ -17,12 +16,12 @@ offset_bottom = 647.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_yw0v8")
 
 [node name="settingButton" type="Button" parent="."]
-offset_left = 993.0
-offset_top = 20.0
-offset_right = 1142.0
-offset_bottom = 51.0
+offset_left = 1081.0
+offset_top = 21.0
+offset_right = 1127.0
+offset_bottom = 57.0
 theme = ExtResource("2_rkssa")
-text = "[insert menu icon]"
+text = "☰"
 
 [node name="settingPanel" type="Panel" parent="."]
 visible = false

@@ -45,8 +45,8 @@ text = "B³ STUDIOS"
 horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 135.0
-offset_top = 577.0
-offset_right = 1024.0
-offset_bottom = 604.0
+offset_left = 120.0
+offset_top = 584.0
+offset_right = 1009.0
+offset_bottom = 611.0
 theme = ExtResource("2_4ddk4")
