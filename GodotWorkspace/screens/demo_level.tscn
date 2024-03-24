@@ -44,18 +44,26 @@ offset_bottom = 262.0
 text = "A router is a device that connects two or more packet-switched networks or subnetworks. It serves two primary functions: managing traffic between these networks by forwarding data packets to their intended IP addresses, and allowing multiple devices to use the same Internet connection."
 autowrap_mode = 2
 
-[node name="info toggle" type="CheckButton" parent="."]
+[node name="infoToggle" type="CheckButton" parent="."]
 offset_left = 1044.0
 offset_top = 591.0
 offset_right = 1123.0
 offset_bottom = 631.0
 text = "Info"
 
+[node name="objectivesToggle" type="CheckButton" parent="."]
+offset_left = 32.0
+offset_top = 11.0
+offset_right = 161.0
+offset_bottom = 42.0
+button_pressed = true
+text = "Objectives"
+
 [node name="objectivesPanel" type="Panel" parent="."]
-offset_left = 16.0
-offset_top = 17.0
-offset_right = 164.0
-offset_bottom = 287.0
+offset_left = 21.0
+offset_top = 41.0
+offset_right = 169.0
+offset_bottom = 311.0
 
 [node name="titleLabel" type="Label" parent="objectivesPanel"]
 layout_mode = 0
@@ -80,4 +88,5 @@ stream = ExtResource("3_ruto6")
 autoplay = true
 
 [connection signal="pressed" from="settingButton" to="." method="_on_setting_button_pressed"]
-[connection signal="toggled" from="info toggle" to="." method="_on_info_toggle_toggled"]
+[connection signal="toggled" from="infoToggle" to="." method="_on_info_toggle_toggled"]
+[connection signal="toggled" from="objectivesToggle" to="." method="_on_objectives_toggle_toggled"]

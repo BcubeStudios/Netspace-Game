@@ -43,3 +43,12 @@ func _on_info_toggle_toggled(toggled_on):
 		info_graphic.show()
 	else:
 		info_graphic.hide()
+
+
+#toggles the objectives panel
+func _on_objectives_toggle_toggled(toggled_on):
+	var objectives_graphic = $objectivesPanel
+	if toggled_on:
+		objectives_graphic.show()
+	else:
+		objectives_graphic.hide()
