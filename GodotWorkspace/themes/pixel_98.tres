@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dupann3qkyje3"]
+
+[ext_resource type="FontFile" uid="uid://cyukar858exk5" path="res://fonts/w95fa.woff" id="1_gq1xi"]
+[ext_resource type="Texture2D" uid="uid://cjfndw515dbgi" path="res://themes/icons/loading bar.svg" id="1_pd2xn"]
+[ext_resource type="Texture2D" uid="uid://yqiwrs1htn31" path="res://themes/icons/loading bar bit.svg" id="2_bnejg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tkprt"]
+texture = ExtResource("1_pd2xn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w2tmh"]
+texture = ExtResource("2_bnejg")
+texture_margin_left = 5.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[resource]
+default_font = ExtResource("1_gq1xi")
+default_font_size = 20
+ProgressBar/styles/background = SubResource("StyleBoxTexture_tkprt")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_w2tmh")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxb6kmvkkcnqh"]
+[gd_scene load_steps=5 format=3 uid="uid://bxb6kmvkkcnqh"]
 
+[ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="2_a67m6"]
 [ext_resource type="AudioStream" uid="uid://b01bpv1v7smkr" path="res://music/chiphead64 - 11pm.ogg" id="2_al1s5"]
 [ext_resource type="PackedScene" uid="uid://c6fth4mtmu8c0" path="res://screens/settings_menu.tscn" id="3_e4t44"]
 
@@ -76,6 +77,7 @@ offset_right = 81.5
 offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_a67m6")
 text = "START GAME"
 icon_alignment = 1
 
@@ -92,6 +94,7 @@ offset_right = 66.5
 offset_bottom = 41.232
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("2_a67m6")
 text = "SETTINGS"
 icon_alignment = 1
 

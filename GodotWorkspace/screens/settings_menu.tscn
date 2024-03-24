@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6fth4mtmu8c0"]
+[gd_scene load_steps=3 format=3 uid="uid://c6fth4mtmu8c0"]
 
 [ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_0h81g"]
+[ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="2_n5gra"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -35,28 +36,39 @@ size_flags_vertical = 4
 
 [node name="ContinueButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_n5gra")
+theme_override_font_sizes/font_size = 20
 text = "CONTINUE"
 
 [node name="MainMenuButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_n5gra")
+theme_override_font_sizes/font_size = 20
 text = "MAIN MENU"
 
 [node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_n5gra")
+theme_override_font_sizes/font_size = 20
 text = "CREDITS"
 
 [node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_n5gra")
 max_value = 50.0
 value = 25.0
 
 [node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_n5gra")
+theme_override_font_sizes/font_size = 20
 text = "MUSIC"
 horizontal_alignment = 1
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_n5gra")
+theme_override_font_sizes/font_size = 20
 text = "QUIT GAME"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
