@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddhmuwam3lrrg"]
+[gd_scene load_steps=9 format=3 uid="uid://ddhmuwam3lrrg"]
 
 [ext_resource type="Script" path="res://scripts/demo_level.gd" id="1_j08t0"]
 [ext_resource type="PackedScene" uid="uid://c6fth4mtmu8c0" path="res://screens/settings_menu.tscn" id="2_1ps50"]
 [ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="2_rkssa"]
 [ext_resource type="AudioStream" uid="uid://bar8iv8kegwxm" path="res://music/Free Game Soundtrack by chiphead64 - (hurry up).ogg" id="3_ruto6"]
+[ext_resource type="Script" path="res://scripts/Point.gd" id="5_h04it"]
+[ext_resource type="Script" path="res://Edge.gd" id="6_3p5jv"]
+[ext_resource type="Script" path="res://screens/Phedge.gd" id="7_5j0xl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw0v8"]
 
@@ -27,6 +30,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="settingButton" type="Button" parent="HUD"]
+layout_mode = 0
 offset_left = 1081.0
 offset_top = 21.0
 offset_right = 1127.0
@@ -36,6 +40,7 @@ text = "☰"
 
 [node name="settingPanel" type="Panel" parent="HUD"]
 visible = false
+layout_mode = 0
 offset_left = 998.0
 offset_top = 59.0
 offset_right = 1129.0
@@ -48,6 +53,7 @@ offset_right = 1.0
 offset_bottom = 1.0
 
 [node name="infoPanel" type="Panel" parent="HUD"]
+layout_mode = 0
 offset_left = 783.0
 offset_top = 288.0
 offset_right = 1128.0
@@ -64,6 +70,7 @@ text = "A router is a device that connects two or more packet-switched networks 
 autowrap_mode = 2
 
 [node name="infoToggle" type="CheckButton" parent="HUD"]
+layout_mode = 0
 offset_left = 1044.0
 offset_top = 591.0
 offset_right = 1123.0
@@ -80,6 +87,7 @@ theme_override_font_sizes/font_size = 20
 text = "Info"
 
 [node name="objectivesToggle" type="CheckButton" parent="HUD"]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 11.0
 offset_right = 163.0
@@ -96,6 +104,7 @@ button_pressed = true
 text = "Objectives"
 
 [node name="objectivesPanel" type="Panel" parent="HUD"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 41.0
 offset_right = 169.0
@@ -128,17 +137,20 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Point" type="Node2D" parent="Director"]
+script = ExtResource("5_h04it")
 
 [node name="Polygon2D" type="Polygon2D" parent="Director/Point"]
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
 
 [node name="Edge" type="Node2D" parent="Director"]
+script = ExtResource("6_3p5jv")
 
 [node name="Line2D" type="Line2D" parent="Director/Edge"]
 default_color = Color(0, 0, 0, 1)
 
 [node name="Phedge" type="Node2D" parent="Director"]
+script = ExtResource("7_5j0xl")
 
 [node name="Line2D" type="Line2D" parent="Director/Phedge"]
 default_color = Color(0, 0, 0, 1)
