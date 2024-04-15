@@ -3,7 +3,7 @@ class_name Point
 
 var pointName: String
 var coords: Vector2i
-var edges: Array[Node2D]
+var edges: Array[Edge]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
