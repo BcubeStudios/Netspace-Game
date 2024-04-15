@@ -6,8 +6,6 @@ var setting_on = false
 func _ready():
 	pass # Replace with function body.
 
-func _init():
-	pass
 
 func _process(_delta):
 	if Input.is_action_just_pressed("Settings"):
@@ -15,9 +13,9 @@ func _process(_delta):
 
 
 func settingsMenu():
-	var settings_menu = $SettingsMenu
-	var setting_panel = $settingPanel
-	var settings_button = $settingButton
+	var settings_menu = $HUD/settingPanel/SettingsMenu
+	var setting_panel = $HUD/settingPanel
+	var settings_button = $HUD/settingButton
 	if setting_on:
 		settings_menu.hide()
 		setting_panel.hide()
@@ -40,7 +38,7 @@ func _on_setting_button_pressed():
 
 #toggles the info panel
 func _on_info_toggle_toggled(toggled_on):
-	var info_graphic = $infoPanel
+	var info_graphic = $HUD/infoPanel
 	if toggled_on:
 		info_graphic.show()
 	else:
@@ -49,7 +47,7 @@ func _on_info_toggle_toggled(toggled_on):
 
 #toggles the objectives panel
 func _on_objectives_toggle_toggled(toggled_on):
-	var objectives_graphic = $objectivesPanel
+	var objectives_graphic = $HUD/objectivesPanel 
 	if toggled_on:
 		objectives_graphic.show()
 	else:

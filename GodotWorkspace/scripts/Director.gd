@@ -1,19 +1,30 @@
 extends Control
 
+var points:Array[Point]
+var edges:Array[Edge]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var point1 = Point.new("point1", Vector2i(150, 150))
-	var point2 = Point.new("point2", Vector2i(300, 150))
-	add_child(point1) 
-	add_child(point2)
-	CreateEdge(point1, point2)
-	pass # Replace with function body.
-
-func CreateEdge(point1, point2):
-	var newEdge = Edge.new(point1, point2)
-	add_child(newEdge)
+	var point1 = $Point1
+	var point2 = $Point2
+	
+	point1.activate("sillyguy", point1.global_position)
+	point2.activate("fundude", point2.global_position)
+	
+	points.append(point1)
+	points.append(point2)
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
+	
+	get_viewport().get_mouse_position()
+	pass
+
+func _input(event):
+	if event is InputEventMouseButton and event.pressed:
+		# check if its inside the shape
+		for point in points:
+			if point.isInside()
 	pass
