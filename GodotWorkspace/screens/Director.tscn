@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddrr7g12l1lle"]
+
+[ext_resource type="Script" path="res://scripts/Director.gd" id="1_c51sn"]
+[ext_resource type="Script" path="res://scripts/Point.gd" id="2_fv06g"]
+[ext_resource type="Script" path="res://scripts/Edge.gd" id="3_816h0"]
+[ext_resource type="Script" path="res://scripts/Phedge.gd" id="4_m85ug"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vvcfl"]
+radius = 18.6815
+
+[node name="Director" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_c51sn")
+
+[node name="Point" type="Node2D" parent="."]
+script = ExtResource("2_fv06g")
+
+[node name="Area2D" type="Area2D" parent="Point"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Point/Area2D"]
+shape = SubResource("CircleShape2D_vvcfl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Point"]
+
+[node name="Edge" type="Node2D" parent="."]
+script = ExtResource("3_816h0")
+
+[node name="Line2D" type="Line2D" parent="Edge"]
+default_color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Edge"]
+
+[node name="Phedge" type="Node2D" parent="."]
+script = ExtResource("4_m85ug")
+
+[node name="Line2D" type="Line2D" parent="Phedge"]
+default_color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Phedge"]

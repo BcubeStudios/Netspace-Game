@@ -35,5 +35,5 @@ func do_left_click():
 	pass
 
 func _draw():
-	#draw_circle(coords)
+	draw_circle(coords, 12, Global.Colours["red"])
 	pass
