@@ -71,7 +71,7 @@ offset_right = 656.0
 offset_bottom = 142.0
 theme = ExtResource("2_a67m6")
 theme_override_font_sizes/font_size = 75
-text = "NETWORKS
+text = "NETSPACE
 "
 
 [node name="subtitleLabel" type="Label" parent="mainPanel"]
@@ -124,27 +124,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -87.5
-offset_top = 131.0
-offset_right = 67.5
-offset_bottom = 203.0
+offset_left = -85.5
+offset_top = 129.0
+offset_right = 69.5
+offset_bottom = 201.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_a67m6")
 text = "START GAME"
 icon_alignment = 1
 
-[node name="SettingsButton" type="Button" parent="NormalMenu"]
+[node name="SettingsButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.608
 anchor_right = 0.5
 anchor_bottom = 0.608
-offset_left = 487.5
-offset_top = -364.768
-offset_right = 550.5
-offset_bottom = -306.768
+offset_left = 489.0
+offset_top = -362.984
+offset_right = 552.0
+offset_bottom = -304.984
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_a67m6")
@@ -152,4 +152,4 @@ text = "☰"
 icon_alignment = 1
 
 [connection signal="pressed" from="NormalMenu/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="NormalMenu/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]

@@ -13,18 +13,18 @@ func _process(_delta):
 
 
 func settingsMenu():
-	var settings_menu = $HUD/settingPanel/SettingsMenu
 	var setting_panel = $HUD/settingPanel
-	var settings_button = $HUD/settingButton
+	var overlay = $overlay
+	var level = $backgroundPanel
 	if setting_on:
-		settings_menu.hide()
 		setting_panel.hide()
-		settings_button.show()
+		overlay.hide()
+		level.show()
 		Engine.time_scale = 1
 	else :
-		settings_button.hide()
 		setting_panel.show()
-		settings_menu.show()
+		overlay.show()
+		level.hide()
 		Engine.time_scale = 0
 	setting_on = !setting_on
 pass
