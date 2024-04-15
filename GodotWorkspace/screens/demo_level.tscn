@@ -1,14 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddhmuwam3lrrg"]
+[gd_scene load_steps=11 format=3 uid="uid://ddhmuwam3lrrg"]
 
 [ext_resource type="Script" path="res://scripts/demo_level.gd" id="1_j08t0"]
 [ext_resource type="PackedScene" uid="uid://c6fth4mtmu8c0" path="res://screens/settings_menu.tscn" id="2_1ps50"]
 [ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="2_rkssa"]
 [ext_resource type="AudioStream" uid="uid://bar8iv8kegwxm" path="res://music/Free Game Soundtrack by chiphead64 - (hurry up).ogg" id="3_ruto6"]
+[ext_resource type="Script" path="res://scripts/Director.gd" id="5_e5e3g"]
 [ext_resource type="Script" path="res://scripts/Point.gd" id="5_h04it"]
 [ext_resource type="Script" path="res://Edge.gd" id="6_3p5jv"]
-[ext_resource type="Script" path="res://screens/Phedge.gd" id="7_5j0xl"]
+[ext_resource type="Script" path="res://scripts/Phedge.gd" id="7_5j0xl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw0v8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l2djm"]
+radius = 18.6815
 
 [node name="demo_level" type="Node2D"]
 script = ExtResource("1_j08t0")
@@ -135,13 +139,17 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("5_e5e3g")
 
 [node name="Point" type="Node2D" parent="Director"]
 script = ExtResource("5_h04it")
 
-[node name="Polygon2D" type="Polygon2D" parent="Director/Point"]
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+[node name="Area2D" type="Area2D" parent="Director/Point"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Director/Point/Area2D"]
+shape = SubResource("CircleShape2D_l2djm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Director/Point"]
 
 [node name="Edge" type="Node2D" parent="Director"]
 script = ExtResource("6_3p5jv")
@@ -149,11 +157,15 @@ script = ExtResource("6_3p5jv")
 [node name="Line2D" type="Line2D" parent="Director/Edge"]
 default_color = Color(0, 0, 0, 1)
 
+[node name="Sprite2D" type="Sprite2D" parent="Director/Edge"]
+
 [node name="Phedge" type="Node2D" parent="Director"]
 script = ExtResource("7_5j0xl")
 
 [node name="Line2D" type="Line2D" parent="Director/Phedge"]
 default_color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Director/Phedge"]
 
 [connection signal="pressed" from="HUD/settingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="toggled" from="HUD/infoToggle" to="." method="_on_info_toggle_toggled"]
