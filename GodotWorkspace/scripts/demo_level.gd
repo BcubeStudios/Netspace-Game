@@ -6,6 +6,8 @@ var setting_on = false
 func _ready():
 	pass # Replace with function body.
 
+func _init():
+	pass
 
 func _process(_delta):
 	if Input.is_action_just_pressed("Settings"):

@@ -27,7 +27,6 @@ stream = ExtResource("3_ruto6")
 autoplay = true
 
 [node name="HUD" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

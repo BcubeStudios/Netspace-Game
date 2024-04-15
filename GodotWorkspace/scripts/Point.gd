@@ -7,12 +7,13 @@ var edges: Array[Edge]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(pointName)
 	pass # Replace with function body.
 
-func _init(name, coords, edges):
+func _init(name, coords):
 	self.pointName = name
 	self.coords = coords
-	self.edges = edges
+
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -34,4 +35,5 @@ func do_left_click():
 	pass
 
 func _draw():
+	#draw_circle(coords)
 	pass
