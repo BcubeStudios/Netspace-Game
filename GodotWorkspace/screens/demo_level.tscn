@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bar8iv8kegwxm" path="res://music/Free Game Soundtrack by chiphead64 - (hurry up).ogg" id="3_ruto6"]
 [ext_resource type="Script" path="res://scripts/Director.gd" id="5_e5e3g"]
 [ext_resource type="Script" path="res://scripts/Point.gd" id="5_h04it"]
-[ext_resource type="Script" path="res://Edge.gd" id="6_3p5jv"]
+[ext_resource type="Script" path="res://scripts/Edge.gd" id="6_3p5jv"]
 [ext_resource type="Script" path="res://scripts/Phedge.gd" id="7_5j0xl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw0v8"]
