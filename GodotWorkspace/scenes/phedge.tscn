@@ -7,5 +7,3 @@ script = ExtResource("1_o03to")
 
 [node name="Line2D" type="Line2D" parent="."]
 default_color = Color(0, 0, 0, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]

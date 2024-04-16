@@ -15,7 +15,7 @@ func color_change():
 
 func _draw():
 	if is_active():
-		draw_line(origin.coords, end, colour, 2)
+		draw_line(origin.coords, end, colour, 4)
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

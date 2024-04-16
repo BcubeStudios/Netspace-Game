@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddhmuwam3lrrg"]
+[gd_scene load_steps=8 format=3 uid="uid://ddhmuwam3lrrg"]
 
 [ext_resource type="Script" path="res://scripts/demo_level.gd" id="1_j08t0"]
 [ext_resource type="PackedScene" uid="uid://c6fth4mtmu8c0" path="res://scenes/settings_menu.tscn" id="2_1ps50"]
@@ -8,13 +8,8 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw0v8"]
 
-[sub_resource type="Gradient" id="Gradient_0q1oc"]
-colors = PackedColorArray(0, 0, 0, 0.705882, 1, 1, 1, 0.705882)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_setfy"]
-gradient = SubResource("Gradient_0q1oc")
-fill_from = Vector2(0.53211, 0.830275)
-fill_to = Vector2(0.541284, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cmm0"]
+bg_color = Color(0.352941, 0.352941, 0.352941, 0.498039)
 
 [node name="demo_level" type="Node2D"]
 script = ExtResource("1_j08t0")
@@ -33,11 +28,13 @@ mouse_filter = 1
 stream = ExtResource("3_ruto6")
 autoplay = true
 
-[node name="overlay" type="Sprite2D" parent="."]
+[node name="overlay" type="Panel" parent="."]
 visible = false
-position = Vector2(568, 334.5)
-scale = Vector2(18.875, 11.1094)
-texture = SubResource("GradientTexture2D_setfy")
+offset_left = -36.0
+offset_top = -10.0
+offset_right = 1175.0
+offset_bottom = 677.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7cmm0")
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
@@ -139,13 +136,15 @@ text = "Objectives: "
 
 [node name="objectivesLabel" type="Label" parent="HUD/objectivesPanel"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 69.0
-offset_right = 90.0
-offset_bottom = 92.0
+offset_left = 11.0
+offset_top = 66.0
+offset_right = 139.0
+offset_bottom = 236.0
 theme = ExtResource("2_rkssa")
 theme_override_font_sizes/font_size = 18
-text = "survive"
+text = "connect nodes
+by clicking nodes
+"
 
 [connection signal="pressed" from="HUD/settingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="toggled" from="HUD/infoToggle" to="." method="_on_info_toggle_toggled"]
