@@ -34,7 +34,7 @@ func do_left_click():
 	
 
 func _draw(): 
-	draw_circle(coords, 20, Global.Colours["red"])
+	#draw_circle(coords, 20, Global.Colours["red"])
 	pass
 
 
@@ -48,9 +48,8 @@ func _on_area_2d_mouse_exited():
 	print("No longer pointing!")
 	
 func add_edge(edge:Edge) -> bool:
-	for x_edge in edges:
-		
-		return false
-	
+	for old_edge in edges:
+		if old_edge.id == edge.id:
+			return false
 	edges.append(edge)
 	return true

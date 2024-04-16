@@ -14,6 +14,9 @@ func _ready():
 func _init(new_point1, new_point2):
 	self.point1 = new_point1
 	self.point2 = new_point2
+	self.id = str(max(point1.coords.x, point2.coords.x))+ \
+	str(min(point1.coords.x, point2.coords.x)) + str(max(point1.coords.y, point2.coords.y)) +\
+	str(min(point1.coords.y, point2.coords.y))
 
 func color_change():
 	pass

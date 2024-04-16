@@ -11,14 +11,7 @@ var current_phedge:Phedge
 func _ready():
 	self.createPoint("point1", Vector2i(650, 150))
 	self.createPoint("point2", Vector2i(300, 350))
-	#var point = $Point
-	#var point2 = $Point2
-	
-	#point.activate("point1", point.global_position)
-	#points.append(point)
-	
-	#point2.activate("point2", point2.global_position)
-	#points.append(point2)
+	self.createPoint("point3", Vector2i(500, 300))
 	
 	current_phedge = $phedge
 	current_phedge.reset_origin()
@@ -44,18 +37,23 @@ func _input(event):
 		current_phedge.set_origin(current_point)
 		pass
 	else:
-		if event is InputEventMouseButton and event.pressed and current_phedge.is_active() and current_point != null:
-			#new edge
-			var edge = Edge.new(current_phedge.origin, current_point)
-			if(current_phedge.origin.add_edge(edge) and current_point.add_edge(edge)):
-				print("edge made")
-				#reset phedge 
-				current_phedge.reset_origin()
-				#add edge to array
-				add_child(edge)
-				#move to almost top
-				move_child(edge, 1)
-				edges.append(edge)
+		if event is InputEventMouseButton and event.pressed and current_phedge.is_active():
+			if current_point != null:
+				#new edge
+				var edge = Edge.new(current_phedge.origin, current_point)
+				if(current_phedge.origin.add_edge(edge) and current_point.add_edge(edge)):
+					print("edge made")
+					#reset phedge 
+					current_phedge.reset_origin()
+					#add edge to array
+					add_child(edge)
+					#move to almost top
+					move_child(edge, 1)
+					edges.append(edge)
+			else:
+				if current_point == null:
+					#reset phedge 
+					current_phedge.reset_origin()
 			pass
 	pass
 	
