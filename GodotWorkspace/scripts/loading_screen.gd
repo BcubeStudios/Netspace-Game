@@ -17,7 +17,7 @@ func loadBar():
 
 #changes to the demo
 func changeScene():
-	get_tree().change_scene_to_file("res://screens/demo_level.tscn")
+	get_tree().change_scene_to_file("res://scenes/demo_level.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #calls to play the animation and the loading bar

@@ -8,11 +8,11 @@ func _ready():
 
 #quits back to main menu
 func _on_exit_button_pressed():
-	get_tree().change_scene_to_file("res://screens/title_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/title_screen.tscn")
 
 #changes scene to the credits scene
 func _on_credits_button_pressed():
-	get_tree().change_scene_to_file("res://screens/credits_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/credits_screen.tscn")
 	pass # Replace with function body.
 
 #quits game entirely

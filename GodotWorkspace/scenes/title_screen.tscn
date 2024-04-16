@@ -4,7 +4,6 @@
 [ext_resource type="AudioStream" uid="uid://b01bpv1v7smkr" path="res://music/chiphead64 - 11pm.ogg" id="2_al1s5"]
 [ext_resource type="PackedScene" uid="uid://c6fth4mtmu8c0" path="res://scenes/settings_menu.tscn" id="3_e4t44"]
 
-
 [sub_resource type="GDScript" id="GDScript_xfbvu"]
 script/source = "extends Control
 
@@ -18,8 +17,7 @@ func _ready():
 	pass
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file(\"res://screens/loading_screen.tscn\")
-	pass # Replace with function body.
+	get_tree().change_scene_to_file(\"res://scenes/loading_screen.tscn\")
 
 func _process(_delta):
 	if Input.is_action_just_pressed(\"Settings\"):

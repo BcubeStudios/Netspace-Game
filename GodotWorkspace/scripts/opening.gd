@@ -22,7 +22,7 @@ func loadBar():
 
 #changes to the demo
 func changeScene():
-	get_tree().change_scene_to_file("res://screens/title_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/title_screen.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

@@ -10,7 +10,7 @@ func _ready():
 	pass
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://screens/loading_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/loading_screen.tscn")
 	pass # Replace with function body.
 
 func _process(_delta):
