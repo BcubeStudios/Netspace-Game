@@ -3,7 +3,7 @@ class_name Phedge
 
 var origin: Point
 var end: Vector2
-var colour: Color = Global.Colours["blue"]
+var colour: Color = Global.Colours["red"]
 var id: String
 
 

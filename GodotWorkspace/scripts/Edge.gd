@@ -3,7 +3,7 @@ class_name Edge
 
 var point1: Point
 var point2: Point
-var colour: Color = Global.Colours["red"]
+var colour: Color = Global.Colours["green"]
 var id: String
 
 
@@ -22,7 +22,7 @@ func color_change():
 	pass
 
 func _draw():
-	draw_line(point1.coords, point2.coords, colour, 3)
+	draw_line(point1.coords, point2.coords, colour, 4)
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
