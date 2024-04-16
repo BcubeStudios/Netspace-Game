@@ -7,13 +7,15 @@ var current_phedge:Phedge
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
-	var point1 = Point.new("point1", Vector2i(150, 150))
-	var point2 = Point.new("point2", Vector2i(300, 150))
-	add_child(point1) 
-	add_child(point2)
+	#self.createPoint("point1", Vector2i(200, 200))
+	#self.createPoint("point2", Vector2i(300, 150))
+	var point = $Point
+	var point2 = $Point2
 	
-	points.append(point1)
+	point.activate("point1", point.global_position)
+	points.append(point)
+	
+	point2.activate("point2", point2.global_position)
 	points.append(point2)
 	
 	current_phedge = $phedge
@@ -21,10 +23,11 @@ func _ready():
 	pass
 
 
-func createPoint(name, coords) -> Point:
-	var newPoint = Point.new(name, coords)
-	add_child(newPoint)
-	return newPoint
+func createPoint(new_name, coords):
+	var newPoint = Point.new()
+	newPoint.activate(new_name, coords)
+	self.add_child(newPoint)
+	points.append(newPoint)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -44,6 +47,8 @@ func _input(event):
 			current_phedge.reset_origin()
 			#add edge to array
 			add_child(edge)
+			#move to almost top
+			move_child(edge, 1)
 			edges.append(edge)
 			pass
 	pass

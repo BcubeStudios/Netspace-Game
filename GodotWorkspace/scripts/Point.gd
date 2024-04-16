@@ -12,10 +12,13 @@ func _ready():
 	self.hide()
 	pass # Replace with function body.
 
-func _init(point_name, point_coords):
-	self.show()
+func activate(point_name, point_coords):
 	self.pointName = point_name
 	self.coords = point_coords
+	self.set_position(point_coords)
+	self.show()
+	print(pointName)
+	print(coords)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

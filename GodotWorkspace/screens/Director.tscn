@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctx4wos4jkx7e"]
+[gd_scene load_steps=5 format=3 uid="uid://ctx4wos4jkx7e"]
 
 [ext_resource type="Script" path="res://scripts/Director.gd" id="1_u1ljf"]
+[ext_resource type="PackedScene" uid="uid://djkkrfn36vjk7" path="res://screens/point.tscn" id="3_4a4bx"]
 [ext_resource type="PackedScene" uid="uid://d0h00g4ba8ubu" path="res://screens/phedge.tscn" id="3_s8nuh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0n6cs"]
@@ -24,3 +25,9 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0n6cs")
 
 [node name="phedge" parent="." instance=ExtResource("3_s8nuh")]
+
+[node name="Point" parent="." instance=ExtResource("3_4a4bx")]
+position = Vector2(673, 168)
+
+[node name="Point2" parent="." instance=ExtResource("3_4a4bx")]
+position = Vector2(324, 358)
