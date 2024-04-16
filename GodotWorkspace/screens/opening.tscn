@@ -20,7 +20,7 @@ offset_right = 748.0
 offset_bottom = 234.0
 theme = ExtResource("2_4ddk4")
 theme_override_font_sizes/font_size = 75
-text = "NETWORKS
+text = "NETSPACE
 "
 
 [node name="subtitleLabel" type="Label" parent="mainPanel"]

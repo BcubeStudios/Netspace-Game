@@ -1,12 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddhmuwam3lrrg"]
+[gd_scene load_steps=9 format=3 uid="uid://ddhmuwam3lrrg"]
 
 [ext_resource type="Script" path="res://scripts/demo_level.gd" id="1_j08t0"]
 [ext_resource type="PackedScene" uid="uid://c6fth4mtmu8c0" path="res://screens/settings_menu.tscn" id="2_1ps50"]
+[ext_resource type="PackedScene" uid="uid://ctx4wos4jkx7e" path="res://screens/director.tscn" id="2_pm2eq"]
 [ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="2_rkssa"]
 [ext_resource type="AudioStream" uid="uid://bar8iv8kegwxm" path="res://music/Free Game Soundtrack by chiphead64 - (hurry up).ogg" id="3_ruto6"]
-[ext_resource type="PackedScene" uid="uid://ddrr7g12l1lle" path="res://screens/Director.tscn" id="5_rh81k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw0v8"]
+
+[sub_resource type="Gradient" id="Gradient_0q1oc"]
+colors = PackedColorArray(0, 0, 0, 0.705882, 1, 1, 1, 0.705882)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_setfy"]
+gradient = SubResource("Gradient_0q1oc")
+fill_from = Vector2(0.53211, 0.830275)
+fill_to = Vector2(0.541284, 0)
 
 [node name="demo_level" type="Node2D"]
 script = ExtResource("1_j08t0")
@@ -14,11 +22,21 @@ script = ExtResource("1_j08t0")
 [node name="backgroundPanel" type="Panel" parent="."]
 offset_right = 1152.0
 offset_bottom = 647.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yw0v8")
+
+[node name="Director" parent="backgroundPanel" instance=ExtResource("2_pm2eq")]
+layout_mode = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ruto6")
 autoplay = true
+
+[node name="overlay" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(568, 334.5)
+scale = Vector2(18.875, 11.1094)
+texture = SubResource("GradientTexture2D_setfy")
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
@@ -38,10 +56,10 @@ text = "☰"
 [node name="settingPanel" type="Panel" parent="HUD"]
 visible = false
 layout_mode = 0
-offset_left = 998.0
-offset_top = 59.0
-offset_right = 1129.0
-offset_bottom = 283.0
+offset_left = 1001.0
+offset_top = 67.0
+offset_right = 1132.0
+offset_bottom = 242.0
 
 [node name="SettingsMenu" parent="HUD/settingPanel" instance=ExtResource("2_1ps50")]
 layout_mode = 1
@@ -81,6 +99,7 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+button_pressed = true
 text = "Info"
 
 [node name="objectivesToggle" type="CheckButton" parent="HUD"]
@@ -126,8 +145,6 @@ offset_bottom = 92.0
 theme = ExtResource("2_rkssa")
 theme_override_font_sizes/font_size = 18
 text = "survive"
-
-[node name="Director" parent="." instance=ExtResource("5_rh81k")]
 
 [connection signal="pressed" from="HUD/settingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="toggled" from="HUD/infoToggle" to="." method="_on_info_toggle_toggled"]
