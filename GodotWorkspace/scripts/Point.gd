@@ -12,7 +12,7 @@ func _ready():
 	self.hide()
 	pass # Replace with function body.
 
-func activate(point_name, point_coords):
+func _init(point_name, point_coords):
 	self.show()
 	self.pointName = point_name
 	self.coords = point_coords
@@ -32,6 +32,7 @@ func do_left_click():
 	
 
 func _draw(): 
+	draw_circle(coords, 12, Global.Colours["red"])
 	pass
 
 
