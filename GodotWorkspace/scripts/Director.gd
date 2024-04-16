@@ -7,6 +7,7 @@ var current_phedge:Phedge
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
 	var point1 = Point.new("point1", Vector2i(150, 150))
 	var point2 = Point.new("point2", Vector2i(300, 150))
 	add_child(point1) 
@@ -19,6 +20,11 @@ func _ready():
 	current_phedge.reset_origin()
 	pass
 
+
+func createPoint(name, coords) -> Point:
+	var newPoint = Point.new(name, coords)
+	add_child(newPoint)
+	return newPoint
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
