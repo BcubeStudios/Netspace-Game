@@ -15,6 +15,7 @@ func _init(point1, point2):
 	self.point1 = point1
 	self.point2 = point2
 	colour = Color(255, 255, 255)
+	print("succsess edge!")
 
 func color_change():
 	pass
