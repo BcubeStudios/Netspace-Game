@@ -9,16 +9,15 @@ var edges: Array[Edge]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.hide()
 	pass # Replace with function body.
 
 func activate(point_name, point_coords):
 	self.pointName = point_name
 	self.coords = point_coords
-	self.set_position(point_coords)
-	self.show()
+	self.global_position = point_coords
+	print(self.global_position)
 	print(pointName)
-	print(coords)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,7 +34,7 @@ func do_left_click():
 	
 
 func _draw(): 
-	draw_circle(coords, 12, Global.Colours["red"])
+	draw_circle(coords, 20, Global.Colours["red"])
 	pass
 
 
@@ -47,3 +46,11 @@ func _on_area_2d_mouse_entered():
 func _on_area_2d_mouse_exited():
 	director.change_current_point(null)
 	print("No longer pointing!")
+	
+func add_edge(edge:Edge) -> bool:
+	for x_edge in edges:
+		
+		return false
+	
+	edges.append(edge)
+	return true

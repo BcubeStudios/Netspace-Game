@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://cgoorc32cnmy4"]
 
-[ext_resource type="Script" path="res://scripts/Edge.gd" id="1_ugkil"]
+[ext_resource type="Script" path="res://scripts/Edge.gd" id="1_hx027"]
 
 [node name="edge" type="Node2D"]
-script = ExtResource("1_ugkil")
+script = ExtResource("1_hx027")
 
 [node name="Line2D" type="Line2D" parent="."]
 default_color = Color(0, 0, 0, 1)

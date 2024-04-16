@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://lrqxkg6ee2cu"]
 
-[ext_resource type="Script" path="res://scripts/opening.gd" id="1_n81yr"]
-[ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="2_4ddk4"]
+[ext_resource type="Script" path="res://scripts/opening.gd" id="1_31ilo"]
+[ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="2_5c3b3"]
 
 [node name="opening" type="Node2D"]
-script = ExtResource("1_n81yr")
+script = ExtResource("1_31ilo")
 
 [node name="mainPanel" type="Panel" parent="."]
 offset_left = 110.0
@@ -18,7 +18,7 @@ offset_left = 281.0
 offset_top = 137.0
 offset_right = 748.0
 offset_bottom = 234.0
-theme = ExtResource("2_4ddk4")
+theme = ExtResource("2_5c3b3")
 theme_override_font_sizes/font_size = 75
 text = "NETSPACE
 "
@@ -29,7 +29,7 @@ offset_left = 165.0
 offset_top = 228.0
 offset_right = 763.0
 offset_bottom = 286.0
-theme = ExtResource("2_4ddk4")
+theme = ExtResource("2_5c3b3")
 theme_override_font_sizes/font_size = 55
 text = "CONNECTION CONUNDRUM"
 
@@ -39,7 +39,7 @@ offset_left = 371.0
 offset_top = 350.0
 offset_right = 530.0
 offset_bottom = 397.0
-theme = ExtResource("2_4ddk4")
+theme = ExtResource("2_5c3b3")
 theme_override_font_sizes/font_size = 35
 text = "B³ STUDIOS"
 horizontal_alignment = 1
@@ -49,4 +49,4 @@ offset_left = 120.0
 offset_top = 584.0
 offset_right = 1009.0
 offset_bottom = 611.0
-theme = ExtResource("2_4ddk4")
+theme = ExtResource("2_5c3b3")
