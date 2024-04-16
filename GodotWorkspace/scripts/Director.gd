@@ -50,6 +50,9 @@ func _input(event):
 					#move to almost top
 					move_child(edge, 1)
 					edges.append(edge)
+				else:
+					#reset phedge 
+					current_phedge.reset_origin()
 			else:
 				if current_point == null:
 					#reset phedge 
