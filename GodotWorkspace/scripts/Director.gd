@@ -7,17 +7,21 @@ var edges:Array[Edge]
 var current_point:Point
 var current_phedge:Phedge
 var length_left: float
+var curr_length: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.createPoint("point1", Vector2i(650, 150))
-	self.createPoint("point2", Vector2i(300, 350))
-	self.createPoint("point3", Vector2i(500, 300))
+	self.createPoint("point1", Vector2i(700, 100))
+	self.createPoint("point2", Vector2i(900, 500))
+	self.createPoint("point3", Vector2i(500, 500))
+	self.createPoint("point4", Vector2i(700, 300))
+	self.createPoint("point5", Vector2i(700, 500))
 	
 	current_phedge = $phedge
 	current_phedge.reset_origin()
 	
-	length_left = 35000
+	length_left = 800
+	curr_length = 0
 
 
 func createPoint(new_name, coords):
@@ -28,12 +32,13 @@ func createPoint(new_name, coords):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	curr_length = current_phedge.length
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and current_point == null:
 		#reset phedge 
 		current_phedge.reset_origin()
+		curr_length = 0
 	else:
 		if event is InputEventMouseButton and event.pressed and !current_phedge.is_active() and current_point != null:
 			#initalise phedge
@@ -56,9 +61,11 @@ func _input(event):
 						edges.append(edge)
 					else:
 						#reset phedge 
+						edge.point1.remove_edge(edge)
+						edge.point2.remove_edge(edge)
 						current_phedge.reset_origin()
+						curr_length = 0
 	pass
-	
 
 func change_current_point(point):
 	current_point = point

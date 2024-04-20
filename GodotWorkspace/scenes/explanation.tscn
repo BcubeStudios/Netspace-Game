@@ -70,6 +70,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xae8e")
 text = "Skip Tutorial"
 
 [node name="Panel2" type="Panel" parent="BGPanel"]
+visible = false
 offset_left = 72.0
 offset_top = 361.0
 offset_right = 388.0

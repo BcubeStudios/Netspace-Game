@@ -32,3 +32,12 @@ func add_edge(edge:Edge) -> bool:
 	$Area2D/icon.frame = 0
 	edges.append(edge)
 	return true
+
+func remove_edge(edge:Edge) -> bool:
+	var x = 0
+	for old_edge in edges:
+		if old_edge.id == edge.id:
+			edges.remove_at(x)
+			return true
+		x = x + 1
+	return false

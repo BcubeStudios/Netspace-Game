@@ -24,7 +24,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_yw0v8")
 [node name="Director" parent="backgroundPanel" instance=ExtResource("2_pm2eq")]
 layout_mode = 1
 
-[node name="Panel" type="Panel" parent="backgroundPanel"]
+[node name="cablePanel" type="Panel" parent="backgroundPanel"]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 571.0
@@ -32,7 +32,7 @@ offset_right = 310.0
 offset_bottom = 623.0
 theme = ExtResource("2_rkssa")
 
-[node name="cable_Label" type="Label" parent="backgroundPanel/Panel"]
+[node name="cable_Label" type="Label" parent="backgroundPanel/cablePanel"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 17.0
@@ -43,7 +43,36 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 23
 text = "Cable length left:"
 
-[node name="length_Label" type="Label" parent="backgroundPanel/Panel"]
+[node name="length_Label" type="Label" parent="backgroundPanel/cablePanel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 17.0
+offset_right = 282.0
+offset_bottom = 40.0
+theme = ExtResource("2_rkssa")
+theme_override_font_sizes/font_size = 22
+text = "FFFF"
+horizontal_alignment = 2
+
+[node name="currCablePanel" type="Panel" parent="backgroundPanel"]
+offset_left = 18.0
+offset_top = 518.0
+offset_right = 310.0
+offset_bottom = 570.0
+theme = ExtResource("2_rkssa")
+
+[node name="cable_Label2" type="Label" parent="backgroundPanel/currCablePanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 17.0
+offset_right = 174.0
+offset_bottom = 42.0
+theme = ExtResource("2_rkssa")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 23
+text = "Current cable length:"
+
+[node name="curr_length_Label" type="Label" parent="backgroundPanel/currCablePanel"]
 layout_mode = 0
 offset_left = 200.0
 offset_top = 17.0
@@ -178,6 +207,7 @@ by clicking nodes
 "
 
 [node name="explanation" parent="." instance=ExtResource("6_kbtp5")]
+visible = false
 
 [connection signal="pressed" from="HUD/settingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="toggled" from="HUD/infoToggle" to="." method="_on_info_toggle_toggled"]
