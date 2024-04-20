@@ -33,6 +33,7 @@ func createPoint(new_name, coords):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	curr_length = current_phedge.length
+	
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and current_point == null:
@@ -75,4 +76,8 @@ func change_length_left(length: float) -> bool:
 	if(new_length >= 0):
 		length_left = new_length
 		return true
+	return false
+	
+func game_won() -> bool:
+	#insert win conditions
 	return false
