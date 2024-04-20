@@ -55,17 +55,22 @@ offset_right = 764.0
 offset_bottom = 485.0
 
 [node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 94.0
 offset_top = 16.0
-offset_right = 309.0
-offset_bottom = 65.0
+offset_right = -66.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("3_mqag2")
 theme_override_font_sizes/font_size = 20
-text = "Did you know routers exist?
-Think about it..."
+text = "Routers help you connect to the internet!"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = 159.0

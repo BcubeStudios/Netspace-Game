@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddhmuwam3lrrg"]
+[gd_scene load_steps=9 format=3 uid="uid://ddhmuwam3lrrg"]
 
 [ext_resource type="Script" path="res://scripts/demo_level.gd" id="1_j08t0"]
 [ext_resource type="PackedScene" uid="uid://c6fth4mtmu8c0" path="res://scenes/settings_menu.tscn" id="2_1ps50"]
 [ext_resource type="PackedScene" uid="uid://ctx4wos4jkx7e" path="res://scenes/director.tscn" id="2_pm2eq"]
 [ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="2_rkssa"]
 [ext_resource type="AudioStream" uid="uid://bar8iv8kegwxm" path="res://music/Free Game Soundtrack by chiphead64 - (hurry up).ogg" id="3_ruto6"]
+[ext_resource type="PackedScene" uid="uid://yyjcuekla8dc" path="res://scenes/explanation.tscn" id="6_kbtp5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw0v8"]
 
@@ -95,6 +96,7 @@ offset_right = 1.0
 offset_bottom = 1.0
 
 [node name="infoPanel" type="Panel" parent="HUD"]
+visible = false
 layout_mode = 0
 offset_left = 783.0
 offset_top = 288.0
@@ -126,7 +128,6 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
-button_pressed = true
 text = "Info"
 
 [node name="objectivesToggle" type="CheckButton" parent="HUD"]
@@ -175,6 +176,8 @@ theme_override_font_sizes/font_size = 18
 text = "connect nodes
 by clicking nodes
 "
+
+[node name="explanation" parent="." instance=ExtResource("6_kbtp5")]
 
 [connection signal="pressed" from="HUD/settingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="toggled" from="HUD/infoToggle" to="." method="_on_info_toggle_toggled"]
