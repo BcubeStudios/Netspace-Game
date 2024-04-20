@@ -11,6 +11,7 @@ offset_left = 110.0
 offset_top = 72.0
 offset_right = 1030.0
 offset_bottom = 552.0
+theme = ExtResource("2_5c3b3")
 
 [node name="mainLabel" type="Label" parent="mainPanel"]
 layout_mode = 0

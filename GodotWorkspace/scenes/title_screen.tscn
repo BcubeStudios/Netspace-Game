@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxb6kmvkkcnqh"]
+[gd_scene load_steps=7 format=3 uid="uid://bxb6kmvkkcnqh"]
 
+[ext_resource type="Texture2D" uid="uid://cewn04jnruqmn" path="res://sprites/star.png" id="2_3ub7k"]
 [ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="2_a67m6"]
 [ext_resource type="AudioStream" uid="uid://b01bpv1v7smkr" path="res://music/chiphead64 - 11pm.ogg" id="2_al1s5"]
 [ext_resource type="PackedScene" uid="uid://c6fth4mtmu8c0" path="res://scenes/settings_menu.tscn" id="3_e4t44"]
@@ -41,6 +42,9 @@ func _on_settings_button_pressed():
 
 "
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2kif"]
+bg_color = Color(0.6, 0.6, 0.6, 0.219608)
+
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -50,17 +54,57 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_xfbvu")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_a67m6")
+
+[node name="star" type="Sprite2D" parent="Panel"]
+position = Vector2(91, 415)
+scale = Vector2(0.0690236, 0.0723906)
+texture = ExtResource("2_3ub7k")
+
+[node name="star1" type="Sprite2D" parent="Panel"]
+position = Vector2(1027, 105)
+scale = Vector2(0.0690236, 0.0723906)
+texture = ExtResource("2_3ub7k")
+
+[node name="star2" type="Sprite2D" parent="Panel"]
+position = Vector2(938, 522.5)
+scale = Vector2(0.0538721, 0.0597643)
+texture = ExtResource("2_3ub7k")
+
+[node name="star3" type="Sprite2D" parent="Panel"]
+position = Vector2(356.5, 135)
+scale = Vector2(0.0361953, 0.03367)
+texture = ExtResource("2_3ub7k")
+
+[node name="star4" type="Sprite2D" parent="Panel"]
+position = Vector2(443, 542.5)
+scale = Vector2(0.0589226, 0.0462963)
+texture = ExtResource("2_3ub7k")
+
+[node name="star5" type="Sprite2D" parent="Panel"]
+position = Vector2(116, 353)
+scale = Vector2(0.0404041, 0.0429293)
+texture = ExtResource("2_3ub7k")
+
 [node name="mainPanel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 103.0
-offset_top = 99.0
-offset_right = -124.0
-offset_bottom = -236.0
+offset_left = 113.0
+offset_top = 94.0
+offset_right = -114.0
+offset_bottom = -241.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b2kif")
 
 [node name="mainLabel" type="Label" parent="mainPanel"]
 layout_mode = 0

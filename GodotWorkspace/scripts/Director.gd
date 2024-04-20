@@ -6,6 +6,7 @@ var points:Array[Point]
 var edges:Array[Edge]
 var current_point:Point
 var current_phedge:Phedge
+var length_left: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,9 +17,7 @@ func _ready():
 	current_phedge = $phedge
 	current_phedge.reset_origin()
 	
-	for _i in self.get_children():
-		print(_i)
-	pass
+	length_left = 35000
 
 
 func createPoint(new_name, coords):
@@ -32,34 +31,41 @@ func _process(_delta):
 	pass
 
 func _input(event):
-	if event is InputEventMouseButton and event.pressed and !current_phedge.is_active() and current_point != null:
-		#initalise phedge
-		current_phedge.set_origin(current_point)
-		pass
+	if event is InputEventMouseButton and event.pressed and current_point == null:
+		#reset phedge 
+		current_phedge.reset_origin()
 	else:
-		if event is InputEventMouseButton and event.pressed and current_phedge.is_active() and current_phedge.is_valid():
-			if current_point != null:
-				#new edge
-				var edge = Edge.new(current_phedge.origin, current_point)
-				if(current_phedge.origin.add_edge(edge) and current_point.add_edge(edge)):
-					print("edge made")
-					#reset phedge 
-					current_phedge.reset_origin()
-					#add edge to array
-					add_child(edge)
-					#move to almost top
-					move_child(edge, 1)
-					edges.append(edge)
-				else:
-					#reset phedge 
-					current_phedge.reset_origin()
-			else:
-				if current_point == null:
-					#reset phedge 
-					current_phedge.reset_origin()
+		if event is InputEventMouseButton and event.pressed and !current_phedge.is_active() and current_point != null:
+			#initalise phedge
+			current_phedge.set_origin(current_point)
 			pass
+			#initalise phedge
+			current_phedge.set_origin(current_point)
+		else:
+			if event is InputEventMouseButton and event.pressed and current_phedge.is_active() and current_phedge.is_valid():
+				if current_point != null:
+					#new edge
+					var edge = Edge.new(current_phedge.origin, current_point)
+					if(current_phedge.origin.add_edge(edge) and current_point.add_edge(edge) and change_length_left(edge.length)):
+						#reset phedge 
+						current_phedge.reset_origin()
+						#add edge to array
+						add_child(edge)
+						#move to almost top
+						move_child(edge, 1)
+						edges.append(edge)
+					else:
+						#reset phedge 
+						current_phedge.reset_origin()
 	pass
 	
 
 func change_current_point(point):
 	current_point = point
+	
+func change_length_left(length: float) -> bool:
+	var new_length = length_left - length
+	if(new_length >= 0):
+		length_left = new_length
+		return true
+	return false

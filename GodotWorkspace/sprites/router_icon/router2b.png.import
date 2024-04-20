@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ob2b7t7vkcmk"
-path="res://.godot/imported/router_icon1.png-3a04ae2dae4e176720964386f587d350.ctex"
+uid="uid://d2kb6uogm3lqh"
+path="res://.godot/imported/router2b.png-f299ddfdbebbb86ca99e080de02e006d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/router_icon/router_icon1.png"
-dest_files=["res://.godot/imported/router_icon1.png-3a04ae2dae4e176720964386f587d350.ctex"]
+source_file="res://sprites/router_icon/router2b.png"
+dest_files=["res://.godot/imported/router2b.png-f299ddfdbebbb86ca99e080de02e006d.ctex"]
 
 [params]
 

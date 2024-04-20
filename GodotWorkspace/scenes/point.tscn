@@ -1,20 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://djkkrfn36vjk7"]
+[gd_scene load_steps=9 format=3 uid="uid://djkkrfn36vjk7"]
 
 [ext_resource type="Script" path="res://scripts/Point.gd" id="1_lffvo"]
-[ext_resource type="Texture2D" uid="uid://bm7fcfg7opidt" path="res://sprites/router_icon/router_icon2.png" id="3_gbj2e"]
-[ext_resource type="Texture2D" uid="uid://ob2b7t7vkcmk" path="res://sprites/router_icon/router_icon1.png" id="4_bhrhp"]
+[ext_resource type="Texture2D" uid="uid://occcic0y0law" path="res://sprites/router_icon/router2.png" id="2_0fm0e"]
+[ext_resource type="Texture2D" uid="uid://d2kb6uogm3lqh" path="res://sprites/router_icon/router2b.png" id="3_lienm"]
+[ext_resource type="Texture2D" uid="uid://cnom2mba7nvdk" path="res://sprites/router_icon/router2c.png" id="4_wq47h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p3cfi"]
-radius = 15.0
+radius = 25.5783
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b5ixt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p4n7r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sowii"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_gbj2e")
+"texture": ExtResource("2_0fm0e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_bhrhp")
+"texture": ExtResource("3_lienm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wq47h")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_b5ixt")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_p4n7r")
 }],
 "loop": true,
 "name": &"default",
@@ -31,7 +45,8 @@ scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_p3cfi")
 
 [node name="icon" type="AnimatedSprite2D" parent="Area2D"]
-scale = Vector2(0.05, 0.05)
+position = Vector2(-1.19209e-07, 0)
+scale = Vector2(0.0856061, 0.0856061)
 sprite_frames = SubResource("SpriteFrames_sowii")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

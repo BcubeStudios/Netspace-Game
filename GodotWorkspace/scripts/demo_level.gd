@@ -1,6 +1,7 @@
 extends Node2D
 
 var setting_on = false
+@onready var length_label = $backgroundPanel/Panel/length_Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,6 +11,7 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("Settings"):
 		settingsMenu()
+	length_label.text = str(int($backgroundPanel/Director.length_left/100))
 
 
 func settingsMenu():

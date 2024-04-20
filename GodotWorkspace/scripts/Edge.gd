@@ -19,6 +19,7 @@ func _init(new_point1, new_point2):
 	str(min(point1.coords.x, point2.coords.x)) + str(max(point1.coords.y, point2.coords.y)) +\
 	str(min(point1.coords.y, point2.coords.y))
 	self.length = sqrt(((point1.coords.x - point2.coords.x)**2) * ((point1.coords.y - point2.coords.y)**2))
+	
 
 func color_change():
 	pass

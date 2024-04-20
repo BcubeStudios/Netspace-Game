@@ -23,6 +23,36 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_yw0v8")
 [node name="Director" parent="backgroundPanel" instance=ExtResource("2_pm2eq")]
 layout_mode = 1
 
+[node name="Panel" type="Panel" parent="backgroundPanel"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 571.0
+offset_right = 310.0
+offset_bottom = 623.0
+theme = ExtResource("2_rkssa")
+
+[node name="cable_Label" type="Label" parent="backgroundPanel/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 17.0
+offset_right = 174.0
+offset_bottom = 42.0
+theme = ExtResource("2_rkssa")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 23
+text = "Cable length left:"
+
+[node name="length_Label" type="Label" parent="backgroundPanel/Panel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 17.0
+offset_right = 282.0
+offset_bottom = 40.0
+theme = ExtResource("2_rkssa")
+theme_override_font_sizes/font_size = 22
+text = "FFFF"
+horizontal_alignment = 2
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ruto6")
 autoplay = true
@@ -122,6 +152,7 @@ offset_left = 21.0
 offset_top = 41.0
 offset_right = 169.0
 offset_bottom = 311.0
+theme = ExtResource("2_rkssa")
 
 [node name="titleLabel" type="Label" parent="HUD/objectivesPanel"]
 layout_mode = 0
