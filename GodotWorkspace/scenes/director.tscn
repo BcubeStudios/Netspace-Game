@@ -42,7 +42,7 @@ func _input(event):
 		current_phedge.set_origin(current_point)
 		pass
 	else:
-		if event is InputEventMouseButton and event.pressed and current_phedge.is_active():
+		if event is InputEventMouseButton and event.pressed and current_phedge.is_active() and current_phedge.is_valid():
 			if current_point != null:
 				#new edge
 				var edge = Edge.new(current_phedge.origin, current_point)

@@ -2,21 +2,24 @@ extends Node2D
 class_name Phedge
 
 var origin: Point
-var end: Vector2
-var colour: Color = Global.Colours["red"]
+var end: Vector2i
+var colour: Color = Global.Colours["green"]
 var id: String
+var maxLenght: float = 300
 
 
-func is_active():
+func is_active()->bool:
 	return origin != null
+	
+func is_valid()->bool:
+	return get_length() < maxLenght
 
-func color_change():
-	pass
 
 func _draw():
-	if is_active():
+	if is_active() and is_valid():
 		draw_line(origin.coords, end, colour, 4)
-	pass
+	elif is_active() and !(is_valid()):
+		draw_line(origin.coords, end, Global.Colours["red"], 4)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -29,6 +32,11 @@ func _process(_delta):
 func set_origin(point):
 	origin = point
 	
+func get_length() -> float:
+	if is_active():
+		return (origin.coords-end).length()
+	else:
+		return 0
 
 func reset_origin():
 	origin=null

@@ -22,7 +22,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_yw0v8")
 
 [node name="Director" parent="backgroundPanel" instance=ExtResource("2_pm2eq")]
 layout_mode = 1
-mouse_filter = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ruto6")

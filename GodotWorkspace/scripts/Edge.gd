@@ -3,7 +3,7 @@ class_name Edge
 
 var point1: Point
 var point2: Point
-var colour: Color = Global.Colours["green"]
+var colour: Color = Global.Colours["black"]
 var id: String
 
 
