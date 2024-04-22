@@ -6,8 +6,8 @@ on:
 
 env:
   GODOT_VERSION: 4.2.1
-  EXPORT_NAME: Netspace-Game
-  PROJECT_PATH: netspace-export
+  EXPORT_NAME: Netspace
+  PROJECT_PATH: Netspace
 
 jobs:
   export-windows:
