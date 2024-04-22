@@ -1,8 +1,13 @@
 name: Build Godot Project
 
 on:
-  push: {}
-  pull_request: {}
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
 
 env:
   GODOT_VERSION: 4.2.1
