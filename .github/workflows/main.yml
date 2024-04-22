@@ -7,7 +7,7 @@ on:
 env:
   GODOT_VERSION: 4.2.1
   EXPORT_NAME: netspace
-  PROJECT_PATH: netspace
+  PROJECT_PATH: GodotWorkspace
 
 jobs:
   export-windows:
@@ -27,6 +27,7 @@ jobs:
       - name: Windows Build
         run: |
           mkdir -v -p build/windows
+          cd $PROJECT_PATH
           godot --headless --verbose --export-release "Windows Desktop" ../build/windows/$EXPORT_NAME.exe
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
