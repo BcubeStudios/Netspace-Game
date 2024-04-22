@@ -55,6 +55,7 @@ text = "FFFF"
 horizontal_alignment = 2
 
 [node name="currCablePanel" type="Panel" parent="backgroundPanel"]
+layout_mode = 0
 offset_left = 18.0
 offset_top = 518.0
 offset_right = 310.0
@@ -206,9 +207,24 @@ text = "connect nodes
 by clicking nodes
 "
 
+[node name="resetButton" type="Button" parent="HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.925
+anchor_top = 6.075
+anchor_right = 9.925
+anchor_bottom = 6.075
+offset_left = 548.0
+offset_top = 354.0
+offset_right = 632.0
+offset_bottom = 382.0
+theme = ExtResource("2_rkssa")
+text = "Reset"
+
 [node name="explanation" parent="." instance=ExtResource("6_kbtp5")]
 visible = false
 
 [connection signal="pressed" from="HUD/settingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="toggled" from="HUD/infoToggle" to="." method="_on_info_toggle_toggled"]
 [connection signal="toggled" from="HUD/objectivesToggle" to="." method="_on_objectives_toggle_toggled"]
+[connection signal="pressed" from="HUD/resetButton" to="." method="_on_reset_button_pressed"]

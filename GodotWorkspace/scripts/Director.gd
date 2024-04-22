@@ -20,7 +20,7 @@ func _ready():
 	current_phedge = $phedge
 	current_phedge.reset_origin()
 	
-	length_left = 800
+	length_left = 1000
 	curr_length = 0
 
 
@@ -60,6 +60,7 @@ func _input(event):
 						#move to almost top
 						move_child(edge, 1)
 						edges.append(edge)
+						game_won()
 					else:
 						#reset phedge 
 						edge.point1.remove_edge(edge)
@@ -78,6 +79,13 @@ func change_length_left(length: float) -> bool:
 		return true
 	return false
 	
-func game_won() -> bool:
+func game_won():
 	#insert win conditions
-	return false
+	if edges.size() == 4:
+		$"../../".level_won()
+	else:
+		pass
+	
+
+func auto_solve():
+	pass

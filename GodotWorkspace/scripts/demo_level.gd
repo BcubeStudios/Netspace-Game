@@ -6,6 +6,9 @@ var setting_on = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Global.First_time:
+		$explanation.show()
+	Global.First_time = false
 	pass # Replace with function body.
 
 
@@ -53,3 +56,9 @@ func _on_objectives_toggle_toggled(toggled_on):
 		objectives_graphic.show()
 	else:
 		objectives_graphic.hide()
+
+func _on_reset_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/demo_level.tscn")
+	
+func level_won():
+	get_tree().change_scene_to_file("res://scenes/ending.tscn")

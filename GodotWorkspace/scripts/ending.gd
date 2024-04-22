@@ -1,13 +1,19 @@
-extends Node
+extends Node2D
 
-var Colours = {"red" = Color(0.671, 0, 0), "blue" = Color(0.078, 0.122, 0.988),  "green" = Color(0, 1, 0.094), "black" = Color(0, 0, 0)}
+#the speed of the text shown
+var textSpeed:float = 0
 
-var First_time:bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
+# slowly shows more text
+func showText():
+	textSpeed += 0.25
+	$Panel/endLabel.visible_characters = int(textSpeed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	showText()
 	pass
+
