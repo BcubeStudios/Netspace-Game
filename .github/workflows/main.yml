@@ -37,5 +37,5 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: windows
+          name: netspace-windows-${GITHUB_SHA::6}
           path: build/windows
