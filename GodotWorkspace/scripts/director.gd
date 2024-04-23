@@ -8,6 +8,7 @@ var current_point:Point
 var current_phedge:Phedge
 var length_left: float
 var curr_length: float
+var max_phedge: float = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,9 +35,9 @@ func createPoint(new_name, coords):
 func _process(_delta):
 	curr_length = current_phedge.length
 	if current_point != null:
-		current_phedge.forcedEnd = current_point.coords
+		current_phedge.forced_end = current_point.coords
 	else:
-		current_phedge.forcedEnd = null
+		current_phedge.forced_end = null
 	
 
 func _input(event):
@@ -47,7 +48,7 @@ func _input(event):
 	else:
 		if event is InputEventMouseButton and event.pressed and !current_phedge.is_active() and current_point != null:
 			#initalise phedge
-			current_phedge.set_origin(current_point)
+			current_phedge.set_origin(current_point, min(max_phedge, length_left))
 		else:
 			if event is InputEventMouseButton and event.pressed and current_phedge.is_active():
 				if current_point != null and current_phedge.is_valid(current_point.coords):

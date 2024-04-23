@@ -5,9 +5,9 @@ var origin: Point
 var end: Vector2i
 var colour: Color = Global.Colours["green"]
 var id: String
-var maxLenght: float = 300
+var max_length: float = 300
 var length: float
-var forcedEnd = null
+var forced_end = null
 
 func _ready():
 	self.length = 0
@@ -15,8 +15,8 @@ func _ready():
 func is_active()->bool:
 	return origin != null
 	
-func is_valid(endPoint = self.end)->bool:
-	return calculate_lenght(endPoint) < self.maxLenght
+func is_valid(end_point = self.end)->bool:
+	return calculate_lenght(end_point) <= self.max_length
 
 func _draw():
 	if is_active() and is_valid():
@@ -27,20 +27,21 @@ func _draw():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	#Insert displaying code, collect mouse position use it as endpoint, draw_line() can be used
-	if self.is_active() and forcedEnd == null:
+	if self.is_active() and forced_end == null:
 		self.end = get_viewport().get_mouse_position()
 		queue_redraw()
 		self.length = calculate_lenght(end)
-	elif self.is_active() and forcedEnd != null:
-		self.end = forcedEnd
+	elif self.is_active() and forced_end != null:
+		self.end = forced_end
 		queue_redraw()
 		self.length = calculate_lenght(end)
 	
-func set_origin(point):
+func set_origin(point, max_length):
 	origin = point
+	self.max_length = max_length
 	
-func calculate_lenght(endPoint)->float:
-	return sqrt(((origin.coords.x - endPoint.x)**2) + ((origin.coords.y - endPoint.y)**2))
+func calculate_lenght(end_point)->float:
+	return sqrt(((origin.coords.x - end_point.x)**2) + ((origin.coords.y - end_point.y)**2))
 func reset_origin():
 	length = 0
 	origin=null
