@@ -38,9 +38,9 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: $EXPORT_NAME
+          name: netspace-windows-release-${{ github.ref_name }}
           path: build/windows
       - name: Upload Release
         uses: ncipollo/release-action@v1
         with: 
-            artifacts: $EXPORT_NAME
+            artifacts: netspace-release-${{ github.ref_name }}
