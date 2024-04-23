@@ -21,7 +21,7 @@ func _ready():
 	current_phedge = $phedge
 	current_phedge.reset_origin()
 	
-	length_left = 850
+	length_left = 1000
 	curr_length = 0
 
 
@@ -82,8 +82,11 @@ func change_length_left(length: float) -> bool:
 	return false
 	
 func game_won():
+	for point in points:
+		if point.curr_frame() == 1:
+			return
 	#insert win conditions
-	if edges.size() == 4:
+	if edges.size() >= 4:
 		$"../../".level_won()
 	else:
 		pass

@@ -41,3 +41,6 @@ func remove_edge(edge:Edge) -> bool:
 			return true
 		x = x + 1
 	return false
+
+func curr_frame()-> int:
+	return $Area2D/icon.frame
