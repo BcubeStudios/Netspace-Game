@@ -8,6 +8,7 @@ on:
       - 'GodotWorkspace/**'
     tags:
       - '*release*'
+  workflow_dispatch:
 
 env:
   GODOT_VERSION: 4.2.1
