@@ -20,7 +20,7 @@ func _ready():
 	current_phedge = $phedge
 	current_phedge.reset_origin()
 	
-	length_left = 1000
+	length_left = 850
 	curr_length = 0
 
 
@@ -61,7 +61,6 @@ func _input(event):
 						#move to almost top
 						move_child(edge, 1)
 						edges.append(edge)
-						print(edges)
 						game_won()
 					else:
 						#reset phedge 
