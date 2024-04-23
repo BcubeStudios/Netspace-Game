@@ -38,6 +38,7 @@ func remove_edge(edge:Edge) -> bool:
 	for old_edge in edges:
 		if old_edge.id == edge.id:
 			edges.remove_at(x)
+			print("edge removed")
 			return true
 		x = x + 1
 	return false

@@ -61,11 +61,10 @@ func _input(event):
 						#move to almost top
 						move_child(edge, 1)
 						edges.append(edge)
+						print(edges)
 						game_won()
 					else:
 						#reset phedge 
-						edge.point1.remove_edge(edge)
-						edge.point2.remove_edge(edge)
 						current_phedge.reset_origin()
 						curr_length = 0
 				else:
