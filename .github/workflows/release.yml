@@ -1,4 +1,4 @@
-name: Build Release
+name: Build Release Netspace
 
 on:
   push:
@@ -42,3 +42,4 @@ jobs:
         uses: ncipollo/release-action@v1
         with: 
             artifacts: netspace-release-${{ github.ref_name }}
+            token: ${{ secrets.GITHUB_TOKEN }}
