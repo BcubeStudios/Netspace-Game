@@ -12,8 +12,8 @@ var curr_length: float
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.createPoint("point1", Vector2i(700, 100))
-	self.createPoint("point2", Vector2i(900, 500))
-	self.createPoint("point3", Vector2i(500, 550))
+	self.createPoint("point2", Vector2i(950, 500))
+	self.createPoint("point3", Vector2i(500, 500))
 	self.createPoint("point4", Vector2i(700, 300))
 	self.createPoint("point5", Vector2i(700, 500))
 	
@@ -33,6 +33,10 @@ func createPoint(new_name, coords):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	curr_length = current_phedge.length
+	if current_point != null:
+		current_phedge.forcedEnd = current_point.coords
+	else:
+		current_phedge.forcedEnd = null
 	
 
 func _input(event):

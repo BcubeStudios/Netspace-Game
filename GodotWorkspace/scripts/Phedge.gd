@@ -7,6 +7,7 @@ var colour: Color = Global.Colours["green"]
 var id: String
 var maxLenght: float = 300
 var length: float
+var forcedEnd = null
 
 func _ready():
 	self.length = 0
@@ -26,11 +27,14 @@ func _draw():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	#Insert displaying code, collect mouse position use it as endpoint, draw_line() can be used
-	if self.is_active():
+	if self.is_active() and forcedEnd == null:
 		self.end = get_viewport().get_mouse_position()
 		queue_redraw()
 		self.length = calculate_lenght(end)
-	pass
+	elif self.is_active() and forcedEnd != null:
+		self.end = forcedEnd
+		queue_redraw()
+		self.length = calculate_lenght(end)
 	
 func set_origin(point):
 	origin = point
