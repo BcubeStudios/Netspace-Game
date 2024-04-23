@@ -9,13 +9,13 @@ var maxLenght: float = 300
 var length: float
 
 func _ready():
-	length = 0
+	self.length = 0
 
 func is_active()->bool:
 	return origin != null
 	
-func is_valid()->bool:
-	return get_length() < maxLenght
+func is_valid(endPoint = self.end)->bool:
+	return calculate_lenght(endPoint) < self.maxLenght
 
 func _draw():
 	if is_active() and is_valid():
@@ -27,20 +27,16 @@ func _draw():
 func _process(_delta):
 	#Insert displaying code, collect mouse position use it as endpoint, draw_line() can be used
 	if self.is_active():
-		end = get_viewport().get_mouse_position()
+		self.end = get_viewport().get_mouse_position()
 		queue_redraw()
-		self.length = sqrt(((origin.coords.x - end.x)**2) + ((origin.coords.y - end.y)**2))
+		self.length = calculate_lenght(end)
 	pass
 	
 func set_origin(point):
 	origin = point
 	
-func get_length() -> float:
-	if is_active():
-		return (origin.coords-end).length()
-	else:
-		return 0
-
+func calculate_lenght(endPoint)->float:
+	return sqrt(((origin.coords.x - endPoint.x)**2) + ((origin.coords.y - endPoint.y)**2))
 func reset_origin():
 	length = 0
 	origin=null
