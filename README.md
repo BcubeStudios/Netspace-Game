@@ -1,4 +1,5 @@
 # NETSPACE - SE-2024 Project
+[![Latest Build](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/main.yml)
 
 ![Title Screen of the game Netspace](https://github.com/BcubeStudios/SE-2024-Tracking/blob/main/Documents/netspace-title-screen.png)
 
