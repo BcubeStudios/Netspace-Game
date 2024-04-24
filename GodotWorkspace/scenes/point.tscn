@@ -36,6 +36,7 @@ animations = [{
 }]
 
 [node name="Point" type="Node2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_lffvo")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -46,7 +47,7 @@ shape = SubResource("CircleShape2D_p3cfi")
 
 [node name="icon" type="AnimatedSprite2D" parent="Area2D"]
 position = Vector2(-1.19209e-07, 0)
-scale = Vector2(0.0856061, 0.0856061)
+scale = Vector2(0.086, 0.086)
 sprite_frames = SubResource("SpriteFrames_sowii")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

@@ -17,11 +17,12 @@ func _ready():
 	self.createPoint("point3", Vector2i(500, 500))
 	self.createPoint("point4", Vector2i(700, 300))
 	self.createPoint("point5", Vector2i(700, 500))
+
 	
 	current_phedge = $phedge
 	current_phedge.reset_origin()
 	
-	length_left = 1000
+	length_left = 900
 	curr_length = 0
 
 
@@ -69,7 +70,7 @@ func _input(event):
 						curr_length = 0
 				else:
 					current_phedge.reset_origin()
-	pass
+
 
 func change_current_point(point):
 	current_point = point
@@ -88,8 +89,6 @@ func game_won():
 	#insert win conditions
 	if edges.size() >= 4:
 		$"../../".level_won()
-	else:
-		pass
 	
 
 func auto_solve():

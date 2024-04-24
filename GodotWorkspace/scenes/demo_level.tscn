@@ -203,9 +203,11 @@ offset_right = 139.0
 offset_bottom = 236.0
 theme = ExtResource("2_rkssa")
 theme_override_font_sizes/font_size = 18
-text = "connect nodes
-by clicking nodes
-"
+text = "Connect all the
+Routers!
+Be wary of the 
+Cable length
+left!"
 
 [node name="resetButton" type="Button" parent="HUD"]
 layout_mode = 1

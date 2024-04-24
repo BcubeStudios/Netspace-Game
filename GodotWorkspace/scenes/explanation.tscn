@@ -74,10 +74,10 @@ text = "Skip Tutorial"
 [node name="Panel2" type="Panel" parent="BGPanel"]
 visible = false
 layout_mode = 0
-offset_left = 72.0
-offset_top = 361.0
-offset_right = 388.0
-offset_bottom = 531.0
+offset_left = 81.0
+offset_top = 322.0
+offset_right = 397.0
+offset_bottom = 492.0
 theme = ExtResource("1_6k1dr")
 
 [node name="continueButton2" type="Button" parent="BGPanel/Panel2"]
