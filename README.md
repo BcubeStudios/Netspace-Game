@@ -1,5 +1,7 @@
 # NETSPACE - SE-2024 Project
 
+![Title Screen of the game Netspace](https://github.com/BcubeStudios/SE-2024-Tracking/blob/main/Documents/netspace-title-screen.png)
+
 ## Getting access to latest build
 Builds are automaticlly available in as artifacts in the [Actions](https://github.com/BcubeStudios/SE-2024-Code/actions) tab. Just click on the latest successfull build adn download the zip at the bottom.
 
