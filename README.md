@@ -1,4 +1,4 @@
-# SE-2024-Code
+# NETSPACE - SE-2024 Project
 
 ## Getting access to latest build
 Builds are automaticlly available in as artifacts in the [Actions](https://github.com/BcubeStudios/SE-2024-Code/actions) tab. Just click on the latest successfull build adn download the zip at the bottom.
