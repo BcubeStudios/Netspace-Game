@@ -99,29 +99,15 @@ func game_won():
 	for point in connected_points:
 		if point is EndPoint:
 			if point.edge != null:
-				var unique1 = true
-				var unique2 = true
-				for new_point in connected_points:
-					if new_point == point.edge.point1:
-						unique1 = false
-					if new_point == point.edge.point2:
-						unique2 = false
-				if unique1:
+				if not (point.edge.point1 in connected_points):
 					connected_points.append(point.edge.point1)
-				if unique2:
+				if not (point.edge.point2 in connected_points):
 					connected_points.append(point.edge.point2)
 		else:
 			for edge in point.edges:
-				var unique1 = true
-				var unique2 = true
-				for new_point in connected_points:
-					if new_point == edge.point1:
-						unique1 = false
-					if new_point == edge.point2:
-						unique2 = false
-				if unique1:
+				if not (edge.point1 in connected_points):
 					connected_points.append(edge.point1)
-				if unique2:
+				if not (edge.point2 in connected_points):
 					connected_points.append(edge.point2)
 	
 	if connected_points.size() == points.size():
@@ -129,4 +115,22 @@ func game_won():
 		$"../../".level_won()
 
 func auto_solve():
-	pass
+	#pick a random starting path
+	var total_points:Array[AbstractPoint]
+	total_points.append(points.pick_random())
+	
+	#go through the list of all avalible points
+	for point in total_points:
+		for new_point in points:
+			if not(new_point in total_points):
+				
+				var edge = Edge.new(point, new_point)
+				if edge.length <= max_phedge and point.add_edge(edge) and new_point.add_edge(edge)and change_length_left(edge.length):
+					total_points.append(new_point)
+					
+					add_child(edge)
+					#move to almost top
+					move_child(edge, 1)
+					edges.append(edge)
+					
+					#game_won()

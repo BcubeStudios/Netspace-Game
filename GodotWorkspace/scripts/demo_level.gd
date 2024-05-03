@@ -58,7 +58,13 @@ func _on_objectives_toggle_toggled(toggled_on):
 		objectives_graphic.hide()
 
 func _on_reset_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/demo_level.tscn")
+	self.reset()
 	
 func level_won():
 	get_tree().change_scene_to_file("res://scenes/ending.tscn")
+
+func reset():
+	get_tree().change_scene_to_file("res://scenes/demo_level.tscn")
+
+func _on_solve_button_pressed():
+	$backgroundPanel/Director.auto_solve()
