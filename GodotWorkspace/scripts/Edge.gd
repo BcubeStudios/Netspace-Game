@@ -1,8 +1,8 @@
 extends Node2D
 class_name Edge
 
-var point1: Point
-var point2: Point
+var point1: AbstractPoint
+var point2: AbstractPoint
 var colour: Color = Global.Colours["black"]
 var id: String
 var length: float

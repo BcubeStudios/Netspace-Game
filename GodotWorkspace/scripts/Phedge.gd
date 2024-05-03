@@ -1,7 +1,7 @@
 extends Node2D
 class_name Phedge
 
-var origin: Point
+var origin: AbstractPoint
 var end: Vector2i
 var colour: Color = Global.Colours["green"]
 var id: String
