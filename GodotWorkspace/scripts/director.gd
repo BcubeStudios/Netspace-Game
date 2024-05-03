@@ -83,13 +83,27 @@ func change_length_left(length: float) -> bool:
 	return false
 	
 func game_won():
-	for point in points:
-		if point.curr_frame() == 1:
-			return
-	#insert win conditions
-	if edges.size() >= 4:
-		$"../../".level_won()
+	@warning_ignore("unassigned_variable")
+	var connected_points:Array[Point]
+	connected_points.append(edges[0].point1)
 	
+	for point in connected_points:
+		for edge in point.edges:
+			var unique1 = true
+			var unique2 = true
+			for new_point in connected_points:
+				if new_point == edge.point1:
+					unique1 = false
+				if new_point == edge.point2:
+					unique2 = false
+			if unique1:
+				connected_points.append(edge.point1)
+			if unique2:
+				connected_points.append(edge.point2)
+	
+	if connected_points.size() == points.size():
+		#weve won so we can call the level to win 
+		$"../../".level_won()
 
 func auto_solve():
 	pass
