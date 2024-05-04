@@ -23,7 +23,7 @@ func _ready():
 	current_phedge = $phedge
 	current_phedge.reset_origin()
 	
-	length_left = 10000
+	length_left = 900
 	curr_length = 0
 
 func createEndPoint(new_name, coords):
@@ -91,7 +91,7 @@ func change_length_left(length: float) -> bool:
 		return true
 	return false
 	
-func game_won():
+func game_won() -> bool:
 	@warning_ignore("unassigned_variable")
 	var connected_points:Array[AbstractPoint]
 	connected_points.append(edges[0].point1)
@@ -113,10 +113,12 @@ func game_won():
 	if connected_points.size() == points.size():
 		#weve won so we can call the level to win 
 		$"../../".level_won()
+		return true
+	return false
 
 func auto_solve():
 	#pick a random starting path
-	var total_points:Array[AbstractPoint]
+	var total_points:Array[AbstractPoint] = []
 	total_points.append(points.pick_random())
 	
 	#go through the list of all avalible points
@@ -125,12 +127,20 @@ func auto_solve():
 			if not(new_point in total_points):
 				
 				var edge = Edge.new(point, new_point)
-				if edge.length <= max_phedge and point.add_edge(edge) and new_point.add_edge(edge)and change_length_left(edge.length):
+				if edge.length <= max_phedge and change_length_left(edge.length) and point.add_edge(edge) and new_point.add_edge(edge):
 					total_points.append(new_point)
-					
+					edges.append(edge)
 					add_child(edge)
 					#move to almost top
 					move_child(edge, 1)
-					edges.append(edge)
+					#draw edge
+					edge.queue_redraw()
+					await Global.wait(0.5)
 					
-					#game_won()
+	if not self.game_won():
+		print("solution not found")
+		#delete all edges
+		
+		#call again
+		#auto_solve()
+
