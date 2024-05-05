@@ -224,6 +224,7 @@ theme = ExtResource("2_rkssa")
 text = "Reset"
 
 [node name="solveButton" type="Button" parent="HUD"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 483.0
 offset_right = 121.0

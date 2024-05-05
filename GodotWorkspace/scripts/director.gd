@@ -23,7 +23,7 @@ func _ready():
 	current_phedge = $phedge
 	current_phedge.reset_origin()
 	
-	length_left = 900
+	length_left = 1000
 	curr_length = 0
 
 func createEndPoint(new_name, coords):
@@ -91,9 +91,11 @@ func change_length_left(length: float) -> bool:
 		return true
 	return false
 	
-func game_won() -> bool:
-	@warning_ignore("unassigned_variable")
-	var connected_points:Array[AbstractPoint]
+func game_won() -> bool:	
+	if edges.is_empty():
+		return false	
+	
+	var connected_points:Array[AbstractPoint] = []
 	connected_points.append(edges[0].point1)
 	
 	for point in connected_points:
@@ -117,30 +119,41 @@ func game_won() -> bool:
 	return false
 
 func auto_solve():
-	#pick a random starting path
-	var total_points:Array[AbstractPoint] = []
-	total_points.append(points.pick_random())
+	var solved_points:Array[AbstractPoint] = []
+	var remaining_points:Array[AbstractPoint] = points.duplicate()
 	
-	#go through the list of all avalible points
-	for point in total_points:
-		for new_point in points:
-			if not(new_point in total_points):
-				
+	#first point random
+	points.shuffle()
+	solved_points.append(points[0])
+	
+	#remove from remaining
+	remaining_points.erase(solved_points[0])
+	
+	var min_edge:Edge
+	
+	while(not self.game_won()):
+		#find minimum edge
+		min_edge = null
+		for point in solved_points:
+			for new_point in remaining_points:
 				var edge = Edge.new(point, new_point)
-				if edge.length <= max_phedge and change_length_left(edge.length) and point.add_edge(edge) and new_point.add_edge(edge):
-					total_points.append(new_point)
-					edges.append(edge)
-					add_child(edge)
-					#move to almost top
-					move_child(edge, 1)
-					#draw edge
-					edge.queue_redraw()
-					await Global.wait(0.5)
-					
-	if not self.game_won():
-		print("solution not found")
-		#delete all edges
-		
-		#call again
-		#auto_solve()
-
+				if min_edge == null:
+					min_edge = edge
+				if edge.length <= max_phedge and edge.length < min_edge.length  and change_length_left(edge.length)\
+				 and point.possible_edge(edge) and new_point.possible_edge(edge):
+					min_edge = edge
+					change_length_left(-(edge.length))
+		#add edge
+		if min_edge != null and min_edge.length <= max_phedge and change_length_left(min_edge.length) \
+		and min_edge.point1.add_edge(min_edge) and min_edge.point2.add_edge(min_edge):
+			edges.append(min_edge)
+			
+			solved_points.append(min_edge.point2)
+			remaining_points.erase(min_edge.point2)
+			
+			add_child(min_edge)
+			#move to almost top
+			move_child(min_edge, 1)
+			#draw edge
+			min_edge.queue_redraw()
+			await Global.wait(0.5)

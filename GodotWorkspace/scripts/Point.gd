@@ -37,3 +37,9 @@ func remove_edge(edge:Edge) -> bool:
 
 func curr_frame()-> int:
 	return $Area2D/icon.frame
+	
+func possible_edge(edge:Edge) -> bool:
+	for old_edge in edges:
+		if old_edge.id == edge.id:
+			return false
+	return true

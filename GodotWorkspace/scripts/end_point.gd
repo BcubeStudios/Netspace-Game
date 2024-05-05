@@ -33,3 +33,6 @@ func remove_edge(_p_edge:Edge) -> bool:
 func curr_frame()-> int:
 	return $Area2D/icon.frame
 
+func possible_edge(_edge:Edge) -> bool:
+	return edge == null
+
