@@ -1,11 +1,11 @@
 extends Node2D
 class_name Edge
 
-var point1: Point
-var point2: Point
+var point1: AbstractPoint
+var point2: AbstractPoint
 var colour: Color = Global.Colours["black"]
 var id: String
-var length: float
+var length: float = 0
 
 
 # Called when the node enters the scene tree for the first time.

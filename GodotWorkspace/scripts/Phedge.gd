@@ -1,7 +1,7 @@
 extends Node2D
 class_name Phedge
 
-var origin: Point
+var origin: AbstractPoint
 var end: Vector2i
 var colour: Color = Global.Colours["green"]
 var id: String
@@ -36,9 +36,9 @@ func _process(_delta):
 		queue_redraw()
 		self.length = calculate_lenght(end)
 	
-func set_origin(point, max_length):
+func set_origin(point, p_max_length):
 	origin = point
-	self.max_length = max_length
+	self.max_length = p_max_length
 	
 func calculate_lenght(end_point)->float:
 	return sqrt(((origin.coords.x - end_point.x)**2) + ((origin.coords.y - end_point.y)**2))

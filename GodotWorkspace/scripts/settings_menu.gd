@@ -10,11 +10,6 @@ func _ready():
 func _on_exit_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/title_screen.tscn")
 
-#changes scene to the credits scene
-func _on_credits_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/credits_screen.tscn")
-	pass # Replace with function body.
-
 #quits game entirely
 func _on_quit_button_pressed():
 	get_tree().quit()
@@ -22,3 +17,7 @@ func _on_quit_button_pressed():
 #changes volume of music
 func _on_music_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value - 35)
+
+
+func _on_credits_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/credits_screen.tscn")

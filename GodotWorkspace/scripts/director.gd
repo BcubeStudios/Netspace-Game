@@ -1,10 +1,11 @@
 extends Control
 
 var point_scene = preload("res://scenes/point.tscn")
+var end_point_scene = preload("res://scenes/end_point.tscn")
 
-var points:Array[Point]
+var points:Array[AbstractPoint]
 var edges:Array[Edge]
-var current_point:Point
+var current_point:AbstractPoint
 var current_phedge:Phedge
 var length_left: float
 var curr_length: float
@@ -12,8 +13,8 @@ var max_phedge: float = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.createPoint("point1", Vector2i(700, 100))
-	self.createPoint("point2", Vector2i(950, 500))
+	self.createEndPoint("point1", Vector2i(700, 100))
+	self.createEndPoint("point2", Vector2i(950, 500))
 	self.createPoint("point3", Vector2i(500, 500))
 	self.createPoint("point4", Vector2i(700, 300))
 	self.createPoint("point5", Vector2i(700, 500))
@@ -22,8 +23,14 @@ func _ready():
 	current_phedge = $phedge
 	current_phedge.reset_origin()
 	
-	length_left = 900
+	length_left = 1000
 	curr_length = 0
+
+func createEndPoint(new_name, coords):
+	var newPoint = end_point_scene.instantiate()
+	newPoint.activate(new_name, coords)
+	self.add_child(newPoint)
+	points.append(newPoint)
 
 
 func createPoint(new_name, coords):
@@ -49,6 +56,8 @@ func _input(event):
 	else:
 		if event is InputEventMouseButton and event.pressed and !current_phedge.is_active() and current_point != null:
 			#initalise phedge
+			if current_point is EndPoint and current_point.edge != null:
+				return
 			current_phedge.set_origin(current_point, min(max_phedge, length_left))
 		else:
 			if event is InputEventMouseButton and event.pressed and current_phedge.is_active():
@@ -82,14 +91,69 @@ func change_length_left(length: float) -> bool:
 		return true
 	return false
 	
-func game_won():
-	for point in points:
-		if point.curr_frame() == 1:
-			return
-	#insert win conditions
-	if edges.size() >= 4:
-		$"../../".level_won()
+func game_won() -> bool:	
+	if edges.is_empty():
+		return false	
 	
+	var connected_points:Array[AbstractPoint] = []
+	connected_points.append(edges[0].point1)
+	
+	for point in connected_points:
+		if point is EndPoint:
+			if point.edge != null:
+				if not (point.edge.point1 in connected_points):
+					connected_points.append(point.edge.point1)
+				if not (point.edge.point2 in connected_points):
+					connected_points.append(point.edge.point2)
+		else:
+			for edge in point.edges:
+				if not (edge.point1 in connected_points):
+					connected_points.append(edge.point1)
+				if not (edge.point2 in connected_points):
+					connected_points.append(edge.point2)
+	
+	if connected_points.size() == points.size():
+		#weve won so we can call the level to win 
+		$"../../".level_won()
+		return true
+	return false
 
 func auto_solve():
-	pass
+	var solved_points:Array[AbstractPoint] = []
+	var remaining_points:Array[AbstractPoint] = points.duplicate()
+	
+	#first point random
+	points.shuffle()
+	solved_points.append(points[0])
+	
+	#remove from remaining
+	remaining_points.erase(solved_points[0])
+	
+	var min_edge:Edge
+	
+	while(not self.game_won()):
+		#find minimum edge
+		min_edge = null
+		for point in solved_points:
+			for new_point in remaining_points:
+				var edge = Edge.new(point, new_point)
+				if min_edge == null:
+					min_edge = edge
+				if edge.length <= max_phedge and edge.length < min_edge.length  and change_length_left(edge.length)\
+				 and point.possible_edge(edge) and new_point.possible_edge(edge):
+					min_edge = edge
+					change_length_left(-(edge.length))
+		#add edge
+		if min_edge != null and min_edge.length <= max_phedge and change_length_left(min_edge.length) \
+		and min_edge.point1.add_edge(min_edge) and min_edge.point2.add_edge(min_edge):
+			edges.append(min_edge)
+			
+			solved_points.append(min_edge.point2)
+			remaining_points.erase(min_edge.point2)
+			
+			add_child(min_edge)
+			#move to almost top
+			move_child(min_edge, 1)
+			#draw edge
+			min_edge.queue_redraw()
+			await Global.wait(0.5)

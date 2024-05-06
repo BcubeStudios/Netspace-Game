@@ -4,7 +4,7 @@
 ![Title Screen of the game Netspace](https://file.minihic.info/netspace-title-screen.png)
 
 ## Getting access to latest build
-Builds are automaticlly available in as artifacts in the [Actions](https://github.com/BcubeStudios/SE-2024-Code/actions) tab. Just click on the latest successfull build adn download the zip at the bottom.
+Builds are automaticlly available in as artifacts in the [Actions](https://github.com/BcubeStudios/SE-2024-Code/actions) tab. Just click on the latest successfull build and download the zip at the bottom.
 
 ### File structure
 - Godot Workspace contains the development environment for the godot project
