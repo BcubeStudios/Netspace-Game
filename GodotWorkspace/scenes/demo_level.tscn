@@ -16,8 +16,8 @@ bg_color = Color(0.352941, 0.352941, 0.352941, 0.498039)
 script = ExtResource("1_j08t0")
 
 [node name="backgroundPanel" type="Panel" parent="."]
-offset_right = 1152.0
-offset_bottom = 647.0
+offset_right = 1281.0
+offset_bottom = 723.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yw0v8")
 
@@ -26,10 +26,10 @@ layout_mode = 1
 
 [node name="cablePanel" type="Panel" parent="backgroundPanel"]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 571.0
-offset_right = 310.0
-offset_bottom = 623.0
+offset_left = 23.0
+offset_top = 646.0
+offset_right = 315.0
+offset_bottom = 698.0
 theme = ExtResource("2_rkssa")
 
 [node name="cable_Label" type="Label" parent="backgroundPanel/cablePanel"]
@@ -56,10 +56,10 @@ horizontal_alignment = 2
 
 [node name="currCablePanel" type="Panel" parent="backgroundPanel"]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 518.0
-offset_right = 310.0
-offset_bottom = 570.0
+offset_left = 23.0
+offset_top = 593.0
+offset_right = 315.0
+offset_bottom = 645.0
 theme = ExtResource("2_rkssa")
 
 [node name="cable_Label2" type="Label" parent="backgroundPanel/currCablePanel"]
@@ -89,11 +89,9 @@ stream = ExtResource("3_ruto6")
 autoplay = true
 
 [node name="overlay" type="Panel" parent="."]
-visible = false
-offset_left = -36.0
-offset_top = -10.0
-offset_right = 1175.0
-offset_bottom = 677.0
+offset_left = 1.0
+offset_right = 1282.0
+offset_bottom = 721.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7cmm0")
 
 [node name="HUD" type="Control" parent="."]
@@ -104,10 +102,10 @@ offset_bottom = 40.0
 
 [node name="settingButton" type="Button" parent="HUD"]
 layout_mode = 0
-offset_left = 1081.0
-offset_top = 21.0
-offset_right = 1127.0
-offset_bottom = 57.0
+offset_left = 1217.0
+offset_top = 18.0
+offset_right = 1263.0
+offset_bottom = 54.0
 theme = ExtResource("2_rkssa")
 text = "☰"
 
@@ -145,10 +143,10 @@ autowrap_mode = 2
 
 [node name="infoToggle" type="CheckButton" parent="HUD"]
 layout_mode = 0
-offset_left = 1044.0
-offset_top = 591.0
-offset_right = 1123.0
-offset_bottom = 631.0
+offset_left = 1176.0
+offset_top = 660.0
+offset_right = 1255.0
+offset_bottom = 700.0
 theme = ExtResource("2_rkssa")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -216,10 +214,10 @@ anchor_left = 9.925
 anchor_top = 6.075
 anchor_right = 9.925
 anchor_bottom = 6.075
-offset_left = 548.0
-offset_top = 354.0
-offset_right = 632.0
-offset_bottom = 382.0
+offset_left = 680.0
+offset_top = 423.0
+offset_right = 764.0
+offset_bottom = 451.0
 theme = ExtResource("2_rkssa")
 text = "Reset"
 

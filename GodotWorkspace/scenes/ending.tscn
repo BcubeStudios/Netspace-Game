@@ -8,16 +8,16 @@
 script = ExtResource("1_wodt8")
 
 [node name="SettingsMenu" parent="." instance=ExtResource("2_q8ayu")]
-offset_left = 550.0
-offset_top = 511.0
-offset_right = 590.0
-offset_bottom = 544.0
+offset_left = 620.0
+offset_top = 566.0
+offset_right = 660.0
+offset_bottom = 599.0
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 143.0
-offset_top = 98.0
-offset_right = 999.0
-offset_bottom = 397.0
+offset_left = 213.0
+offset_top = 153.0
+offset_right = 1069.0
+offset_bottom = 452.0
 theme = ExtResource("3_ekkbn")
 
 [node name="endLabel" type="Label" parent="Panel"]

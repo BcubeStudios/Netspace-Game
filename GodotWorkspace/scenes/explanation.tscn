@@ -12,8 +12,8 @@ bg_color = Color(0.8, 0.8, 0.8, 1)
 script = ExtResource("1_04cib")
 
 [node name="BGPanel" type="Panel" parent="."]
-offset_right = 1154.0
-offset_bottom = 650.0
+offset_right = 1287.0
+offset_bottom = 722.0
 
 [node name="Panel1" type="Panel" parent="BGPanel"]
 layout_mode = 0
@@ -74,10 +74,10 @@ text = "Skip Tutorial"
 [node name="Panel2" type="Panel" parent="BGPanel"]
 visible = false
 layout_mode = 0
-offset_left = 81.0
-offset_top = 322.0
-offset_right = 397.0
-offset_bottom = 492.0
+offset_left = 85.0
+offset_top = 403.0
+offset_right = 401.0
+offset_bottom = 573.0
 theme = ExtResource("1_6k1dr")
 
 [node name="continueButton2" type="Button" parent="BGPanel/Panel2"]
@@ -146,10 +146,10 @@ autowrap_mode = 2
 [node name="Panel4" type="Panel" parent="BGPanel"]
 visible = false
 layout_mode = 0
-offset_left = 790.0
-offset_top = 388.0
-offset_right = 1106.0
-offset_bottom = 558.0
+offset_left = 830.0
+offset_top = 461.0
+offset_right = 1146.0
+offset_bottom = 631.0
 theme = ExtResource("1_6k1dr")
 
 [node name="continueButton4" type="Button" parent="BGPanel/Panel4"]
