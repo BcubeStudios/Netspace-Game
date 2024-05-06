@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://ddhmuwam3lrrg"]
 
 [ext_resource type="Script" path="res://scripts/demo_level.gd" id="1_j08t0"]
-[ext_resource type="PackedScene" uid="uid://c6fth4mtmu8c0" path="res://scenes/settings_menu.tscn" id="2_1ps50"]
 [ext_resource type="PackedScene" uid="uid://ctx4wos4jkx7e" path="res://scenes/director.tscn" id="2_pm2eq"]
 [ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="2_rkssa"]
 [ext_resource type="AudioStream" uid="uid://bar8iv8kegwxm" path="res://music/Free Game Soundtrack by chiphead64 - (hurry up).ogg" id="3_ruto6"]
 [ext_resource type="PackedScene" uid="uid://yyjcuekla8dc" path="res://scenes/explanation.tscn" id="6_kbtp5"]
+[ext_resource type="PackedScene" uid="uid://smxxaf128sk0" path="res://scenes/hud.tscn" id="6_nrepm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw0v8"]
 
@@ -95,147 +95,7 @@ offset_right = 1282.0
 offset_bottom = 721.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7cmm0")
 
-[node name="HUD" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="settingButton" type="Button" parent="HUD"]
-layout_mode = 0
-offset_left = 1217.0
-offset_top = 18.0
-offset_right = 1263.0
-offset_bottom = 54.0
-theme = ExtResource("2_rkssa")
-text = "☰"
-
-[node name="settingPanel" type="Panel" parent="HUD"]
-visible = false
-layout_mode = 0
-offset_left = 1001.0
-offset_top = 67.0
-offset_right = 1132.0
-offset_bottom = 242.0
-
-[node name="SettingsMenu" parent="HUD/settingPanel" instance=ExtResource("2_1ps50")]
-layout_mode = 1
-offset_left = 1.0
-offset_right = 1.0
-offset_bottom = 1.0
-
-[node name="infoPanel" type="Panel" parent="HUD"]
-visible = false
-layout_mode = 0
-offset_left = 783.0
-offset_top = 288.0
-offset_right = 1128.0
-offset_bottom = 573.0
-theme = ExtResource("2_rkssa")
-
-[node name="infoLabel" type="Label" parent="HUD/infoPanel"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 31.0
-offset_right = 320.0
-offset_bottom = 262.0
-text = "A router is a device that connects two or more packet-switched networks or subnetworks. It serves two primary functions: managing traffic between these networks by forwarding data packets to their intended IP addresses, and allowing multiple devices to use the same Internet connection."
-autowrap_mode = 2
-
-[node name="infoToggle" type="CheckButton" parent="HUD"]
-layout_mode = 0
-offset_left = 1176.0
-offset_top = 660.0
-offset_right = 1255.0
-offset_bottom = 700.0
-theme = ExtResource("2_rkssa")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "Info"
-
-[node name="objectivesToggle" type="CheckButton" parent="HUD"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 11.0
-offset_right = 163.0
-offset_bottom = 42.0
-theme = ExtResource("2_rkssa")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-button_pressed = true
-text = "Objectives"
-
-[node name="objectivesPanel" type="Panel" parent="HUD"]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 41.0
-offset_right = 169.0
-offset_bottom = 311.0
-theme = ExtResource("2_rkssa")
-
-[node name="titleLabel" type="Label" parent="HUD/objectivesPanel"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 28.0
-offset_right = 130.0
-offset_bottom = 55.0
-theme = ExtResource("2_rkssa")
-theme_override_font_sizes/font_size = 22
-text = "Objectives: "
-
-[node name="objectivesLabel" type="Label" parent="HUD/objectivesPanel"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 66.0
-offset_right = 139.0
-offset_bottom = 236.0
-theme = ExtResource("2_rkssa")
-theme_override_font_sizes/font_size = 18
-text = "Connect all the
-Routers!
-Be wary of the 
-Cable length
-left!"
-
-[node name="resetButton" type="Button" parent="HUD"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 9.925
-anchor_top = 6.075
-anchor_right = 9.925
-anchor_bottom = 6.075
-offset_left = 680.0
-offset_top = 423.0
-offset_right = 764.0
-offset_bottom = 451.0
-theme = ExtResource("2_rkssa")
-text = "Reset"
-
-[node name="solveButton" type="Button" parent="HUD"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 554.0
-offset_right = 123.0
-offset_bottom = 582.0
-theme = ExtResource("2_rkssa")
-text = "Auto-Solve"
-
 [node name="explanation" parent="." instance=ExtResource("6_kbtp5")]
 visible = false
 
-[connection signal="pressed" from="HUD/settingButton" to="." method="_on_setting_button_pressed"]
-[connection signal="toggled" from="HUD/infoToggle" to="." method="_on_info_toggle_toggled"]
-[connection signal="toggled" from="HUD/objectivesToggle" to="." method="_on_objectives_toggle_toggled"]
-[connection signal="pressed" from="HUD/resetButton" to="." method="_on_reset_button_pressed"]
-[connection signal="pressed" from="HUD/solveButton" to="." method="_on_solve_button_pressed"]
+[node name="HUD" parent="." instance=ExtResource("6_nrepm")]

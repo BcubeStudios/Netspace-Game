@@ -13,17 +13,9 @@ var max_phedge: float = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.createEndPoint("point1", Vector2i(700, 100))
-	self.createEndPoint("point2", Vector2i(950, 500))
-	self.createPoint("point3", Vector2i(500, 500))
-	self.createPoint("point4", Vector2i(700, 300))
-	self.createPoint("point5", Vector2i(700, 500))
-
-	
 	current_phedge = $phedge
 	current_phedge.reset_origin()
 	
-	length_left = 1000
 	curr_length = 0
 
 func createEndPoint(new_name, coords):

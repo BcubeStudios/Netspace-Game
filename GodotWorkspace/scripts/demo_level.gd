@@ -10,7 +10,15 @@ func _ready():
 	if Global.First_time:
 		$explanation.show()
 	Global.First_time = false
-	pass # Replace with function body.
+	var dir = $backgroundPanel/Director
+	dir.createEndPoint("point1", Vector2i(700, 100))
+	dir.createEndPoint("point2", Vector2i(950, 500))
+	dir.createPoint("point3", Vector2i(500, 500))
+	dir.createPoint("point4", Vector2i(700, 300))
+	dir.createPoint("point5", Vector2i(700, 500))
+	
+	dir.length_left = 1000
+	
 
 
 func _process(_delta):
