@@ -90,4 +90,15 @@ offset_bottom = 582.0
 theme = ExtResource("3_fyrpk")
 text = "Auto-Solve"
 
+[node name="resetButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1091.0
+offset_top = 678.0
+offset_right = 1175.0
+offset_bottom = 706.0
+theme = ExtResource("3_fyrpk")
+text = "Reset"
+
 [connection signal="pressed" from="solveButton" to="." method="_on_solve_button_pressed"]
+[connection signal="pressed" from="resetButton" to="." method="_on_reset_button_pressed"]

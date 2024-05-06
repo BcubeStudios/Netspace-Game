@@ -128,16 +128,6 @@ Be wary of the
 Cable length
 left!"
 
-[node name="resetButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 9.925
-anchor_top = 6.075
-anchor_right = 9.925
-anchor_bottom = 6.075
-offset_left = 680.0
-offset_top = 423.0
-offset_right = 764.0
-offset_bottom = 451.0
-theme = ExtResource("1_xdl22")
-text = "Reset"
+[connection signal="pressed" from="settingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="toggled" from="infoToggle" to="." method="_on_info_toggle_toggled"]
+[connection signal="toggled" from="objectivesToggle" to="." method="_on_objectives_toggle_toggled"]

@@ -150,4 +150,8 @@ func auto_solve():
 			min_edge.queue_redraw()
 			await Global.wait(0.5)
 
-
+func reset():
+	for point in points:
+		for edge in edges:
+			point.remove_edge(edge)
+	edges.clear()

@@ -8,7 +8,7 @@ func _process(_delta):
 		settingsMenu()
 
 func settingsMenu():
-	var setting_panel = $HUD/settingPanel
+	var setting_panel = $settingPanel
 	var overlay = $overlay
 	if setting_on:
 		setting_panel.hide()
@@ -44,6 +44,3 @@ func _on_objectives_toggle_toggled(toggled_on):
 	else:
 		objectives_graphic.hide()
 
-func _on_reset_button_pressed():
-	#.reset()
-	pass
