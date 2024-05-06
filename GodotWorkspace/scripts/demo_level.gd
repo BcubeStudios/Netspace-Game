@@ -3,6 +3,7 @@ extends Node2D
 var setting_on = false
 @onready var length_label = $backgroundPanel/cablePanel/length_Label
 @onready var curr_length_label = $backgroundPanel/currCablePanel/curr_length_Label
+@onready var director_scene = preload("res://scenes/director.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -58,7 +59,14 @@ func _on_objectives_toggle_toggled(toggled_on):
 		objectives_graphic.hide()
 
 func _on_reset_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/demo_level.tscn")
+	self.reset()
 	
 func level_won():
+	await Global.wait(1.5)
 	get_tree().change_scene_to_file("res://scenes/ending.tscn")
+
+func reset():
+	get_tree().change_scene_to_file("res://scenes/demo_level.tscn")
+
+func _on_solve_button_pressed():
+	$backgroundPanel/Director.auto_solve()

@@ -1,4 +1,4 @@
-extends Label
+extends Node2D
 
 #the speed of the text shown
 var textSpeed:int = 0
@@ -10,9 +10,12 @@ func _ready():
 # slowly shows more text
 func showText():
 	textSpeed += 1
-	self.visible_characters = textSpeed
+	$creditsPanel/creditsLabel.visible_characters = textSpeed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	showText()
 	pass
+
+func _on_exit_button_pressed():
+	get_tree().quit()
