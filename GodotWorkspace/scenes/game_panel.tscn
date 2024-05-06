@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://b68odumc68nqb"]
+
+[ext_resource type="Script" path="res://scripts/game_panel.gd" id="1_nwra8"]
+[ext_resource type="AudioStream" uid="uid://bar8iv8kegwxm" path="res://music/Free Game Soundtrack by chiphead64 - (hurry up).ogg" id="1_ydtua"]
+[ext_resource type="PackedScene" uid="uid://ctx4wos4jkx7e" path="res://scenes/director.tscn" id="2_iis6n"]
+[ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="3_fyrpk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw0v8"]
+
+[node name="gamePanel" type="Panel"]
+offset_right = 1281.0
+offset_bottom = 723.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yw0v8")
+script = ExtResource("1_nwra8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_ydtua")
+autoplay = true
+
+[node name="Director" parent="." instance=ExtResource("2_iis6n")]
+layout_mode = 1
+
+[node name="cablePanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 646.0
+offset_right = 315.0
+offset_bottom = 698.0
+theme = ExtResource("3_fyrpk")
+
+[node name="cable_Label" type="Label" parent="cablePanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 17.0
+offset_right = 174.0
+offset_bottom = 42.0
+theme = ExtResource("3_fyrpk")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 23
+text = "Cable length left:"
+
+[node name="length_Label" type="Label" parent="cablePanel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 17.0
+offset_right = 282.0
+offset_bottom = 40.0
+theme = ExtResource("3_fyrpk")
+theme_override_font_sizes/font_size = 22
+text = "FFFF"
+horizontal_alignment = 2
+
+[node name="currCablePanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 593.0
+offset_right = 315.0
+offset_bottom = 645.0
+theme = ExtResource("3_fyrpk")
+
+[node name="cable_Label2" type="Label" parent="currCablePanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 17.0
+offset_right = 174.0
+offset_bottom = 42.0
+theme = ExtResource("3_fyrpk")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 23
+text = "Current cable length:"
+
+[node name="curr_length_Label" type="Label" parent="currCablePanel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 17.0
+offset_right = 282.0
+offset_bottom = 40.0
+theme = ExtResource("3_fyrpk")
+theme_override_font_sizes/font_size = 22
+text = "FFFF"
+horizontal_alignment = 2
+
+[node name="solveButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 554.0
+offset_right = 123.0
+offset_bottom = 582.0
+theme = ExtResource("3_fyrpk")
+text = "Auto-Solve"
+
+[connection signal="pressed" from="solveButton" to="." method="_on_solve_button_pressed"]

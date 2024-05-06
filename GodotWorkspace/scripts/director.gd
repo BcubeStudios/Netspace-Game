@@ -149,3 +149,5 @@ func auto_solve():
 			#draw edge
 			min_edge.queue_redraw()
 			await Global.wait(0.5)
+
+
