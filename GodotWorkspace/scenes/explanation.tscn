@@ -74,10 +74,10 @@ text = "Skip Tutorial"
 [node name="Panel2" type="Panel" parent="BGPanel"]
 visible = false
 layout_mode = 0
-offset_left = 85.0
-offset_top = 403.0
-offset_right = 401.0
-offset_bottom = 573.0
+offset_left = 160.0
+offset_top = 398.0
+offset_right = 476.0
+offset_bottom = 568.0
 theme = ExtResource("1_6k1dr")
 
 [node name="continueButton2" type="Button" parent="BGPanel/Panel2"]
@@ -146,10 +146,10 @@ autowrap_mode = 2
 [node name="Panel4" type="Panel" parent="BGPanel"]
 visible = false
 layout_mode = 0
-offset_left = 830.0
-offset_top = 461.0
-offset_right = 1146.0
-offset_bottom = 631.0
+offset_left = 899.0
+offset_top = 475.0
+offset_right = 1215.0
+offset_bottom = 645.0
 theme = ExtResource("1_6k1dr")
 
 [node name="continueButton4" type="Button" parent="BGPanel/Panel4"]

@@ -54,10 +54,10 @@ text = "THANK YOU "
 horizontal_alignment = 1
 
 [node name="ExitButton" type="Button" parent="."]
-offset_left = 1036.0
-offset_top = 595.0
-offset_right = 1126.0
-offset_bottom = 627.0
+offset_left = 1164.0
+offset_top = 667.0
+offset_right = 1254.0
+offset_bottom = 699.0
 theme = ExtResource("1_ssuwq")
 text = "Exit"
 

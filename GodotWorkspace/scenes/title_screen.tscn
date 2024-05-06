@@ -56,41 +56,62 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 113.0
-offset_top = 94.0
-offset_right = -114.0
-offset_bottom = -241.0
+offset_left = 132.0
+offset_top = 115.0
+offset_right = -95.0
+offset_bottom = -220.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_a67m6")
 
 [node name="mainLabel" type="Label" parent="mainPanel"]
-layout_mode = 0
-offset_left = 281.0
-offset_top = 45.0
-offset_right = 656.0
-offset_bottom = 142.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.5
+offset_top = -130.5
+offset_right = 171.5
+offset_bottom = -33.5
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2_a67m6")
 theme_override_font_sizes/font_size = 75
 text = "NETSPACE
 "
 
 [node name="subtitleLabel" type="Label" parent="mainPanel"]
-layout_mode = 0
-offset_left = 130.0
-offset_top = 130.0
-offset_right = 728.0
-offset_bottom = 188.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.0
+offset_top = -29.0
+offset_right = 299.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2_a67m6")
 theme_override_font_sizes/font_size = 55
 text = "CONNECTION CONUNDRUM"
 
 [node name="studioLabel" type="Label" parent="mainPanel"]
-layout_mode = 0
-offset_left = 394.0
-offset_top = 210.0
-offset_right = 553.0
-offset_bottom = 257.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = 51.5
+offset_right = 79.5
+offset_bottom = 98.5
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2_a67m6")
 theme_override_font_sizes/font_size = 35
 text = "B³ STUDIOS"
@@ -125,10 +146,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -85.5
-offset_top = 129.0
-offset_right = 69.5
-offset_bottom = 201.0
+offset_left = -69.884
+offset_top = 163.0
+offset_right = 85.116
+offset_bottom = 235.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_a67m6")
@@ -142,10 +163,10 @@ anchor_left = 0.5
 anchor_top = 0.608
 anchor_right = 0.5
 anchor_bottom = 0.608
-offset_left = 489.0
-offset_top = -362.984
-offset_right = 552.0
-offset_bottom = -304.984
+offset_left = 556.0
+offset_top = -413.76
+offset_right = 619.0
+offset_bottom = -355.76
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_a67m6")
@@ -155,32 +176,32 @@ icon_alignment = 1
 [node name="Decoration" type="Node2D" parent="."]
 
 [node name="star" type="Sprite2D" parent="Decoration"]
-position = Vector2(91, 415)
+position = Vector2(141, 488)
 scale = Vector2(0.0690236, 0.0723906)
 texture = ExtResource("2_3ub7k")
 
 [node name="star1" type="Sprite2D" parent="Decoration"]
-position = Vector2(1052, 162)
+position = Vector2(1102, 235)
 scale = Vector2(0.0690236, 0.0723906)
 texture = ExtResource("2_3ub7k")
 
 [node name="star2" type="Sprite2D" parent="Decoration"]
-position = Vector2(938, 522.5)
+position = Vector2(988, 595.5)
 scale = Vector2(0.0538721, 0.0597643)
 texture = ExtResource("2_3ub7k")
 
 [node name="star3" type="Sprite2D" parent="Decoration"]
-position = Vector2(356.5, 135)
+position = Vector2(406.5, 208)
 scale = Vector2(0.0361953, 0.03367)
 texture = ExtResource("2_3ub7k")
 
 [node name="star4" type="Sprite2D" parent="Decoration"]
-position = Vector2(443, 542.5)
+position = Vector2(493, 615.5)
 scale = Vector2(0.0589226, 0.0462963)
 texture = ExtResource("2_3ub7k")
 
 [node name="star5" type="Sprite2D" parent="Decoration"]
-position = Vector2(140, 366)
+position = Vector2(190, 439)
 scale = Vector2(0.0404041, 0.0429293)
 texture = ExtResource("2_3ub7k")
 
