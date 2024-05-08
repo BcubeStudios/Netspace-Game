@@ -1,9 +1,13 @@
 extends Node2D
 
+var max_phedge = 800
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var dir = $gamePanel/Director
+	self.gamePanel.Director.max_phedge = 1000000
+	self.HUD.objectivePanel.objectivesLabel.text = "yhvbgutvctuyc"
+	
 	dir.createPoint("point1", randomCoordinates(Vector2i(640, 100)))
 	dir.createPoint("point2", randomCoordinates(Vector2i(910, 230)))
 	dir.createPoint("point3", randomCoordinates(Vector2i(1120, 360)))
