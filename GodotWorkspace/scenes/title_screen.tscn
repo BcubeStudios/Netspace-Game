@@ -1,46 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://bxb6kmvkkcnqh"]
 
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_k045k"]
 [ext_resource type="Texture2D" uid="uid://cewn04jnruqmn" path="res://sprites/star.png" id="2_3ub7k"]
 [ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="2_a67m6"]
 [ext_resource type="AudioStream" uid="uid://b01bpv1v7smkr" path="res://music/chiphead64 - 11pm.ogg" id="2_al1s5"]
 [ext_resource type="PackedScene" uid="uid://c6fth4mtmu8c0" path="res://scenes/settings_menu.tscn" id="3_e4t44"]
-
-[sub_resource type="GDScript" id="GDScript_xfbvu"]
-script/source = "extends Control
-
-@onready var audio = $AudioStreamPlayer2D
-@onready var normal_menu =$NormalMenu
-@onready var settings_menu = $SettingsMenu
-var setting_on = false
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
-func _on_start_button_pressed():
-	get_tree().change_scene_to_file(\"res://scenes/loading_screen.tscn\")
-
-func _process(_delta):
-	if Input.is_action_just_pressed(\"Settings\"):
-		settingsMenu()
-		
-func settingsMenu():
-	if setting_on:
-		settings_menu.hide()
-		normal_menu.show()
-		Engine.time_scale = 1
-	else :
-		normal_menu.hide()
-		settings_menu.show()
-		Engine.time_scale = 0
-	setting_on = !setting_on
-
-
-func _on_settings_button_pressed():
-	settingsMenu()
-	
-
-"
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -49,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_xfbvu")
+script = ExtResource("1_k045k")
 
 [node name="mainPanel" type="Panel" parent="."]
 layout_mode = 1

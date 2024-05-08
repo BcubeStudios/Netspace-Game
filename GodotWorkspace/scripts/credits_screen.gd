@@ -8,13 +8,13 @@ func _ready():
 	pass # Replace with function body.
 
 # slowly shows more text
-func showText():
+func show_text():
 	textSpeed += 1
-	$creditsPanel/creditsLabel.visible_characters = textSpeed
+	$CreditsPanel/CreditsLabel.visible_characters = textSpeed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	showText()
+	show_text()
 	pass
 
 func _on_exit_button_pressed():

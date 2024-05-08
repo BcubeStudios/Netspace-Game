@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c6fth4mtmu8c0" path="res://scenes/settings_menu.tscn" id="2_q8ayu"]
 [ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="3_ekkbn"]
 
-[node name="ending" type="Node2D"]
+[node name="Ending" type="Node2D"]
 script = ExtResource("1_wodt8")
 
 [node name="SettingsMenu" parent="." instance=ExtResource("2_q8ayu")]
@@ -20,7 +20,7 @@ offset_right = 1069.0
 offset_bottom = 452.0
 theme = ExtResource("3_ekkbn")
 
-[node name="endLabel" type="Label" parent="Panel"]
+[node name="EndLabel" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 52.0
 offset_top = 44.0

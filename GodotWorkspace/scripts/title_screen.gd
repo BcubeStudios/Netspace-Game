@@ -15,14 +15,14 @@ func _on_start_button_pressed():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("Settings"):
-		settingsMenu()
+		settings_menu_controller()
 		
-func settingsMenu():
+func settings_menu_controller():
 	if setting_on:
 		settings_menu.hide()
 		normal_menu.show()
 		Engine.time_scale = 1
-	else :
+	else:
 		normal_menu.hide()
 		settings_menu.show()
 		Engine.time_scale = 0
@@ -30,6 +30,6 @@ func settingsMenu():
 
 
 func _on_settings_button_pressed():
-	settingsMenu()
+	settings_menu_controller()
 	
 

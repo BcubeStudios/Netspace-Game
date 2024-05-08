@@ -25,7 +25,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="end_point" type="Node2D"]
+[node name="EndPoint" type="Node2D"]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_lotb8")
 
@@ -35,7 +35,7 @@ script = ExtResource("1_lotb8")
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_6n3wq")
 
-[node name="icon" type="AnimatedSprite2D" parent="Area2D"]
+[node name="Icon" type="AnimatedSprite2D" parent="Area2D"]
 scale = Vector2(0.0777395, 0.0777395)
 sprite_frames = SubResource("SpriteFrames_amch7")
 animation = &"endsprites"

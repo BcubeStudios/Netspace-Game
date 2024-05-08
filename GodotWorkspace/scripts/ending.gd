@@ -8,12 +8,12 @@ func _ready():
 	pass # Replace with function body.
 
 # slowly shows more text
-func showText():
+func show_text():
 	textSpeed += 0.25
-	$Panel/endLabel.visible_characters = int(textSpeed)
+	$Panel/EndLabel.visible_characters = int(textSpeed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	showText()
+	show_text()
 	pass
 
