@@ -16,6 +16,7 @@ script = ExtResource("1_kxnmn")
 
 [node name="overlay" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 1.0
 offset_right = 1282.0
 offset_bottom = 721.0
