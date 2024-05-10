@@ -8,14 +8,14 @@ func _ready():
 	dir.max_phedge = 1000000
 	$HUD/objectivesPanel/objectivesLabel.text = "yhvbgutvctuyc"
 	
-	dir.createPoint("point1", randomCoordinates(Vector2i(640, 100)))
-	dir.createPoint("point2", randomCoordinates(Vector2i(910, 230)))
-	dir.createPoint("point3", randomCoordinates(Vector2i(1120, 360)))
-	dir.createPoint("point4", randomCoordinates(Vector2i(910, 490)))
-	dir.createPoint("point5", randomCoordinates(Vector2i(640, 620)))
-	dir.createPoint("point6", randomCoordinates(Vector2i(370, 490)))
-	dir.createPoint("point7", randomCoordinates(Vector2i(160, 360)))
-	dir.createPoint("point8", randomCoordinates(Vector2i(370, 230)))
+	dir.createVariablePoint("point1", randomCoordinates(Vector2i(640, 100)), 2)
+	dir.createVariablePoint("point2", randomCoordinates(Vector2i(910, 230)), 2)
+	dir.createVariablePoint("point3", randomCoordinates(Vector2i(1120, 360)), 2)
+	dir.createVariablePoint("point4", randomCoordinates(Vector2i(910, 490)), 2)
+	dir.createVariablePoint("point5", randomCoordinates(Vector2i(640, 620)), 2)
+	dir.createVariablePoint("point6", randomCoordinates(Vector2i(370, 490)), 2)
+	dir.createVariablePoint("point7", randomCoordinates(Vector2i(160, 360)), 2)
+	dir.createVariablePoint("point8", randomCoordinates(Vector2i(370, 230)), 2)
 
 	
 	dir.length_left = 100000

@@ -2,6 +2,7 @@ extends Control
 
 var point_scene = preload("res://scenes/point.tscn")
 var end_point_scene = preload("res://scenes/end_point.tscn")
+var variable_point_scene = preload("res://scenes/variable_point.tscn")
 
 var points:Array[AbstractPoint]
 var edges:Array[Edge]
@@ -17,6 +18,13 @@ func _ready():
 	current_phedge.reset_origin()
 	
 	curr_length = 0
+
+func createVariablePoint(new_name, coords, max_edges):
+	var newPoint = variable_point_scene.instantiate()
+	newPoint.activate(new_name, coords)
+	newPoint.change_max_edges(max_edges)
+	self.add_child(newPoint)
+	points.append(newPoint)
 
 func createEndPoint(new_name, coords):
 	var newPoint = end_point_scene.instantiate()
