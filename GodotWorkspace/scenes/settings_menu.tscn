@@ -51,12 +51,11 @@ theme = ExtResource("2_n5gra")
 max_value = 50.0
 value = 25.0
 
-[node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="MusicToggle" type="CheckButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_n5gra")
-theme_override_font_sizes/font_size = 20
+button_pressed = true
 text = "MUSIC"
-horizontal_alignment = 1
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -67,4 +66,5 @@ text = "QUIT GAME"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MainMenuButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/creditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/MusicToggle" to="." method="_on_music_toggle_toggled"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
