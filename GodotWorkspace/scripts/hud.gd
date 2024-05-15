@@ -21,7 +21,6 @@ func settingsMenu():
 	setting_on = !setting_on
 
 
-
 #activates the settings mode
 func _on_setting_button_pressed():
 	settingsMenu()
