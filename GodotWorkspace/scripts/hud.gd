@@ -29,7 +29,7 @@ func _on_setting_button_pressed():
 
 #toggles the info panel
 func _on_info_toggle_toggled(toggled_on):
-	var info_graphic = $HUD/infoPanel
+	var info_graphic = $infoPanel
 	if toggled_on:
 		info_graphic.show()
 	else:
@@ -38,7 +38,7 @@ func _on_info_toggle_toggled(toggled_on):
 
 #toggles the objectives panel
 func _on_objectives_toggle_toggled(toggled_on):
-	var objectives_graphic = $HUD/objectivesPanel 
+	var objectives_graphic = $objectivesPanel
 	if toggled_on:
 		objectives_graphic.show()
 	else:
