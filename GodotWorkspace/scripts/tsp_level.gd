@@ -6,12 +6,14 @@ var max_phedge = 800
 func _ready():
 	var dir = $gamePanel/Director
 	dir.max_phedge = 1000
+	dir.setCableLength(100000)
+	
 	$HUD/objectivesPanel/objectivesLabel.text = "Connect all 
 	the nodes using 
 	the least amount
 	of cable possible"
 	$gamePanel/cablePanel/cable_Label.text = "Current Cable Used"
-	$gamePanel/cablePanel/length_Label.text = str(int($gamePanel/Director.length_left - max_phedge))
+	$gamePanel/cablePanel/length_Label.hide()
 	
 	dir.createVariablePoint("point1", randomCoordinates(Vector2i(640, 100)), 2)
 	dir.createVariablePoint("point2", randomCoordinates(Vector2i(910, 230)), 2)
@@ -22,8 +24,6 @@ func _ready():
 	dir.createVariablePoint("point7", randomCoordinates(Vector2i(160, 360)), 2)
 	dir.createVariablePoint("point8", randomCoordinates(Vector2i(370, 230)), 2)
 
-	
-	dir.length_left = 100000
 
 func randomCoordinates(expectedCoords):
 	
@@ -40,4 +40,5 @@ func level_won():
 func reset():
 	get_tree().change_scene_to_file("res://scenes/demo_level.tscn")
 
-
+func _process(_delta):
+	$scoreLabel.text = str(int(100000 - $gamePanel/Director.length_left))

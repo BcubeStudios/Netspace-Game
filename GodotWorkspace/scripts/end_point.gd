@@ -35,4 +35,10 @@ func curr_frame()-> int:
 
 func possible_edge(_edge:Edge) -> bool:
 	return edge == null
+	
+func redraw():
+	if(edge == null):
+		$Area2D/icon.frame = 1
+	else:
+		$Area2D/icon.frame = 0
 

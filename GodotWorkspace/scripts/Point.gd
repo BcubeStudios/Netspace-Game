@@ -43,3 +43,9 @@ func possible_edge(edge:Edge) -> bool:
 		if old_edge.id == edge.id:
 			return false
 	return true
+
+func redraw():
+	if(edges.is_empty()):
+		$Area2D/icon.frame = 1
+	else:
+		$Area2D/icon.frame = 0

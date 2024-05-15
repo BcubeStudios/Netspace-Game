@@ -8,6 +8,7 @@ var points:Array[AbstractPoint]
 var edges:Array[Edge]
 var current_point:AbstractPoint
 var current_phedge:Phedge
+var max_length: float
 var length_left: float
 var curr_length: float
 var max_phedge: float = 300
@@ -18,6 +19,10 @@ func _ready():
 	current_phedge.reset_origin()
 	
 	curr_length = 0
+
+func setCableLength(length):
+	max_length = length
+	length_left = length
 
 func createVariablePoint(new_name, coords, max_edges):
 	var newPoint = variable_point_scene.instantiate()
@@ -162,4 +167,8 @@ func reset():
 	for point in points:
 		for edge in edges:
 			point.remove_edge(edge)
+		point.redraw()
+	for edge in edges:
+		edge.queue_free()
 	edges.clear()
+	length_left = max_length
