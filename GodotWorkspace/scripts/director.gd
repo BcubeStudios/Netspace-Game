@@ -20,18 +20,18 @@ func _ready():
 	
 	curr_length = 0
 
-func setCableLength(length):
+func set_cable_length(length):
 	max_length = length
 	length_left = length
 
-func createVariablePoint(new_name, coords, max_edges):
+func create_variable_point(new_name, coords, max_edges):
 	var newPoint = variable_point_scene.instantiate()
 	newPoint.activate(new_name, coords)
 	newPoint.change_max_edges(max_edges)
 	self.add_child(newPoint)
 	points.append(newPoint)
 
-func createEndPoint(new_name, coords):
+func create_end_point(new_name, coords):
 
 	var newPoint = end_point_scene.instantiate()
 	newPoint.activate(new_name, coords)
