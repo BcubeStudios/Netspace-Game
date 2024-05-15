@@ -3,9 +3,8 @@ class_name VariablePoint
 
 var max_edges:int = 0
 
-func activate(point_name, point_coords):
-	super(point_name, point_coords)
-	$Area2D/icon.frame = 1
+func activate(p_point_name, p_point_coords):
+	super(p_point_name, p_point_coords)
 
 func add_edge(edge:Edge) -> bool:
 	if edges.size() >= max_edges:
@@ -13,7 +12,7 @@ func add_edge(edge:Edge) -> bool:
 	for old_edge in edges:
 		if old_edge.id == edge.id:
 			return false
-	$Area2D/icon.frame = 0
+	$Area2D/sprite.frame = 0
 	edges.append(edge)
 	return true
 

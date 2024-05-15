@@ -8,7 +8,7 @@ func _process(_delta):
 		settingsMenu()
 
 func settingsMenu():
-	var setting_panel = $settingPanel
+	var setting_panel = $SettingPanel
 	var overlay = $overlay
 	if setting_on:
 		setting_panel.hide()
@@ -29,7 +29,7 @@ func _on_setting_button_pressed():
 
 #toggles the info panel
 func _on_info_toggle_toggled(toggled_on):
-	var info_graphic = $infoPanel
+	var info_graphic = $InfoPanel
 	if toggled_on:
 		info_graphic.show()
 	else:
@@ -38,7 +38,7 @@ func _on_info_toggle_toggled(toggled_on):
 
 #toggles the objectives panel
 func _on_objectives_toggle_toggled(toggled_on):
-	var objectives_graphic = $objectivesPanel
+	var objectives_graphic = $ObjectivesPanel
 	if toggled_on:
 		objectives_graphic.show()
 	else:

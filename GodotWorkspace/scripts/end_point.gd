@@ -3,26 +3,26 @@ class_name EndPoint
 
 var edge:Edge
 
-func activate(point_name, point_coords):
-	super(point_name, point_coords)
+func activate(p_point_name, p_point_coords):
+	super(p_point_name, p_point_coords)
 	edge = null
-	$Area2D/Icon.frame = 1
+	$Area2D/sprite.frame = 1
 
 func _on_area_2d_mouse_entered():
 	super()
-	$Area2D/Icon.frame = 2
+	$Area2D/sprite.frame = 2
 
 func _on_area_2d_mouse_exited():
 	super()
 	if(edge == null):
-		$Area2D/Icon.frame = 1
+		$Area2D/sprite.frame = 1
 	else:
-		$Area2D/Icon.frame = 0
+		$Area2D/sprite.frame = 0
 	
 func add_edge(p_edge:Edge) -> bool:
 	if edge == null:
 		edge = p_edge
-		$Area2D/Icon.frame = 0
+		$Area2D/sprite.frame = 0
 		return true
 	return false
 
@@ -31,14 +31,14 @@ func remove_edge(_p_edge:Edge) -> bool:
 	return true
 
 func curr_frame()-> int:
-	return $Area2D/Icon.frame
+	return $Area2D/sprite.frame
 
 func possible_edge(_edge:Edge) -> bool:
 	return edge == null
 	
 func redraw():
 	if(edge == null):
-		$Area2D/icon.frame = 1
+		$Area2D/sprite.frame = 1
 	else:
-		$Area2D/icon.frame = 0
+		$Area2D/sprite.frame = 0
 

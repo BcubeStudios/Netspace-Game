@@ -7,8 +7,8 @@ func _ready():
 	var dir = $gamePanel/Director
 	dir.max_phedge = 1000
 	dir.setCableLength(100000)
-	$HUD/infoPanel/infoLabel.text = "The Traveling Salesman Problem aka TSP is a problem in graph theory. It asks a given a list of nodes, how can we visit each one at least once, while returning to the origin, using the least amount of lenght possible. Here you can try to find the shortest amount of lenght. In the real world there are many algorithms that try to solve this problem most efficiently."
-	$HUD/objectivesPanel/objectivesLabel.text = "Connect all the nodes at least once using the least amount of cable possible. The edge should return to the origine node."
+	$HUD/InfoPanel/InfoLabel.text = "The Traveling Salesman Problem aka TSP is a problem in graph theory. It asks a given a list of nodes, how can we visit each one at least once, while returning to the origin, using the least amount of lenght possible. Here you can try to find the shortest amount of lenght. In the real world there are many algorithms that try to solve this problem most efficiently."
+	$HUD/ObjectivesPanel/ObjectivesLabel.text = "Connect all the nodes at least once using the least amount of cable possible. The edge should return to the origine node."
 
 	$gamePanel/cablePanel/cable_Label.text = "Current Cable Used"
 	$gamePanel/cablePanel/length_Label.hide()

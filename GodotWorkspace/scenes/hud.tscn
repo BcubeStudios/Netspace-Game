@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://smxxaf128sk0"]
+[gd_scene load_steps=6 format=3 uid="uid://smxxaf128sk0"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_kxnmn"]
 [ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="1_xdl22"]
@@ -132,29 +132,6 @@ Cable length
 left!"
 autowrap_mode = 3
 
-[connection signal="pressed" from="settingButton" to="." method="_on_setting_button_pressed"]
-[connection signal="toggled" from="infoToggle" to="." method="_on_info_toggle_toggled"]
-[connection signal="toggled" from="objectivesToggle" to="." method="_on_objectives_toggle_toggled"]
-
-[node name="ResetButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 9.925
-anchor_top = 6.075
-anchor_right = 9.925
-anchor_bottom = 6.075
-offset_left = 680.0
-offset_top = 423.0
-offset_right = 764.0
-offset_bottom = 451.0
-theme = ExtResource("1_xdl22")
-text = "Reset"
-
-[node name="SolveButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 554.0
-offset_right = 123.0
-offset_bottom = 582.0
-theme = ExtResource("1_xdl22")
-text = "Auto-Solve"
+[connection signal="pressed" from="SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="toggled" from="InfoToggle" to="." method="_on_info_toggle_toggled"]
+[connection signal="toggled" from="ObjectivesToggle" to="." method="_on_objectives_toggle_toggled"]

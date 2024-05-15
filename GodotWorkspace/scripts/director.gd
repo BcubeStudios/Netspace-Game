@@ -125,6 +125,9 @@ func game_won() -> bool:
 	return false
 
 func auto_solve():
+	self.reset()
+	await Global.wait(0.5)
+	
 	var solved_points:Array[AbstractPoint] = []
 	var remaining_points:Array[AbstractPoint] = points.duplicate()
 	

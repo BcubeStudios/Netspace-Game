@@ -11,7 +11,7 @@ func load_bar():
 		$ProgressBar.value = percentage
 		pass
 	else:
-		change_scene()
+		changeScene()
 
 #changes to the demo
 func changeScene():
