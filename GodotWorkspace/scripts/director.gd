@@ -2,11 +2,13 @@ extends Control
 
 var point_scene = preload("res://scenes/point.tscn")
 var end_point_scene = preload("res://scenes/end_point.tscn")
+var variable_point_scene = preload("res://scenes/variable_point.tscn")
 
 var points:Array[AbstractPoint]
 var edges:Array[Edge]
 var current_point:AbstractPoint
 var current_phedge:Phedge
+var max_length: float
 var length_left: float
 var curr_length: float
 var max_phedge: float = 300
@@ -18,7 +20,19 @@ func _ready():
 	
 	curr_length = 0
 
-func create_end_point(new_name, coords):
+func setCableLength(length):
+	max_length = length
+	length_left = length
+
+func createVariablePoint(new_name, coords, max_edges):
+	var newPoint = variable_point_scene.instantiate()
+	newPoint.activate(new_name, coords)
+	newPoint.change_max_edges(max_edges)
+	self.add_child(newPoint)
+	points.append(newPoint)
+
+func createEndPoint(new_name, coords):
+
 	var newPoint = end_point_scene.instantiate()
 	newPoint.activate(new_name, coords)
 	self.add_child(newPoint)
@@ -149,3 +163,13 @@ func auto_solve():
 			#draw edge
 			min_edge.queue_redraw()
 			await Global.wait(0.5)
+
+func reset():
+	for point in points:
+		for edge in edges:
+			point.remove_edge(edge)
+		point.redraw()
+	for edge in edges:
+		edge.queue_free()
+	edges.clear()
+	length_left = max_length

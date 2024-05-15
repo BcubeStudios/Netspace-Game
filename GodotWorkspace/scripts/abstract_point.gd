@@ -26,6 +26,8 @@ func remove_edge(_edge:Edge) -> bool:
 func curr_frame()-> int:
 	return -1
 	
+func redraw():
+	pass
 
 func possible_edge(_edge:Edge) -> bool:
 	return false

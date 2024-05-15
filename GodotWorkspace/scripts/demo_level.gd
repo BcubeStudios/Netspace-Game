@@ -1,5 +1,6 @@
 extends Node2D
 
+
 var setting_on = false
 @onready var length_label = $BackgroundPanel/CablePanel/LengthLabel
 @onready var curr_length_label = $BackgroundPanel/CurrCablePanel/CurrLengthLabel
@@ -10,16 +11,15 @@ func _ready():
 	if Global.First_time:
 		$Explanation.show()
 	Global.First_time = false
-	var dir = $BackgroundPanel/Director
-	dir.create_end_point("point1", Vector2i(700, 100))
-	dir.create_end_point("point2", Vector2i(950, 500))
-	dir.create_point("point3", Vector2i(500, 500))
-	dir.create_point("point4", Vector2i(700, 300))
-	dir.create_point("point5", Vector2i(700, 500))
+
+	var dir = $gamePanel/Director
+	dir.createEndPoint("point1", Vector2i(700, 100))
+	dir.createEndPoint("point2", Vector2i(950, 500))
+	dir.createPoint("point3", Vector2i(500, 500))
+	dir.createPoint("point4", Vector2i(700, 300))
+	dir.createPoint("point5", Vector2i(700, 500))
 	
 	dir.length_left = 1000
-	
-
 
 func _process(_delta):
 	if Input.is_action_just_pressed("Settings"):
