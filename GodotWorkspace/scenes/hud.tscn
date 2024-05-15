@@ -128,6 +128,7 @@ Routers!
 Be wary of the 
 Cable length
 left!"
+autowrap_mode = 3
 
 [connection signal="pressed" from="settingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="toggled" from="infoToggle" to="." method="_on_info_toggle_toggled"]
