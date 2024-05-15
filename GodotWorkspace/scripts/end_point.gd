@@ -39,7 +39,7 @@ func possible_edge(p_edge:Edge) -> bool:
 	if p_edge.point1 == p_edge.point2:
 		return false
 	return edge == null
-	
+
 func redraw():
 	if(edge == null):
 		$Area2D/sprite.frame = 1
