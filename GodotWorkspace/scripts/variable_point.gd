@@ -7,6 +7,8 @@ func activate(p_point_name, p_point_coords):
 	super(p_point_name, p_point_coords)
 
 func add_edge(edge:Edge) -> bool:
+	if edge.point1 == edge.point2:
+		return false
 	if edges.size() >= max_edges:
 		return false
 	for old_edge in edges:
@@ -17,6 +19,8 @@ func add_edge(edge:Edge) -> bool:
 	return true
 
 func possible_edge(edge:Edge) -> bool:
+	if edge.point1 == edge.point2:
+		return false
 	if edges.size() >= max_edges:
 		return false
 	for old_edge in edges:

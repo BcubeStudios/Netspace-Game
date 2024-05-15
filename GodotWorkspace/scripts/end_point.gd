@@ -20,6 +20,8 @@ func _on_area_2d_mouse_exited():
 		$Area2D/sprite.frame = 0
 	
 func add_edge(p_edge:Edge) -> bool:
+	if p_edge.point1 == p_edge.point2:
+		return false
 	if edge == null:
 		edge = p_edge
 		$Area2D/sprite.frame = 0
@@ -33,7 +35,9 @@ func remove_edge(_p_edge:Edge) -> bool:
 func curr_frame()-> int:
 	return $Area2D/sprite.frame
 
-func possible_edge(_edge:Edge) -> bool:
+func possible_edge(p_edge:Edge) -> bool:
+	if p_edge.point1 == p_edge.point2:
+		return false
 	return edge == null
 	
 func redraw():

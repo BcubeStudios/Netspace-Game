@@ -19,6 +19,8 @@ func _on_area_2d_mouse_exited():
 		$Area2D/sprite.frame = 0
 	
 func add_edge(edge:Edge) -> bool:
+	if edge.point1 == edge.point2:
+		return false
 	for old_edge in edges:
 		if old_edge.id == edge.id:
 			return false
@@ -39,6 +41,8 @@ func curr_frame()-> int:
 	return $Area2D/sprite.frame
 	
 func possible_edge(edge:Edge) -> bool:
+	if edge.point1 == edge.point2:
+		return false
 	for old_edge in edges:
 		if old_edge.id == edge.id:
 			return false
