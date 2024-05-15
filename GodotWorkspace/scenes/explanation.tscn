@@ -35,7 +35,7 @@ Then try and complete them
 You can always hide the panel"
 autowrap_mode = 2
 
-[node name="continueButton1" type="Button" parent="BGPanel/Panel1"]
+[node name="ContinueButton1" type="Button" parent="BGPanel/Panel1"]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 134.0
@@ -53,7 +53,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xae8e")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xae8e")
 text = "Continue"
 
-[node name="skipButton" type="Button" parent="BGPanel/Panel1"]
+[node name="SkipButton" type="Button" parent="BGPanel/Panel1"]
 layout_mode = 0
 offset_left = 169.0
 offset_top = 134.0
@@ -80,7 +80,7 @@ offset_right = 476.0
 offset_bottom = 568.0
 theme = ExtResource("1_6k1dr")
 
-[node name="continueButton2" type="Button" parent="BGPanel/Panel2"]
+[node name="ContinueButton2" type="Button" parent="BGPanel/Panel2"]
 layout_mode = 0
 offset_left = 79.0
 offset_top = 135.0
@@ -116,7 +116,7 @@ offset_right = 752.0
 offset_bottom = 332.0
 theme = ExtResource("1_6k1dr")
 
-[node name="continueButton3" type="Button" parent="BGPanel/Panel3"]
+[node name="ContinueButton3" type="Button" parent="BGPanel/Panel3"]
 layout_mode = 0
 offset_left = 79.0
 offset_top = 135.0
@@ -152,7 +152,7 @@ offset_right = 1215.0
 offset_bottom = 645.0
 theme = ExtResource("1_6k1dr")
 
-[node name="continueButton4" type="Button" parent="BGPanel/Panel4"]
+[node name="ContinueButton4" type="Button" parent="BGPanel/Panel4"]
 layout_mode = 0
 offset_left = 79.0
 offset_top = 135.0
@@ -179,8 +179,8 @@ offset_bottom = 124.0
 text = "A more in-depth look of Routers and how they work can be found here!"
 autowrap_mode = 2
 
-[connection signal="pressed" from="BGPanel/Panel1/continueButton1" to="." method="_on_continue_button_1_pressed"]
-[connection signal="pressed" from="BGPanel/Panel1/skipButton" to="." method="_on_skip_button_pressed"]
-[connection signal="pressed" from="BGPanel/Panel2/continueButton2" to="." method="_on_continue_button_2_pressed"]
-[connection signal="pressed" from="BGPanel/Panel3/continueButton3" to="." method="_on_continue_button_3_pressed"]
-[connection signal="pressed" from="BGPanel/Panel4/continueButton4" to="." method="_on_continue_button_4_pressed"]
+[connection signal="pressed" from="BGPanel/Panel1/ContinueButton1" to="." method="_on_continue_button_1_pressed"]
+[connection signal="pressed" from="BGPanel/Panel1/SkipButton" to="." method="_on_skip_button_pressed"]
+[connection signal="pressed" from="BGPanel/Panel2/ContinueButton2" to="." method="_on_continue_button_2_pressed"]
+[connection signal="pressed" from="BGPanel/Panel3/ContinueButton3" to="." method="_on_continue_button_3_pressed"]
+[connection signal="pressed" from="BGPanel/Panel4/ContinueButton4" to="." method="_on_continue_button_4_pressed"]

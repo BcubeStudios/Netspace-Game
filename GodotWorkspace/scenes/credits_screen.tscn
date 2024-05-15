@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://560ew43lfwqo" path="res://sprites/logoB3.png" id="3_gr65l"]
 [ext_resource type="AudioStream" uid="uid://b01bpv1v7smkr" path="res://music/chiphead64 - 11pm.ogg" id="5_7auvm"]
 
-[node name="credits_screen" type="Node2D"]
+[node name="CreditsScreen" type="Node2D"]
 script = ExtResource("1_5jsv6")
 
-[node name="creditsPanel" type="Panel" parent="."]
+[node name="CreditsPanel" type="Panel" parent="."]
 offset_left = 242.0
 offset_top = 163.0
 offset_right = 1043.0
@@ -16,7 +16,7 @@ offset_bottom = 600.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="creditsLabel" type="Label" parent="creditsPanel"]
+[node name="CreditsLabel" type="Label" parent="CreditsPanel"]
 layout_mode = 0
 offset_left = 347.0
 offset_top = 25.0
@@ -39,12 +39,12 @@ Music by Chiphead64
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="Sprite2D" type="Sprite2D" parent="creditsPanel"]
+[node name="Sprite2D" type="Sprite2D" parent="CreditsPanel"]
 position = Vector2(184, 108)
 scale = Vector2(0.408719, 0.508117)
 texture = ExtResource("3_gr65l")
 
-[node name="thankyouLabel" type="Label" parent="."]
+[node name="ThankYouLabel" type="Label" parent="."]
 offset_left = 300.0
 offset_top = 113.0
 offset_right = 1003.0
@@ -53,7 +53,7 @@ theme = ExtResource("1_ssuwq")
 text = "THANK YOU "
 horizontal_alignment = 1
 
-[node name="ExitButton" type="Button" parent="."]
+[node name="Exit_button" type="Button" parent="."]
 offset_left = 1164.0
 offset_top = 667.0
 offset_right = 1254.0
@@ -66,4 +66,4 @@ position = Vector2(66, 34)
 stream = ExtResource("5_7auvm")
 autoplay = true
 
-[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Exit_button" to="." method="_on_exit_button_pressed"]

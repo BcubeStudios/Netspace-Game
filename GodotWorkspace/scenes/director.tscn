@@ -22,4 +22,4 @@ offset_bottom = 719.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0n6cs")
 
-[node name="phedge" parent="." instance=ExtResource("3_s8nuh")]
+[node name="Phedge" parent="." instance=ExtResource("3_s8nuh")]

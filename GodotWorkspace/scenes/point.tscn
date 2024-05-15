@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://djkkrfn36vjk7"]
 
-[ext_resource type="Script" path="res://scripts/Point.gd" id="1_lffvo"]
+[ext_resource type="Script" path="res://scripts/point.gd" id="1_lffvo"]
 [ext_resource type="Texture2D" uid="uid://occcic0y0law" path="res://sprites/router_icon/router2.png" id="2_0fm0e"]
 [ext_resource type="Texture2D" uid="uid://d2kb6uogm3lqh" path="res://sprites/router_icon/router2b.png" id="3_lienm"]
 [ext_resource type="Texture2D" uid="uid://cnom2mba7nvdk" path="res://sprites/router_icon/router2c.png" id="4_wq47h"]
@@ -45,7 +45,7 @@ script = ExtResource("1_lffvo")
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_p3cfi")
 
-[node name="icon" type="AnimatedSprite2D" parent="Area2D"]
+[node name="Icon" type="AnimatedSprite2D" parent="Area2D"]
 position = Vector2(-1.19209e-07, 0)
 scale = Vector2(0.086, 0.086)
 sprite_frames = SubResource("SpriteFrames_sowii")

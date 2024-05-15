@@ -15,7 +15,7 @@ var max_phedge: float = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	current_phedge = $phedge
+	current_phedge = $Phedge
 	current_phedge.reset_origin()
 	
 	curr_length = 0
@@ -32,13 +32,14 @@ func createVariablePoint(new_name, coords, max_edges):
 	points.append(newPoint)
 
 func createEndPoint(new_name, coords):
+
 	var newPoint = end_point_scene.instantiate()
 	newPoint.activate(new_name, coords)
 	self.add_child(newPoint)
 	points.append(newPoint)
 
 
-func createPoint(new_name, coords):
+func create_point(new_name, coords):
 	var newPoint = point_scene.instantiate()
 	newPoint.activate(new_name, coords)
 	self.add_child(newPoint)
@@ -87,7 +88,7 @@ func _input(event):
 
 
 func change_current_point(point):
-	current_point = point
+	self.current_point = point
 	
 func change_length_left(length: float) -> bool:
 	var new_length = length_left - length

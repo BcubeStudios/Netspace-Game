@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d0h00g4ba8ubu"]
 
-[ext_resource type="Script" path="res://scripts/Phedge.gd" id="1_o03to"]
+[ext_resource type="Script" path="res://scripts/phedge.gd" id="1_o03to"]
 
 [node name="phedge" type="Node2D"]
 script = ExtResource("1_o03to")

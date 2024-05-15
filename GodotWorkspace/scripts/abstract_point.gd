@@ -3,13 +3,13 @@ class_name AbstractPoint
 
 @onready var director = $"../"
 
-var pointName: String
+var point_name: String
 var coords: Vector2i
 
-func activate(point_name, point_coords):
-	self.pointName = point_name
-	self.coords = point_coords
-	self.global_position = point_coords
+func activate(new_point_name, new_point_coords):
+	self.point_name = new_point_name
+	self.coords = new_point_coords
+	self.global_position = new_point_coords
 
 func _on_area_2d_mouse_entered():
 	director.change_current_point(self)

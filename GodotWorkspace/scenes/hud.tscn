@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_kxnmn"]
 [ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="1_xdl22"]
 [ext_resource type="PackedScene" uid="uid://c6fth4mtmu8c0" path="res://scenes/settings_menu.tscn" id="2_2df07"]
+[ext_resource type="Script" path="res://scripts/setting_panel.gd" id="2_boipr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xka14"]
 bg_color = Color(0.352941, 0.352941, 0.352941, 0.498039)
@@ -22,7 +23,7 @@ offset_right = 1282.0
 offset_bottom = 721.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xka14")
 
-[node name="settingButton" type="Button" parent="."]
+[node name="SettingButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1217.0
 offset_top = 18.0
@@ -31,21 +32,22 @@ offset_bottom = 54.0
 theme = ExtResource("1_xdl22")
 text = "☰"
 
-[node name="settingPanel" type="Panel" parent="."]
+[node name="SettingPanel" type="Panel" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 1001.0
-offset_top = 67.0
-offset_right = 1132.0
-offset_bottom = 242.0
+offset_left = 1136.0
+offset_top = 59.0
+offset_right = 1267.0
+offset_bottom = 234.0
+script = ExtResource("2_boipr")
 
-[node name="SettingsMenu" parent="settingPanel" instance=ExtResource("2_2df07")]
+[node name="SettingsMenu" parent="SettingPanel" instance=ExtResource("2_2df07")]
 layout_mode = 1
 offset_left = 1.0
 offset_right = 1.0
 offset_bottom = 1.0
 
-[node name="infoPanel" type="Panel" parent="."]
+[node name="InfoPanel" type="Panel" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 783.0
@@ -54,7 +56,7 @@ offset_right = 1128.0
 offset_bottom = 573.0
 theme = ExtResource("1_xdl22")
 
-[node name="infoLabel" type="Label" parent="infoPanel"]
+[node name="InfoLabel" type="Label" parent="InfoPanel"]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 31.0
@@ -63,7 +65,7 @@ offset_bottom = 262.0
 text = "A router is a device that connects two or more packet-switched networks or subnetworks. It serves two primary functions: managing traffic between these networks by forwarding data packets to their intended IP addresses, and allowing multiple devices to use the same Internet connection."
 autowrap_mode = 2
 
-[node name="infoToggle" type="CheckButton" parent="."]
+[node name="InfoToggle" type="CheckButton" parent="."]
 layout_mode = 0
 offset_left = 1176.0
 offset_top = 660.0
@@ -80,7 +82,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Info"
 
-[node name="objectivesToggle" type="CheckButton" parent="."]
+[node name="ObjectivesToggle" type="CheckButton" parent="."]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 11.0
@@ -97,7 +99,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 button_pressed = true
 text = "Objectives"
 
-[node name="objectivesPanel" type="Panel" parent="."]
+[node name="ObjectivesPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 41.0
@@ -105,7 +107,7 @@ offset_right = 169.0
 offset_bottom = 311.0
 theme = ExtResource("1_xdl22")
 
-[node name="titleLabel" type="Label" parent="objectivesPanel"]
+[node name="TitleLabel" type="Label" parent="ObjectivesPanel"]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 28.0
@@ -115,7 +117,7 @@ theme = ExtResource("1_xdl22")
 theme_override_font_sizes/font_size = 22
 text = "Objectives: "
 
-[node name="objectivesLabel" type="Label" parent="objectivesPanel"]
+[node name="ObjectivesLabel" type="Label" parent="ObjectivesPanel"]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 66.0
@@ -133,3 +135,26 @@ autowrap_mode = 3
 [connection signal="pressed" from="settingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="toggled" from="infoToggle" to="." method="_on_info_toggle_toggled"]
 [connection signal="toggled" from="objectivesToggle" to="." method="_on_objectives_toggle_toggled"]
+
+[node name="ResetButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.925
+anchor_top = 6.075
+anchor_right = 9.925
+anchor_bottom = 6.075
+offset_left = 680.0
+offset_top = 423.0
+offset_right = 764.0
+offset_bottom = 451.0
+theme = ExtResource("1_xdl22")
+text = "Reset"
+
+[node name="SolveButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 554.0
+offset_right = 123.0
+offset_bottom = 582.0
+theme = ExtResource("1_xdl22")
+text = "Auto-Solve"
