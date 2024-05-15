@@ -5,8 +5,13 @@ var max_phedge = 800
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var dir = $gamePanel/Director
-	dir.max_phedge = 1000000
-	$HUD/objectivesPanel/objectivesLabel.text = "yhvbgutvctuyc"
+	dir.max_phedge = 1000
+	$HUD/objectivesPanel/objectivesLabel.text = "Connect all 
+	the nodes using 
+	the least amount
+	of cable possible"
+	$gamePanel/cablePanel/cable_Label.text = "Current Cable Used"
+	$gamePanel/cablePanel/length_Label.text = str(int($gamePanel/Director.length_left - max_phedge))
 	
 	dir.createVariablePoint("point1", randomCoordinates(Vector2i(640, 100)), 2)
 	dir.createVariablePoint("point2", randomCoordinates(Vector2i(910, 230)), 2)
@@ -24,8 +29,8 @@ func randomCoordinates(expectedCoords):
 	
 	var random = RandomNumberGenerator.new()
 	random.randomize()
-	var x = random.randi_range(expectedCoords[0] - 100, expectedCoords[0] + 100)
-	var y = random.randi_range(expectedCoords[1] - 100, expectedCoords[1] + 100)
+	var x = random.randi_range(expectedCoords[0] - 80, expectedCoords[0] + 80)
+	var y = random.randi_range(expectedCoords[1] - 80, expectedCoords[1] + 80)
 	return Vector2(x, y)
 	
 func level_won():
