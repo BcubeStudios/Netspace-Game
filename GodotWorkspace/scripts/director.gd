@@ -71,7 +71,7 @@ func _input(event):
 					#new edge
 					var edge = Edge.new(current_phedge.origin, current_point)
 					if(current_phedge.origin.add_edge(edge) and current_point.add_edge(edge) and change_length_left(edge.length)):
-						#reset phedge 
+												#reset phedge 
 						current_phedge.reset_origin()
 						#add edge to array
 						add_child(edge)
@@ -80,6 +80,10 @@ func _input(event):
 						edges.append(edge)
 						game_won()
 					else:
+						current_phedge.origin.remove_edge(edge)
+						current_phedge.origin.redraw()
+						current_point.remove_edge(edge)
+						current_point.redraw()
 						#reset phedge 
 						current_phedge.reset_origin()
 						curr_length = 0

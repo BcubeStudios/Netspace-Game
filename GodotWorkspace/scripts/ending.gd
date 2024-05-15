@@ -21,7 +21,7 @@ func _on_setting_button_pressed():
 	settingsMenu()
 
 func settingsMenu():
-	var setting_panel = $SettingPanel
+	var setting_panel = $SettingsMenu
 	if setting_on:
 		setting_panel.hide()
 	else :
