@@ -15,7 +15,7 @@ var max_phedge: float = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	current_phedge = $Phedge
+	current_phedge = $thisPhedge
 	current_phedge.reset_origin()
 	
 	curr_length = 0
