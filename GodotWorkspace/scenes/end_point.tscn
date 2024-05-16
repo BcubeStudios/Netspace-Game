@@ -35,7 +35,7 @@ script = ExtResource("1_lotb8")
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_6n3wq")
 
-[node name="Icon" type="AnimatedSprite2D" parent="Area2D"]
+[node name="sprite" type="AnimatedSprite2D" parent="Area2D"]
 scale = Vector2(0.0777395, 0.0777395)
 sprite_frames = SubResource("SpriteFrames_amch7")
 animation = &"endsprites"

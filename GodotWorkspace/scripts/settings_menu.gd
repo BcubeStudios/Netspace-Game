@@ -23,3 +23,9 @@ func _on_music_slider_value_changed(value):
 func _on_credits_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/credits_screen.tscn")
 
+func _on_music_toggle_toggled(toggled_on):
+	var master_bus = AudioServer.get_bus_index("Master")
+	if toggled_on:
+		AudioServer.set_bus_mute(master_bus, false)
+	else:
+		AudioServer.set_bus_mute(master_bus, true)

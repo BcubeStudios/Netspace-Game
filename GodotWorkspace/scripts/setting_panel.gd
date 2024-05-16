@@ -1,12 +1,12 @@
 extends Panel
 
-var is_visible = true
+var visiblePanel = true
 
 func _on_setting_button_pressed():
-	if is_visible:
+	if visiblePanel:
 		self.show()
 		Engine.time_scale = 0
 	else:
 		self.hide()
 		Engine.time_scale = 1
-	is_visible = !is_visible
+	visiblePanel = !visiblePanel

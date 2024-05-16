@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://djkkrfn36vjk7"]
+[gd_scene load_steps=9 format=3 uid="uid://cjr8l1f3f61dv"]
 
-[ext_resource type="Script" path="res://scripts/point.gd" id="1_lffvo"]
-[ext_resource type="Texture2D" uid="uid://occcic0y0law" path="res://sprites/router_icon/router2.png" id="2_0fm0e"]
-[ext_resource type="Texture2D" uid="uid://d2kb6uogm3lqh" path="res://sprites/router_icon/router2b.png" id="3_lienm"]
-[ext_resource type="Texture2D" uid="uid://cnom2mba7nvdk" path="res://sprites/router_icon/router2c.png" id="4_wq47h"]
+[ext_resource type="Script" path="res://scripts/variable_point.gd" id="1_jy03a"]
+[ext_resource type="Texture2D" uid="uid://occcic0y0law" path="res://sprites/router_icon/router2.png" id="2_dogpd"]
+[ext_resource type="Texture2D" uid="uid://d2kb6uogm3lqh" path="res://sprites/router_icon/router2b.png" id="3_s4b62"]
+[ext_resource type="Texture2D" uid="uid://cnom2mba7nvdk" path="res://sprites/router_icon/router2c.png" id="4_ndssc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p3cfi"]
 radius = 25.5783
@@ -16,13 +16,13 @@ radius = 25.5783
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_0fm0e")
+"texture": ExtResource("2_dogpd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_lienm")
+"texture": ExtResource("3_s4b62")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_wq47h")
+"texture": ExtResource("4_ndssc")
 }, {
 "duration": 1.0,
 "texture": SubResource("CompressedTexture2D_b5ixt")
@@ -35,9 +35,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Point" type="Node2D"]
+[node name="variablePoint" type="Node2D"]
 scale = Vector2(0.8, 0.8)
-script = ExtResource("1_lffvo")
+script = ExtResource("1_jy03a")
 
 [node name="Area2D" type="Area2D" parent="."]
 

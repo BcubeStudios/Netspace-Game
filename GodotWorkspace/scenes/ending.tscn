@@ -7,11 +7,20 @@
 [node name="Ending" type="Node2D"]
 script = ExtResource("1_wodt8")
 
+[node name="SettingButton" type="Button" parent="."]
+offset_left = 1195.0
+offset_top = 41.0
+offset_right = 1241.0
+offset_bottom = 77.0
+theme = ExtResource("3_ekkbn")
+text = "☰"
+
 [node name="SettingsMenu" parent="." instance=ExtResource("2_q8ayu")]
-offset_left = 620.0
-offset_top = 566.0
-offset_right = 660.0
-offset_bottom = 599.0
+visible = false
+offset_left = 1177.0
+offset_top = 159.0
+offset_right = 1217.0
+offset_bottom = 192.0
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 213.0
@@ -27,10 +36,22 @@ offset_top = 44.0
 offset_right = 794.0
 offset_bottom = 249.0
 theme_override_font_sizes/font_size = 50
-text = "Thank you for playing the demo...
+text = "Congrats on solving the level!
 We hope you enjoyed!
 
-Like and Subscribe"
+Like and Subscribe for more!!!!            !"
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
+
+[node name="continueButton" type="Button" parent="."]
+offset_left = 543.0
+offset_top = 566.0
+offset_right = 773.0
+offset_bottom = 618.0
+theme = ExtResource("3_ekkbn")
+theme_override_font_sizes/font_size = 46
+text = "CONTINUE ?"
+
+[connection signal="pressed" from="SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="continueButton" to="." method="_on_continue_button_pressed"]

@@ -3,24 +3,38 @@ extends Control
 var point_scene = preload("res://scenes/point.tscn")
 var end_point_scene = preload("res://scenes/end_point.tscn")
 var edge_scene = preload("res://scenes/edge.tscn")
+var variable_point_scene = preload("res://scenes/variable_point.tscn")
 
 var points:Array[AbstractPoint]
 var edges:Array[Edge]
 var current_point:AbstractPoint
 var current_edge:Edge
 var current_phedge:Phedge
+var max_length: float
 var length_left: float
 var curr_length: float
 var max_phedge: float = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	current_phedge = $Phedge
+	current_phedge = $thisPhedge
 	current_phedge.reset_origin()
 	
 	curr_length = 0
 
+func set_cable_length(length):
+	max_length = length
+	length_left = length
+
+func create_variable_point(new_name, coords, max_edges):
+	var newPoint = variable_point_scene.instantiate()
+	newPoint.activate(new_name, coords)
+	newPoint.change_max_edges(max_edges)
+	self.add_child(newPoint)
+	points.append(newPoint)
+
 func create_end_point(new_name, coords):
+
 	var newPoint = end_point_scene.instantiate()
 	newPoint.activate(new_name, coords)
 	self.add_child(newPoint)
@@ -86,9 +100,14 @@ func create_edge(point1, point2):
 		game_won()
 	# abort edge creation if not valid
 	else:
-		# reset phedge 
-		current_phedge.reset_origin()
+		# fully remove edge from its points
+		current_phedge.origin.remove_edge(edge)
+		current_phedge.origin.redraw()
+		current_point.remove_edge(edge)
+		current_point.redraw()
 		edge.queue_free()
+		# reset phedge
+		current_phedge.reset_origin()
 		curr_length = 0
 
 func delete_edge(edge):
@@ -138,6 +157,9 @@ func game_won() -> bool:
 	return false
 
 func auto_solve():
+	self.reset()
+	await Global.wait(0.5)
+	
 	var solved_points:Array[AbstractPoint] = []
 	var remaining_points:Array[AbstractPoint] = points.duplicate()
 	
@@ -178,3 +200,12 @@ func auto_solve():
 			min_edge.queue_redraw()
 			await Global.wait(0.5)
 
+func reset():
+	for point in points:
+		for edge in edges:
+			point.remove_edge(edge)
+		point.redraw()
+	for edge in edges:
+		edge.queue_free()
+	edges.clear()
+	length_left = max_length
