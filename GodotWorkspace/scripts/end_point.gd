@@ -28,9 +28,12 @@ func add_edge(p_edge:Edge) -> bool:
 		return true
 	return false
 
-func remove_edge(_p_edge:Edge) -> bool:
-	edge = null
-	return true
+func remove_edge(p_edge:Edge) -> bool:
+	if(p_edge.id == edge.id):
+		edge = null
+		return true
+	else:
+		return false
 
 func curr_frame()-> int:
 	return $Area2D/sprite.frame

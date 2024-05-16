@@ -35,8 +35,6 @@ func level_won():
 	await Global.wait(1.5)
 	get_tree().change_scene_to_file("res://scenes/ending.tscn")
 
-func reset():
-	get_tree().change_scene_to_file("res://scenes/demo_level.tscn")
 
 func _process(_delta):
 	$scoreLabel.text = str(int($gamePanel/Director.max_length - $gamePanel/Director.length_left))
