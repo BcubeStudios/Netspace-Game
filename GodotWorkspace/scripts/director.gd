@@ -11,7 +11,7 @@ var current_edge:Edge
 var current_phedge:Phedge
 var length_left: float
 var curr_length: float
-var max_phedge: float = 350
+var max_phedge: float = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

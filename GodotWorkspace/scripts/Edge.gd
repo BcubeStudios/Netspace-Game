@@ -42,8 +42,3 @@ func activate(new_point1, new_point2):
 
 func _draw():
 	draw_line(Vector2i(0,0), point2.coords-point1.coords, colour, 4)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
