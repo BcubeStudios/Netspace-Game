@@ -11,7 +11,7 @@ var current_edge:Edge
 var current_phedge:Phedge
 var length_left: float
 var curr_length: float
-var max_phedge: float = 300
+var max_phedge: float = 350
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -88,6 +88,7 @@ func create_edge(point1, point2):
 	else:
 		# reset phedge 
 		current_phedge.reset_origin()
+		edge.queue_free()
 		curr_length = 0
 
 func delete_edge(edge):

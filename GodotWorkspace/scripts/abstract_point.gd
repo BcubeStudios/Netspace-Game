@@ -16,7 +16,7 @@ func _on_area_2d_mouse_entered():
 
 func _on_area_2d_mouse_exited():
 	director.change_pointing_at(null)
-	
+
 func add_edge(_edge:Edge) -> bool:
 	return false
 

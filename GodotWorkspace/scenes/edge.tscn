@@ -2,15 +2,18 @@
 
 [ext_resource type="Script" path="res://scripts/edge.gd" id="1_hx027"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_dg4bt"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yoloo"]
 
 [node name="Edge" type="Node2D"]
 script = ExtResource("1_hx027")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_priority = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("SegmentShape2D_dg4bt")
+visibility_layer = 2
+shape = SubResource("RectangleShape2D_yoloo")
+one_way_collision_margin = 0.0
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
