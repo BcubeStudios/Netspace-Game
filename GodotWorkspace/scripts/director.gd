@@ -114,6 +114,9 @@ func delete_edge(edge):
 	# unlink edge from both it's points
 	edge.point1.remove_edge(edge)
 	edge.point2.remove_edge(edge)
+	#reset edge look
+	edge.point1.redraw()
+	edge.point2.redraw()
 	# refund used length
 	change_length_left(-edge.length)
 	# remove edge from the director
