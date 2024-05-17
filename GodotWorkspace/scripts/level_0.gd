@@ -12,7 +12,6 @@ func _ready():
 	$HUD/ObjectivesPanel/ObjectivesLabel.text = "Connect all the nodes at least once using the least amount of cable possible. The edge should return to the origine node."
 
 	$gamePanel/cablePanel/cable_Label.text = "Current Cable Used"
-	$gamePanel/cablePanel/length_Label.hide()
 	
 	dir.create_end_point("point1", (Vector2i(450, 450)))
 	dir.create_end_point("point2", (Vector2i(850, 450)))

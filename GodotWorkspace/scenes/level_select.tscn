@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://crsso304y6jxn"]
+[gd_scene load_steps=6 format=3 uid="uid://crsso304y6jxn"]
 
 [ext_resource type="Script" path="res://scripts/level_select.gd" id="1_jg4nj"]
 [ext_resource type="PackedScene" uid="uid://c6fth4mtmu8c0" path="res://scenes/settings_menu.tscn" id="2_t2cu7"]
 [ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="3_3r531"]
-[ext_resource type="Texture2D" uid="uid://8uprky4jngxw" path="res://sprites/router/windows.png" id="4_kt32x"]
+[ext_resource type="Texture2D" uid="uid://dk8uafhm1rf0y" path="res://sprites/panels/windows-grey.jpg" id="3_gx2ky"]
+[ext_resource type="Texture2D" uid="uid://bdm0xlk4i4ib0" path="res://sprites/panels/windows-white.jpg" id="4_740pk"]
 
 [node name="level_select" type="Node2D"]
 script = ExtResource("1_jg4nj")
@@ -19,10 +20,11 @@ offset_left = 166.0
 offset_top = 55.0
 offset_right = 520.0
 offset_bottom = 279.0
-texture_normal = ExtResource("4_kt32x")
-texture_pressed = ExtResource("4_kt32x")
-texture_hover = ExtResource("4_kt32x")
-texture_disabled = ExtResource("4_kt32x")
+texture_normal = ExtResource("3_gx2ky")
+texture_pressed = ExtResource("4_740pk")
+texture_hover = ExtResource("4_740pk")
+texture_disabled = ExtResource("4_740pk")
+texture_focused = ExtResource("4_740pk")
 
 [node name="demoLabel" type="Label" parent="demoButton"]
 layout_mode = 0
@@ -42,10 +44,11 @@ offset_left = 168.0
 offset_top = 370.0
 offset_right = 522.0
 offset_bottom = 594.0
-texture_normal = ExtResource("4_kt32x")
-texture_pressed = ExtResource("4_kt32x")
-texture_hover = ExtResource("4_kt32x")
-texture_disabled = ExtResource("4_kt32x")
+texture_normal = ExtResource("3_gx2ky")
+texture_pressed = ExtResource("4_740pk")
+texture_hover = ExtResource("4_740pk")
+texture_disabled = ExtResource("4_740pk")
+texture_focused = ExtResource("4_740pk")
 
 [node name="level0Label" type="Label" parent="level0Button"]
 layout_mode = 0
@@ -65,10 +68,10 @@ offset_left = 744.0
 offset_top = 70.0
 offset_right = 1098.0
 offset_bottom = 294.0
-texture_normal = ExtResource("4_kt32x")
-texture_pressed = ExtResource("4_kt32x")
-texture_hover = ExtResource("4_kt32x")
-texture_disabled = ExtResource("4_kt32x")
+texture_normal = ExtResource("3_gx2ky")
+texture_pressed = ExtResource("4_740pk")
+texture_hover = ExtResource("4_740pk")
+texture_disabled = ExtResource("4_740pk")
 
 [node name="level1Label" type="Label" parent="level1Button"]
 layout_mode = 0
@@ -88,10 +91,11 @@ offset_left = 459.0
 offset_top = 200.0
 offset_right = 813.0
 offset_bottom = 424.0
-texture_normal = ExtResource("4_kt32x")
-texture_pressed = ExtResource("4_kt32x")
-texture_hover = ExtResource("4_kt32x")
-texture_disabled = ExtResource("4_kt32x")
+texture_normal = ExtResource("3_gx2ky")
+texture_pressed = ExtResource("4_740pk")
+texture_hover = ExtResource("4_740pk")
+texture_disabled = ExtResource("4_740pk")
+texture_focused = ExtResource("4_740pk")
 
 [node name="level2Label" type="Label" parent="level2Button"]
 layout_mode = 0
@@ -111,10 +115,11 @@ offset_left = 703.0
 offset_top = 357.0
 offset_right = 1057.0
 offset_bottom = 581.0
-texture_normal = ExtResource("4_kt32x")
-texture_pressed = ExtResource("4_kt32x")
-texture_hover = ExtResource("4_kt32x")
-texture_disabled = ExtResource("4_kt32x")
+texture_normal = ExtResource("3_gx2ky")
+texture_pressed = ExtResource("4_740pk")
+texture_hover = ExtResource("4_740pk")
+texture_disabled = ExtResource("4_740pk")
+texture_focused = ExtResource("4_740pk")
 
 [node name="tspLabel" type="Label" parent="tspButton"]
 layout_mode = 0
@@ -129,6 +134,13 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 61
 text = "TSP LEVEL"
 
+[connection signal="mouse_entered" from="demoButton" to="." method="_on_demo_button_mouse_entered"]
 [connection signal="pressed" from="demoButton" to="." method="_on_demo_button_pressed"]
+[connection signal="mouse_entered" from="level0Button" to="." method="_on_level_0_button_mouse_entered"]
 [connection signal="pressed" from="level0Button" to="." method="_on_level_0_button_pressed"]
+[connection signal="mouse_entered" from="level1Button" to="." method="_on_level_1_button_mouse_entered"]
+[connection signal="pressed" from="level1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="mouse_entered" from="level2Button" to="." method="_on_level_2_button_mouse_entered"]
+[connection signal="pressed" from="level2Button" to="." method="_on_level_2_button_pressed"]
+[connection signal="mouse_entered" from="tspButton" to="." method="_on_tsp_button_mouse_entered"]
 [connection signal="pressed" from="tspButton" to="." method="_on_tsp_button_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8uprky4jngxw"
-path="res://.godot/imported/windows.png-c7877a3616d11c6ffdb4f1afa3166df1.ctex"
+uid="uid://bdm0xlk4i4ib0"
+path="res://.godot/imported/windows-white.jpg-7b119bde42c44f089b664649d2dec809.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/router/windows.png"
-dest_files=["res://.godot/imported/windows.png-c7877a3616d11c6ffdb4f1afa3166df1.ctex"]
+source_file="res://sprites/panels/windows-white.jpg"
+dest_files=["res://.godot/imported/windows-white.jpg-7b119bde42c44f089b664649d2dec809.ctex"]
 
 [params]
 
