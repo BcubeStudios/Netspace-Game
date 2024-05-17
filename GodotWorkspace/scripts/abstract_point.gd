@@ -12,11 +12,11 @@ func activate(new_point_name, new_point_coords):
 	self.global_position = new_point_coords
 
 func _on_area_2d_mouse_entered():
-	director.change_current_point(self)
+	director.change_pointing_at(self)
 
 func _on_area_2d_mouse_exited():
-	director.change_current_point(null)
-	
+	director.change_pointing_at(null)
+
 func add_edge(_edge:Edge) -> bool:
 	return false
 
