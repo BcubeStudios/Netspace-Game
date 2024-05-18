@@ -29,6 +29,8 @@ func add_edge(p_edge:Edge) -> bool:
 	return false
 
 func remove_edge(p_edge:Edge) -> bool:
+	if edge ==null :
+		return false
 	if(p_edge.id == edge.id):
 		edge = null
 		return true

@@ -89,7 +89,10 @@ func create_edge(point1, point2):
 	var edge = edge_scene.instantiate()
 	edge.activate(point1, point2)
 	# check if the edge would be valid
-	if(current_phedge.origin.add_edge(edge) and current_point.add_edge(edge) and change_length_left(edge.length)):
+	if(current_phedge.origin.possible_edge(edge) and current_point.possible_edge(edge) and change_length_left(edge.length)):
+		#add to edges
+		current_phedge.origin.add_edge(edge)
+		current_point.add_edge(edge)
 		# reset phedge 
 		current_phedge.reset_origin()
 		# add edge to array
@@ -101,10 +104,6 @@ func create_edge(point1, point2):
 	# abort edge creation if not valid
 	else:
 		# fully remove edge from its points
-		current_phedge.origin.remove_edge(edge)
-		current_phedge.origin.redraw()
-		current_point.remove_edge(edge)
-		current_point.redraw()
 		edge.queue_free()
 		# reset phedge
 		current_phedge.reset_origin()
