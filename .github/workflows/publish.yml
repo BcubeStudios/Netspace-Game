@@ -38,8 +38,8 @@ jobs:
           # See: https://github.com/godotengine/godot-docs/issues/7084
         run: |
           cd build/web
-          wget https://github.com/gzuidhof/coi-serviceworker/raw/master/coi-serviceworker.js > coi-serviceworker.js
-          sed -i 's#\(		<title>Se-2024-code</title>\)#		<script src="coi-serviceworker.js"></script>\n\1#g' index.html
+          wget https://raw.githubusercontent.com/josephrocca/clip-image-sorter/main/enable-threads.js > enable-threads.js
+          sed -i 's#\(		<title>Se-2024-code</title>\)#		<script src="enable-threads.js"></script>\n\1#g' index.html
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
