@@ -1,8 +1,8 @@
 # NETSPACE - SE-2024 Project
 [![Latest Build](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/main.yml)
 
-## [PLAY HERE!](https://bcubestudios.github.io/SE-2024-Code/)
-Only works on chromium based browsers(refresh if issues)
+# [PLAY HERE!](https://bcubestudios.github.io/SE-2024-Code/)
+> Only works on chromium based browsers (refresh if issues)
 
 ![Title Screen of the game Netspace](https://cdn.discordapp.com/attachments/1209910332202684436/1240276276397477952/image.png?ex=6645f8cb&is=6644a74b&hm=4c01dd31e74e20de32f2657f356db0aa08e6f956a06bf164ff2959804611e5cd&)
 
