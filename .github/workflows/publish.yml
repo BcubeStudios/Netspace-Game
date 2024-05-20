@@ -36,8 +36,8 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: netspace
-          path: $PROJECT_PATH/build/web
+          name: netspace-web-${{ github.sha }}
+          path: build/web
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
