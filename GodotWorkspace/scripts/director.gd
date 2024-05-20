@@ -181,12 +181,13 @@ func auto_solve():
 			for new_point in remaining_points:
 				var edge = edge_scene.instantiate()
 				edge.activate(point, new_point)
-				if min_edge == null:
-					min_edge = edge
-				if edge.length <= max_phedge and edge.length < min_edge.length  and change_length_left(edge.length)\
-				 and point.possible_edge(edge) and new_point.possible_edge(edge):
-					min_edge = edge
-					change_length_left(-(edge.length))
+				if not (new_point is EndPoint and point is EndPoint):
+					if min_edge == null:
+						min_edge = edge
+					if edge.length <= max_phedge and edge.length < min_edge.length  and change_length_left(edge.length)\
+					 and point.possible_edge(edge) and new_point.possible_edge(edge):
+						min_edge = edge
+						change_length_left(-(edge.length))
 		# add edge
 		if min_edge != null and min_edge.length <= max_phedge and change_length_left(min_edge.length) \
 		and min_edge.point1.add_edge(min_edge) and min_edge.point2.add_edge(min_edge):
