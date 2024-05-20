@@ -8,8 +8,8 @@ func _ready():
 	dir.set_cable_length(100000)
 	
 	# Modify 
-	$HUD/InfoPanel/InfoLabel.text = "Routers"
-	$HUD/ObjectivesPanel/ObjectivesLabel.text = "Connect all the nodes using the router!"
+	$HUD/InfoPanel/InfoLabel.text = "Routers: in the real world, a router connects devices between networks! Here we have 2 networks that need connecting. We could connect every device to each other but that would use up a lot of cable. In the real world, it would be impossible to connect every single device to an other device, so we use routers!"
+	$HUD/ObjectivesPanel/ObjectivesLabel.text = "Connect all the nodes using the router! Remember, some nodes can only have one connection while others (routers) can have multiple.	"
 	
 	# Add points here (end, normal, or varible with a max amount of edges)
 	dir.create_point("router1", randomCoordinates(Vector2i(480, 360)))
@@ -34,6 +34,6 @@ func randomCoordinates(expectedCoords):
 	
 	var random = RandomNumberGenerator.new()
 	random.randomize()
-	var x = random.randi_range(expectedCoords[0] - 20, expectedCoords[0] + 20)
-	var y = random.randi_range(expectedCoords[1] - 20, expectedCoords[1] + 20)
+	var x = random.randi_range(expectedCoords[0] - 30, expectedCoords[0] + 30)
+	var y = random.randi_range(expectedCoords[1] - 30, expectedCoords[1] + 30)
 	return Vector2(x, y)
