@@ -39,16 +39,16 @@ autowrap_mode = 2
 
 [node name="Panel2" type="Panel" parent="Control"]
 layout_mode = 0
-offset_left = 836.0
-offset_top = 153.0
-offset_right = 1037.0
-offset_bottom = 272.0
+offset_left = 850.0
+offset_top = 218.0
+offset_right = 1049.0
+offset_bottom = 367.0
 
 [node name="Label" type="Label" parent="Control/Panel2"]
 layout_mode = 0
 offset_left = 14.0
-offset_top = 20.0
+offset_top = 14.0
 offset_right = 187.0
-offset_bottom = 104.0
-text = "If your'e "
+offset_bottom = 126.0
+text = "If you're stuck somewhere try using the RESET button or RIGHT-CLICKING to erase a connection"
 autowrap_mode = 2
