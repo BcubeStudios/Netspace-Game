@@ -39,7 +39,7 @@ jobs:
           # Different js file only works on chromium based browsers: https://raw.githubusercontent.com/josephrocca/clip-image-sorter/main/enable-threads.js
         run: |
           cd build/web
-          wget https://raw.githubusercontent.com/gzuidhof/coi-serviceworker/master/coi-serviceworker.js
+          wget https://raw.githubusercontent.com/josephrocca/clip-image-sorter/main/enable-threads.js
           sed -i 's#\(		<title>Se-2024-code</title>\)#		<script src="enable-threads.js"></script>\n\1#g' index.html
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
