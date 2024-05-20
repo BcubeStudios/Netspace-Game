@@ -93,10 +93,10 @@ text = "Auto-Solve"
 [node name="resetButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 1091.0
-offset_top = 678.0
-offset_right = 1175.0
-offset_bottom = 706.0
+offset_left = 1088.0
+offset_top = 667.0
+offset_right = 1172.0
+offset_bottom = 695.0
 theme = ExtResource("3_fyrpk")
 text = "Reset"
 

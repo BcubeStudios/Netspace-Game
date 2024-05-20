@@ -30,6 +30,7 @@ func add_edge(edge:Edge) -> bool:
 
 func remove_edge(edge:Edge) -> bool:
 	var x = 0
+	
 	for old_edge in edges:
 		if old_edge.id == edge.id:
 			edges.remove_at(x)

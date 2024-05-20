@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc25l4fo5y5pb"]
+
+[ext_resource type="Script" path="res://scripts/level_0.gd" id="1_ekgpp"]
+[ext_resource type="PackedScene" uid="uid://b68odumc68nqb" path="res://scenes/game_panel.tscn" id="1_fxrbj"]
+[ext_resource type="PackedScene" uid="uid://smxxaf128sk0" path="res://scenes/hud.tscn" id="2_jfl5n"]
+[ext_resource type="Theme" uid="uid://dupann3qkyje3" path="res://themes/pixel_98.tres" id="4_nmj0y"]
+
+[node name="level0" type="Node2D"]
+script = ExtResource("1_ekgpp")
+
+[node name="gamePanel" parent="." instance=ExtResource("1_fxrbj")]
+
+[node name="HUD" parent="." instance=ExtResource("2_jfl5n")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+theme = ExtResource("4_nmj0y")
+
+[node name="panel1" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 162.0
+offset_right = 582.0
+offset_bottom = 271.0
+theme = ExtResource("4_nmj0y")
+
+[node name="Label" type="Label" parent="Control/panel1"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 161.0
+offset_bottom = 90.0
+text = "Try Connecting 2 END-NODES by clicking one, then the other"
+autowrap_mode = 2
+
+[node name="Panel2" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 218.0
+offset_right = 1049.0
+offset_bottom = 367.0
+
+[node name="Label" type="Label" parent="Control/Panel2"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 187.0
+offset_bottom = 126.0
+text = "If you're stuck somewhere try using the RESET button or RIGHT-CLICKING to erase a connection"
+autowrap_mode = 2

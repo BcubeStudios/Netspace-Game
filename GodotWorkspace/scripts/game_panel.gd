@@ -9,6 +9,8 @@ func _process(_delta):
 
 
 func _on_solve_button_pressed():
+	$resetButton.hide()
+	$solveButton.hide()
 	$Director.auto_solve()
 
 func _on_reset_button_pressed():
