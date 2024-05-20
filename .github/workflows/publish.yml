@@ -9,7 +9,7 @@ env:
   PROJECT_PATH: GodotWorkspace
 
 permissions:
-    contents: read
+    contents: write
     pages: write
     id-token: write
 
