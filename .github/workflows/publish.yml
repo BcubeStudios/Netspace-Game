@@ -1,6 +1,11 @@
 name: Publish Game to Actions
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'GodotWorkspace/**'
   workflow_dispatch:
 
 env:
