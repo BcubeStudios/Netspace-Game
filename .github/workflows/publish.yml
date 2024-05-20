@@ -36,7 +36,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: netspace-web-${{ github.sha }}
+          name: github-pages
           path: build/web
   deploy:
     environment:
