@@ -1,4 +1,4 @@
-name: Publish Game to Actions
+name: Build Web
 
 on:
   push:
