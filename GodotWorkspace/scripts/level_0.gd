@@ -50,7 +50,7 @@ func next_step():
 		4:
 			await Global.wait(0.5)
 			$Control/panel4.show()
-			dir.create_end_point("point6", (Vector2i(1000, 250)))
+			dir.create_end_point("point6", (Vector2i(1050, 300)))
 		5:
 			await Global.wait(0.5)
 			dir.create_end_point("point7", (Vector2i(900, 650)))
