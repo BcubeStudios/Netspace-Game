@@ -1,0 +1,58 @@
+name: Build Web
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'GodotWorkspace/**'
+  workflow_dispatch:
+
+env:
+  GODOT_VERSION: 4.2.1
+  EXPORT_NAME: netspace
+  PROJECT_PATH: GodotWorkspace
+
+permissions:
+    contents: write
+    pages: write
+    id-token: write
+
+jobs:
+  build:
+    name: build-web
+    runs-on: ubuntu-24.04
+    container:
+      image: barichello/godot-ci:4.2.1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+      - name: Web Build
+        run: |
+          mkdir -v -p build/web
+          cd $PROJECT_PATH
+          godot --headless --verbose --export-release "Web" ../build/web/index.html
+      - name: Add Workaround SharedArrayBuffer
+          # Workaround for SharedArrayBuffer support on GitHub Pages
+          # See: https://github.com/godotengine/godot-docs/issues/7084
+          # Different js file only works on chromium based browsers: https://raw.githubusercontent.com/josephrocca/clip-image-sorter/main/enable-threads.js
+        run: |
+          cd build/web
+          wget https://raw.githubusercontent.com/josephrocca/clip-image-sorter/main/enable-threads.js
+          sed -i 's#\(		<title>Se-2024-code</title>\)#		<script src="enable-threads.js"></script>\n\1#g' index.html
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: netspace-web
+          path: build/web/*
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build/web # The folder the action should deploy.

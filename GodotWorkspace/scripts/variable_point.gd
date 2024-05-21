@@ -14,8 +14,8 @@ func add_edge(edge:Edge) -> bool:
 	for old_edge in edges:
 		if old_edge.id == edge.id:
 			return false
-	$Area2D/sprite.frame = 0
 	edges.append(edge)
+	redraw()
 	return true
 
 func possible_edge(edge:Edge) -> bool:
@@ -32,3 +32,17 @@ func change_max_edges(amount: int):
 	if (amount <1 or amount > 10 ):
 		return
 	max_edges = amount
+	
+func redraw():
+	if(edges.is_empty()):
+		$Area2D/sprite.frame = 1
+	else:
+		if edges.size() == max_edges:
+			$Area2D/sprite.frame = 3
+		else:
+			$Area2D/sprite.frame = 0
+
+func curr_frame()-> int:
+	if edges.size() == max_edges:
+		return 0
+	return $Area2D/sprite.frame
