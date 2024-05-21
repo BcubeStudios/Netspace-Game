@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdit8m8yom0wh"]
+
+[ext_resource type="PackedScene" uid="uid://b68odumc68nqb" path="res://scenes/game_panel.tscn" id="1_o202n"]
+[ext_resource type="Script" path="res://scripts/level_3.gd" id="1_tgtm3"]
+[ext_resource type="PackedScene" uid="uid://smxxaf128sk0" path="res://scenes/hud.tscn" id="2_uq4uq"]
+
+[node name="level3" type="Node2D"]
+script = ExtResource("1_tgtm3")
+
+[node name="gamePanel" parent="." instance=ExtResource("1_o202n")]
+
+[node name="HUD" parent="." instance=ExtResource("2_uq4uq")]

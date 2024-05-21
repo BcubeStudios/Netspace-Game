@@ -17,18 +17,24 @@ func _on_level_1_button_pressed():
 func _on_level_2_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/level_2.tscn")
 
+func _on_level_3_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/level_3.tscn")
+
 
 func _on_demo_button_mouse_entered():
-	move_child($demoButton, 5)
+	move_child($demoButton, 6)
 
 func _on_level_0_button_mouse_entered():
-	move_child($level0Button, 5)
+	move_child($level0Button, 6)
 
 func _on_level_1_button_mouse_entered():
-	move_child($level1Button, 5)
+	move_child($level1Button, 6)
 
 func _on_level_2_button_mouse_entered():
-	move_child($level2Button, 5)
+	move_child($level2Button, 6)
 
 func _on_tsp_button_mouse_entered():
-	move_child($tspButton, 5)
+	move_child($tspButton, 6)
+
+func _on_level_3_button_mouse_entered():
+	move_child($level3Button, 6)
