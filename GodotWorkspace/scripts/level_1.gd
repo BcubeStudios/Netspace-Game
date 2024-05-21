@@ -27,7 +27,7 @@ func _ready():
 	dir.create_end_point("point3b", randomCoordinates(Vector2i(910, 490)))
 
 func level_won():
-	await Global.wait(1.5)
+	await Global.wait(0.5)
 	get_tree().change_scene_to_file("res://scenes/ending.tscn")
 	
 func randomCoordinates(expectedCoords):
