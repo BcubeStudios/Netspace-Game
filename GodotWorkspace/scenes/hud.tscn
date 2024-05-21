@@ -48,12 +48,11 @@ offset_right = 1.0
 offset_bottom = 1.0
 
 [node name="InfoPanel" type="Panel" parent="."]
-visible = false
 layout_mode = 0
-offset_left = 783.0
-offset_top = 288.0
-offset_right = 1128.0
-offset_bottom = 573.0
+offset_left = 927.0
+offset_top = 374.0
+offset_right = 1272.0
+offset_bottom = 659.0
 theme = ExtResource("1_xdl22")
 
 [node name="InfoLabel" type="Label" parent="InfoPanel"]
@@ -80,6 +79,7 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+button_pressed = true
 text = "Info"
 
 [node name="ObjectivesToggle" type="CheckButton" parent="."]

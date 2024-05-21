@@ -10,8 +10,6 @@ script = ExtResource("1_ekgpp")
 
 [node name="gamePanel" parent="." instance=ExtResource("1_fxrbj")]
 
-[node name="HUD" parent="." instance=ExtResource("2_jfl5n")]
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -37,14 +35,15 @@ offset_bottom = 90.0
 text = "Try Connecting 2 END-NODES by clicking one, then the other"
 autowrap_mode = 2
 
-[node name="Panel2" type="Panel" parent="Control"]
+[node name="panel2" type="Panel" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = 850.0
 offset_top = 218.0
 offset_right = 1049.0
 offset_bottom = 367.0
 
-[node name="Label" type="Label" parent="Control/Panel2"]
+[node name="Label" type="Label" parent="Control/panel2"]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 14.0
@@ -52,3 +51,39 @@ offset_right = 187.0
 offset_bottom = 126.0
 text = "If you're stuck somewhere try using the RESET button or RIGHT-CLICKING to erase a connection"
 autowrap_mode = 2
+
+[node name="panel3" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 598.0
+offset_top = 539.0
+offset_right = 797.0
+offset_bottom = 688.0
+
+[node name="Label" type="Label" parent="Control/panel3"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 21.0
+offset_right = 192.0
+offset_bottom = 133.0
+text = "END-NODES represent you and your computer:
+They can only connect to 1 NODE"
+autowrap_mode = 2
+
+[node name="panel4" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 343.0
+offset_right = 192.0
+offset_bottom = 557.0
+theme = ExtResource("4_nmj0y")
+
+[node name="Label" type="Label" parent="Control/panel4"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 17.0
+offset_right = 162.0
+offset_bottom = 211.0
+text = "VARIABLE NODES can have a maximum number of connections. Pay attention as they show once they're MAXED OUT"
+autowrap_mode = 2
+
+[node name="HUD" parent="." instance=ExtResource("2_jfl5n")]

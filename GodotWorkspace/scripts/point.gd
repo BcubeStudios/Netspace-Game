@@ -13,10 +13,7 @@ func _on_area_2d_mouse_entered():
 
 func _on_area_2d_mouse_exited():
 	super()
-	if(edges.is_empty()):
-		$Area2D/sprite.frame = 1
-	else:
-		$Area2D/sprite.frame = 0
+	redraw()
 	
 func add_edge(edge:Edge) -> bool:
 	if edge.point1 == edge.point2:
@@ -24,8 +21,8 @@ func add_edge(edge:Edge) -> bool:
 	for old_edge in edges:
 		if old_edge.id == edge.id:
 			return false
-	$Area2D/sprite.frame = 0
 	edges.append(edge)
+	redraw()
 	return true
 
 func remove_edge(edge:Edge) -> bool:
