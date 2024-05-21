@@ -1,5 +1,5 @@
 # NETSPACE - SE-2024 Project
-[![Latest Build](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/main.yml) [![Build Web](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/publish.yml/badge.svg)](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/publish.yml)
+[![Latest Build](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/main.yml) [![Build Web](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/publish.yml/badge.svg)](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/publish.yml) [![pages-build-deployment](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/pages/pages-build-deployment)
 
 # [PLAY HERE!](https://bcubestudios.github.io/SE-2024-Code/)
 > Only works on chromium based browsers (refresh if issues)
