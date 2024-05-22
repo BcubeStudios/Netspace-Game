@@ -185,9 +185,8 @@ func auto_solve():
 					if min_edge == null:
 						min_edge = edge
 					if edge.length <= max_phedge and edge.length < min_edge.length  and new_point.possible_edge(edge)\
-					 and point.possible_edge(edge) and change_length_left(edge.length):
+					 and point.possible_edge(edge) and (length_left - edge.length >= 0):
 						min_edge = edge
-						change_length_left(-(edge.length))
 		# add edge
 		if min_edge != null and min_edge.length <= max_phedge and change_length_left(min_edge.length) \
 		and min_edge.point1.add_edge(min_edge) and min_edge.point2.add_edge(min_edge):

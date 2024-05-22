@@ -13,6 +13,8 @@ func _ready():
 	$gamePanel/cablePanel/cable_Label.text = "Current Cable Used"
 	$gamePanel/cablePanel/length_Label.hide()
 	
+	$gamePanel/solveButton.hide()
+	
 	dir.create_variable_point("point1", randomCoordinates(Vector2i(640, 100)), 2)
 	dir.create_variable_point("point2", randomCoordinates(Vector2i(910, 230)), 2)
 	dir.create_variable_point("point3", randomCoordinates(Vector2i(1120, 360)), 2)
