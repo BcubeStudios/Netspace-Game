@@ -2,7 +2,6 @@
 [![Latest Build](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/main.yml) [![Build Web](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/publish.yml/badge.svg)](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/publish.yml) [![pages-build-deployment](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/BcubeStudios/SE-2024-Code/actions/workflows/pages/pages-build-deployment)
 
 # [PLAY HERE!](https://bcubestudios.github.io/Netspace-Game/)
-> Only works on chromium based browsers (refresh if issues)
 
 ![Title Screen of the game Netspace](https://cdn.discordapp.com/attachments/1209910332202684436/1240276276397477952/image.png?ex=6645f8cb&is=6644a74b&hm=4c01dd31e74e20de32f2657f356db0aa08e6f956a06bf164ff2959804611e5cd&)
 
@@ -20,3 +19,6 @@ Builds are automaticlly available in as artifacts in the [Actions](https://githu
 - Import the /GodotWorkspace folder of the repository in Godot
 - You are now ready!
 
+## Credits
+
+ Thanks to [this repo](https://github.com/gzuidhof/coi-serviceworker) for workaround web export
