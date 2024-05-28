@@ -3,7 +3,7 @@
 
 # [PLAY HERE!](https://bcubestudios.github.io/Netspace-Game/)
 
-![Title Screen of the game Netspace]([https://cdn.discordapp.com/attachments/1209910332202684436/1240276276397477952/image.png?ex=6645f8cb&is=6644a74b&hm=4c01dd31e74e20de32f2657f356db0aa08e6f956a06bf164ff2959804611e5cd&](https://cdn.discordapp.com/attachments/1209909887644082251/1245112474848464916/main.jpg?ex=665790db&is=66563f5b&hm=babe9ba5c3294d711eb9e0d20b6aa09facdea07205f3adc9def6b754b85750fe&))
+![Title Screen of the game Netspace](https://cdn.discordapp.com/attachments/1209909887644082251/1245112474848464916/main.jpg?ex=665790db&is=66563f5b&hm=babe9ba5c3294d711eb9e0d20b6aa09facdea07205f3adc9def6b754b85750fe&)
 
 ## Getting access to latest build
 Builds are automaticlly available in as artifacts in the [Actions](https://github.com/BcubeStudios/SE-2024-Code/actions) tab. Just click on the latest successfull build and download the zip at the bottom.
