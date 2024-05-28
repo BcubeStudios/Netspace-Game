@@ -5,6 +5,8 @@
 
 ![Title Screen of the game Netspace](https://cdn.discordapp.com/attachments/1209909887644082251/1245112474848464916/main.jpg?ex=665790db&is=66563f5b&hm=babe9ba5c3294d711eb9e0d20b6aa09facdea07205f3adc9def6b754b85750fe&)
 
+## [Trailer](https://www.youtube.com/watch?v=JoZ_3TgLo5k)
+
 ## Getting access to latest build
 Builds are automaticlly available in as artifacts in the [Actions](https://github.com/BcubeStudios/SE-2024-Code/actions) tab. Just click on the latest successfull build and download the zip at the bottom.
 
@@ -22,5 +24,3 @@ Builds are automaticlly available in as artifacts in the [Actions](https://githu
 ## Credits
 
  Thanks to [this repo](https://github.com/gzuidhof/coi-serviceworker) for workaround web export
-
-## [Trailer](https://www.youtube.com/watch?v=JoZ_3TgLo5k)
