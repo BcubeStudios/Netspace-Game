@@ -23,6 +23,4 @@ Builds are automaticlly available in as artifacts in the [Actions](https://githu
 
  Thanks to [this repo](https://github.com/gzuidhof/coi-serviceworker) for workaround web export
 
-### Trailer
-
-[Video link for game trailer](https://www.youtube.com/watch?v=JoZ_3TgLo5k)
+## [Trailer](https://www.youtube.com/watch?v=JoZ_3TgLo5k)
