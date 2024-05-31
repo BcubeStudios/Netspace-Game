@@ -72,7 +72,7 @@ func _input(event):
 			create_edge(current_phedge.origin, current_point)
 		else:
 			current_phedge.reset_origin()
-	elif event is InputEventMouseButton and event.pressed and current_edge != null:
+	elif event is InputEventMouseButton and event.get_button_index() == 2 and event.pressed and current_edge != null:
 		delete_edge(current_edge)
 
 
