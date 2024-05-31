@@ -8,6 +8,8 @@
 ## [Trailer](https://www.youtube.com/watch?v=JoZ_3TgLo5k)
 [NETSPACE Trailer.webm](https://github.com/BcubeStudios/Netspace-Game/assets/75472720/022dcdd3-ff1b-4917-9620-381133b6ef5a)
 
+## [Short Demo](https://youtu.be/XotvQj1e2tw)
+
 ## Getting access to latest build
 Builds are automaticlly available in as artifacts in the [Actions](https://github.com/BcubeStudios/SE-2024-Code/actions) tab. Just click on the latest successfull build and download the zip at the bottom.
 
